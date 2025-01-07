@@ -63,7 +63,6 @@
               </div>
             </div>
             <a href="event.html" class="nav-item nav-link">Giới thiệu</a>
-            <a href="about.html" class="nav-item nav-link">Liên hệ</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dịch vụ</a>
               <div class="dropdown-menu bg-light">
@@ -75,6 +74,7 @@
               </div>
             </div>
             <a href="service.html" class="nav-item nav-link">Thông báo</a>
+            <a href="about.html" class="nav-item nav-link">Liên hệ</a>
           </div>
           <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex"
             data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>

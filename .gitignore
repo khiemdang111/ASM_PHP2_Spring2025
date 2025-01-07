@@ -10,3 +10,4 @@ composer.json
 cgi-bin
 
 .env
+package-lock.json
