@@ -30,7 +30,6 @@
 </head>
 
 <body>
-  <h1>Đây là header</h1>
   <!-- Spinner Start -->
   <div id="spinner"
     class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -63,17 +62,8 @@
               </div>
             </div>
             <a href="event.html" class="nav-item nav-link">Giới thiệu</a>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dịch vụ</a>
-              <div class="dropdown-menu bg-light">
-                <a href="book.html" class="dropdown-item">Booking</a>
-                <a href="blog.html" class="dropdown-item">Our Blog</a>
-                <a href="team.html" class="dropdown-item">Our Team</a>
-                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                <a href="404.html" class="dropdown-item">404 Page</a>
-              </div>
-            </div>
-            <a href="service.html" class="nav-item nav-link">Thông báo</a>
+            <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+            <a href="service.html" class="nav-item nav-link">Tin tức</a>
             <a href="about.html" class="nav-item nav-link">Liên hệ</a>
           </div>
           <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex"
