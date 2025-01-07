@@ -27,6 +27,8 @@
 
   <!-- Template Stylesheet -->
   <link href="/public/client/assets/css/style.css" rel="stylesheet">
+  <link href="/public/client/assets/css/custom.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -66,8 +68,17 @@
             <a href="service.html" class="nav-item nav-link">Tin tức</a>
             <a href="about.html" class="nav-item nav-link">Liên hệ</a>
           </div>
-          <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex"
-            data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+   <div id="search-icon">
+   <div class="container">
+        <input checked="" class="checkbox" type="checkbox"> 
+        <div class="mainbox">
+            <div class="iconContainer">
+                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+            </div>
+         <input class="search_input" placeholder="Tìm kiếm" type="text">
+        </div>
+    </div>
+   </div>       
           <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Đặt nhanh</a>
         </div>
       </nav>
