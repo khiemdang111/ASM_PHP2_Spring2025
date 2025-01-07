@@ -7,9 +7,7 @@ ini_set('log_errors', TRUE);
 ini_set('error_log', './logs/php/php-errors.log');
 require_once 'vendor/autoload.php';
 
-
-
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 require_once 'config.php';
-include_once './Client/index.php';
+include_once './View/Client/index.php';
