@@ -64,7 +64,8 @@
                     </li>
                     <li>
                         <a href="mailbox.html"><i class="fa fa-snowflake-o"></i> <span class="nav-label">Danh
-                                mục</span></a>
+                                mục</span><span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="mailbox.html">Tất cả</a></li>
                             <li><a href="mail_detail.html">Thêm mới</a></li>
@@ -84,40 +85,20 @@
                         <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="form_basic.html">Basic form</a></li>
-                            <li><a href="form_advanced.html">Advanced Plugins</a></li>
-                            <li><a href="form_wizard.html">Wizard</a></li>
-                            <li><a href="form_file_upload.html">File Upload</a></li>
-                            <li><a href="form_editors.html">Text Editor</a></li>
-                            <li><a href="form_autocomplete.html">Autocomplete</a></li>
-                            <li><a href="form_markdown.html">Markdown</a></li>
+                            <li><a href="form_basic.html">Tất cả</a></li>
+                            <li><a href="form_editors.html">Chờ xử lí</a></li>
+                            <li><a href="form_advanced.html">Đang giao</a></li>
+                            <li><a href="form_wizard.html">Đã giao</a></li>
+                            <li><a href="form_file_upload.html">Đã hủy</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết </span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
+                            <li><a href="#">Tất cả</a></li>
                             <li>
-                                <a href="#" id="damian">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="#">Second Level Item</a></li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
+                                <a href="#">Thêm mới</a>
                             </li>
                         </ul>
                     </li>
@@ -125,7 +106,19 @@
                         <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">Vourcher
                             </span></a>
                     </li>
-
+                    <li>
+                        <a href="#"><i class="fa fa-trash"></i> <span class="nav-label">Thùng rác </span><span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="#">Sản phẩm</a></li>
+                            <li>
+                                <a href="#">Bài viết</a>
+                            </li>
+                            <li>
+                                <a href="#">Người dùng</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
 
             </div>
