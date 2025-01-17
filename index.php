@@ -8,6 +8,18 @@ ini_set('error_log', './logs/php/php-errors.log');
 use App\Model\Database;
 use App\Model\User;
 use App\Controller\Client\HomeController;
+use App\Controller\Client\ProductController;
+use App\Controller\Admin\HomeController as AdminHomeController;
+use App\Controller\Admin\ProductController as AdminProductController;
+use App\Controller\Admin\CategoryController as AdminCategoryController;
+use App\Controller\Admin\CustomerController as AdminCustomerController;
+use App\Controller\Admin\CommentController as AdminCommentController;
+use App\Controller\Admin\RaitingController as AdminRaitingController;
+use App\Controller\Admin\OrderController as AdminOrderController;
+use App\Controller\Admin\PostController as AdminPostController;
+use App\Controller\Admin\VoucherController as AdminVoucherController;
+use App\Controller\Admin\RoleController as AdminRoleController;
+
 use App\Router;
 require_once 'vendor/autoload.php';
 
@@ -17,12 +29,31 @@ require_once 'config.php';
 
 $router = new Router();
 
+// ***** Client *****
 $router->add("/", [HomeController::class, 'index']);
-$router->add("/product", [HomeController::class, 'about']);
+$router->add("/product", [ProductController::class, 'index']);
 $router->add("/about", [HomeController::class, 'about']);
 $router->add("/service", [HomeController::class, 'service']);
 $router->add("/blog", [HomeController::class, 'blog']);
 $router->add("/contact", [HomeController::class, 'contact']);
+
+
+// ***** Admin *****
+
+$router->add("/admin", [AdminHomeController::class, 'index']);
+$router->add("/admin/product", [AdminProductController::class, 'index']);
+$router->add("/admin/role", [AdminRoleController::class, 'index']);
+$router->add("/admin/category", [AdminCategoryController::class, 'index']);
+$router->add("/admin/customer", [AdminCustomerController::class, 'index']);
+$router->add("/admin/comment", [AdminCommentController::class, 'index']);
+$router->add("/admin/raiting", [AdminRaitingController::class, 'index']);
+$router->add("/admin/order", [AdminOrderController::class, 'index']);
+$router->add("/admin/post", [AdminPostController::class, 'index']);
+$router->add("/admin/voucher", [AdminVoucherController::class, 'index']);
+
+
+
+
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $route = $router->match($path);

@@ -31,7 +31,7 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element text-center"> <span>
                                 <img alt="image" class="img-circle avatar-admin m-auto" width="70px"
-                                    src="img/profile_small.jpg" />
+                                    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Ftthy5143%2Favatar-facebook-xinh-m%25E1%25BA%25B7c-%25C4%2591%25E1%25BB%258Bnh%2F&psig=AOvVaw2Mx-ZSuYChIx1DqEIBi9xk&ust=1737186702659000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjSnvWi_IoDFQAAAAAdAAAAABAE" />
                             </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong
@@ -48,17 +48,17 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="../index.php"><i class="fa fa-th-large"></i> <span
+                        <a href="/admin"><i class="fa fa-th-large"></i> <span
                                 class="nav-label">Dashboards</span></a>
                     </li>
                     <li>
-                        <a href="./pages/roles/index.php"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
+                        <a href="/admin/role"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="./pages/products/index.php">Tất cả</a></li>
+                            <li><a href="/admin/product">Tất cả</a></li>
                             <li><a href="./pages/products/create.php">Thêm mới</a></li>
                         </ul>
                     </li>
@@ -67,25 +67,25 @@
                                 mục</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="./pages/categories/index.php">Tất cả</a></li>
+                            <li><a href="/admin/category">Tất cả</a></li>
                             <li><a href="./pages/categories/index.php">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./pages/custommers/index.php"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span> </a>
+                        <a href="/admin/customer"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span> </a>
                     </li>
                     <li>
-                        <a href="./pages/comments/index.php"><i class="fa fa-comment"></i> <span class="nav-label">Bình luận</span>
+                        <a href="/admin/comment"><i class="fa fa-comment"></i> <span class="nav-label">Bình luận</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./pages/products/raitings.php"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
+                        <a href="/admin/raiting"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="./pages/orders/index.php">Tất cả</a></li>
+                            <li><a href="/admin/order">Tất cả</a></li>
                             <li><a href="./pages/orders/index.php">Chờ xử lí</a></li>
                             <li><a href="./pages/orders/index.php">Đang giao</a></li>
                             <li><a href="./pages/orders/index.php">Đã giao</a></li>
@@ -96,14 +96,14 @@
                         <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết </span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="./pages/posts/index.php">Tất cả</a></li>
+                            <li><a href="/admin/post">Tất cả</a></li>
                             <li>
                                 <a href="./pages/posts/index.php">Thêm mới</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./pages/vouchers/index.php"><i class="fa fa-magic"></i> <span class="nav-label">Vourcher
+                        <a href="/admin/voucher"><i class="fa fa-magic"></i> <span class="nav-label">Vourcher
                             </span></a>
                     </li>
                     <li>

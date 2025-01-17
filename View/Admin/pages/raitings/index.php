@@ -3,13 +3,13 @@ include '../../layout/header.php'
   ?>
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-9">
-    <h2>Quản lí bình luận</h2>
+    <h2>Quản lí đánh giá</h2>
     <ol class="breadcrumb">
       <li>
         <a href="index.html">Trang chủ</a>
       </li>
       <li class="active">
-        <a>Quản lí bình luận</a>
+        <a>Quản lí đánh giá</a>
       </li>
     </ol>
   </div>
