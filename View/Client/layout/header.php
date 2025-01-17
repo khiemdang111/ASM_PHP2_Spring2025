@@ -53,9 +53,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav mx-auto">
-            <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+            <a href="/" class="nav-item nav-link active">Trang chủ</a>
             <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Thực đơn</a>
+              <a href="./pages/menu.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Thực đơn</a>
               <div class="dropdown-menu bg-light">
                 <a href="book.html" class="dropdown-item">Burger</a>
                 <a href="blog.html" class="dropdown-item">Pizza</a>
@@ -63,23 +63,40 @@
                 <a href="testimonial.html" class="dropdown-item">Sandwiches</a>
               </div>
             </div>
-            <a href="event.html" class="nav-item nav-link">Giới thiệu</a>
-            <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
-            <a href="service.html" class="nav-item nav-link">Tin tức</a>
-            <a href="about.html" class="nav-item nav-link">Liên hệ</a>
+            <a href="/about" class="nav-item nav-link">Giới thiệu</a>
+            <a href="/service" class="nav-item nav-link">Dịch vụ</a>
+            <a href="/blog" class="nav-item nav-link">Tin tức</a>
+            <a href="/contact" class="nav-item nav-link">Liên hệ</a>
           </div>
-   <div id="search-icon">
-   <div class="container">
-        <input checked="" class="checkbox" type="checkbox"> 
-        <div class="mainbox">
-            <div class="iconContainer">
-                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+          <div id="search-icon">
+            <div class="container">
+              <input checked="" class="checkbox" type="checkbox">
+              <div class="mainbox">
+                <div class="iconContainer">
+                  <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                    <path
+                      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                    </path>
+                  </svg>
+                </div>
+                <input class="search_input" placeholder="Tìm kiếm" type="text">
+              </div>
             </div>
-         <input class="search_input" placeholder="Tìm kiếm" type="text">
-        </div>
-    </div>
-   </div>       
+          </div>
           <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Đặt nhanh</a>
+          <div class="cart-icon px-2">
+            <a class="button">
+              <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24"
+                xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                <path
+                  d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z">
+                </path>
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                </path>
+              </svg>
+            </a>
+          </div>
         </div>
       </nav>
     </div>

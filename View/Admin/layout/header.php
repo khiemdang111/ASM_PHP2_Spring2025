@@ -44,22 +44,22 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            K-Food
                         </div>
                     </li>
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span
+                        <a href="../index.php"><i class="fa fa-th-large"></i> <span
                                 class="nav-label">Dashboards</span></a>
                     </li>
                     <li>
-                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
+                        <a href="./pages/roles/index.php"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">Tất cả</a></li>
-                            <li><a href="graph_morris.html">Thêm mới</a></li>
+                            <li><a href="./pages/products/index.php">Tất cả</a></li>
+                            <li><a href="./pages/products/create.php">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li>
@@ -67,55 +67,55 @@
                                 mục</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="mailbox.html">Tất cả</a></li>
-                            <li><a href="mail_detail.html">Thêm mới</a></li>
+                            <li><a href="./pages/categories/index.php">Tất cả</a></li>
+                            <li><a href="./pages/categories/index.php">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="metrics.html"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span> </a>
+                        <a href="./pages/custommers/index.php"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span> </a>
                     </li>
                     <li>
-                        <a href="metrics.html"><i class="fa fa-comment"></i> <span class="nav-label">Bình luận</span>
+                        <a href="./pages/comments/index.php"><i class="fa fa-comment"></i> <span class="nav-label">Bình luận</span>
                         </a>
                     </li>
                     <li>
-                        <a href="widgets.html"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
+                        <a href="./pages/products/raitings.php"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="form_basic.html">Tất cả</a></li>
-                            <li><a href="form_editors.html">Chờ xử lí</a></li>
-                            <li><a href="form_advanced.html">Đang giao</a></li>
-                            <li><a href="form_wizard.html">Đã giao</a></li>
-                            <li><a href="form_file_upload.html">Đã hủy</a></li>
+                            <li><a href="./pages/orders/index.php">Tất cả</a></li>
+                            <li><a href="./pages/orders/index.php">Chờ xử lí</a></li>
+                            <li><a href="./pages/orders/index.php">Đang giao</a></li>
+                            <li><a href="./pages/orders/index.php">Đã giao</a></li>
+                            <li><a href="./pages/orders/index.php">Đã hủy</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết </span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="#">Tất cả</a></li>
+                            <li><a href="./pages/posts/index.php">Tất cả</a></li>
                             <li>
-                                <a href="#">Thêm mới</a>
+                                <a href="./pages/posts/index.php">Thêm mới</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">Vourcher
+                        <a href="./pages/vouchers/index.php"><i class="fa fa-magic"></i> <span class="nav-label">Vourcher
                             </span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-trash"></i> <span class="nav-label">Thùng rác </span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="#">Sản phẩm</a></li>
+                            <li><a href="./pages/products/index.php">Sản phẩm</a></li>
                             <li>
-                                <a href="#">Bài viết</a>
+                                <a href="./pages/products/index.php">Bài viết</a>
                             </li>
                             <li>
-                                <a href="#">Người dùng</a>
+                                <a href="./pages/products/index.php">Người dùng</a>
                             </li>
                         </ul>
                     </li>

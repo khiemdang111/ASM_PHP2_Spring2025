@@ -89,3 +89,43 @@
     font-size: 1.3em;
   }
 }
+.cart-icon{
+  /* From Uiverse.io by JaydipPrajapati1910 */ 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #d4a762;
+  outline: 3px #d4a762 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.button svg path {
+  transition: 400ms;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button:hover .text {
+  color: #d4a762;
+}
+
+.button:hover svg path {
+  fill: #d4a762;
+}
+}
