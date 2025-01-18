@@ -5,8 +5,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 ini_set('log_errors', TRUE); 
 ini_set('error_log', './logs/php/php-errors.log');
-use App\Model\Database;
-use App\Model\User;
+
 use App\Controller\Client\HomeController;
 use App\Controller\Client\ProductController;
 use App\Controller\Admin\HomeController as AdminHomeController;
@@ -50,9 +49,6 @@ $router->add("/admin/raiting", [AdminRaitingController::class, 'index']);
 $router->add("/admin/order", [AdminOrderController::class, 'index']);
 $router->add("/admin/post", [AdminPostController::class, 'index']);
 $router->add("/admin/voucher", [AdminVoucherController::class, 'index']);
-
-
-
 
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);

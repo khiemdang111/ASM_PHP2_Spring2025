@@ -83,7 +83,7 @@
               </div>
             </div>
           </div>
-          <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Đặt nhanh</a>
+          <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill text-light">Đặt nhanh</a>
           <div class="cart-icon px-2">
             <a class="button">
               <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24"

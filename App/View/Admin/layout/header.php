@@ -51,7 +51,7 @@
                         <a href="/admin"><i class="fa fa-th-large"></i> <span
                                 class="nav-label">Dashboards</span></a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="/admin/role"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
                     </li>
                     <li>
@@ -71,7 +71,7 @@
                             <li><a href="./pages/categories/index.php">Thêm mới</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="/admin/customer"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span> </a>
                     </li>
                     <li>

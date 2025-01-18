@@ -3,7 +3,7 @@ namespace App\Controller\Client;
 
 class ProductController {
   public function index() {
-    header("Location: View/Client/Pages/product.php");
+    header("Location: App/View/Client/Pages/product.php");
     exit();
   }
 }

@@ -3,7 +3,7 @@ namespace App\Controller\Admin;
 
 class CategoryController  {
   public function index() {
-    header("Location: /View/Admin/Pages/categories/index.php");
+    header("Location: /App/View/Admin/Pages/categories/index.php");
     exit();
   }
 }

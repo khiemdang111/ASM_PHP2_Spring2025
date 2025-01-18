@@ -3,7 +3,7 @@ namespace App\Controller\Admin;
 
 class PostController {
   public function index() {
-    header("Location: /View/Admin/pages/posts/index.php");
+    header("Location: /App/View/Admin/pages/posts/index.php");
     exit();
   }
 }
