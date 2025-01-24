@@ -92,23 +92,29 @@ class Product extends BaseView
                     <div class="col-9 col-md-9 col-xl-9">
                         <h2 class="text-center mb-3">Sản phẩm nổi bật</h2>
                         <div class="row">
-                            <div class="col-4 col-md-4 col-xl-4 ">
-                                <div class="card">
-                                    <img width="200px" height="200px" src="/public/client/assets/img/menu-02.jpg"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Paneer</h5>
-                                        <p class="card-text product-menu-description mb-0">Tôm, thanh cua, mực và bông cải xanh
-                                            tươi ngon trên nền sốt Pesto
-                                            Xanh.</p>
-                                        <p>Giá chỉ từ: <span class="text-danger fs-3"> 199k</span> <span class="text-secondary"
-                                                style=" text-decoration: line-through;">250k</span></p>
-                                        <a href="#" class="btn btn-primary">Giỏ hàng</a>
-                                        <a href="#" class="btn btn-danger">Mua ngay</a>
+                            <?php
+                            if ($data != null):
+                                foreach ($data as $item):
+                                    ?>
+                                    <div class="col-4 col-md-4 col-xl-4 mb-3">
+                                        <div class="card">
+                                            <img width="200px" height="200px" src="/public/assets/images/<?= $item['image'] ?>"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h6 class="card-title name-product"><?= $item['name'] ?></h6>
+                                                <p class="card-text product-menu-description mb-0"><?= $item['description'] ?></p>
+                                                <p>Giá chỉ từ: <span class="text-danger fs-3"> <?= number_format($item['price']) ?>
+                                                        đ</span> <span class="text-secondary" style=" text-decoration: line-through;">
+                                                        <?php
+                                                        $item['discount_price'] ? $item['discout_price'] : '';
+                                                        ?>
+                                                    </span></p>
+                                                <a href="#" class="btn btn-primary">Giỏ hàng</a>
+                                                <a href="#" class="btn btn-danger">Mua ngay</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-4 col-md-4 col-xl-4 ">
+                                    <!-- <div class="col-4 col-md-4 col-xl-4 ">
                                 <div class="card">
                                     <img width="200px" height="200px" src="/public/client/assets/img/menu-02.jpg"
                                         class="card-img-top" alt="...">
@@ -139,7 +145,11 @@ class Product extends BaseView
                                         <a href="#" class="btn btn-danger">Mua ngay</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                                <?php
+                                endforeach;
+                            endif;
+                            ?>
                         </div>
                     </div>
                 </div>

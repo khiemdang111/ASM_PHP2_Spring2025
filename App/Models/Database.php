@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Models;
 
 use mysqli;
 
@@ -31,4 +31,13 @@ class Database
 
     return $mysqli;
   }
+  public function MySQLi()
+    {
+        $conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        return $conn;
+    }
 }
