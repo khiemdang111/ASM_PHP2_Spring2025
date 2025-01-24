@@ -6,20 +6,26 @@ error_reporting(E_ALL);
 ini_set('log_errors', TRUE); 
 ini_set('error_log', './logs/php/php-errors.log');
 
-use App\Controller\Client\HomeController;
-use App\Controller\Client\ProductController;
-use App\Controller\Admin\HomeController as AdminHomeController;
-use App\Controller\Admin\ProductController as AdminProductController;
-use App\Controller\Admin\CategoryController as AdminCategoryController;
-use App\Controller\Admin\CustomerController as AdminCustomerController;
-use App\Controller\Admin\CommentController as AdminCommentController;
-use App\Controller\Admin\RaitingController as AdminRaitingController;
-use App\Controller\Admin\OrderController as AdminOrderController;
-use App\Controller\Admin\PostController as AdminPostController;
-use App\Controller\Admin\VoucherController as AdminVoucherController;
-use App\Controller\Admin\RoleController as AdminRoleController;
+use App\Controllers\Client\HomeController;
+use App\Controllers\Client\ProductController;
+use App\Controllers\Client\AboutController;
+use App\Controllers\Client\ServiceController;
+use App\Controllers\Client\BlogController;
+use App\Controllers\Client\ContactController;
+use App\Controllers\Admin\HomeController as AdminHomeController;
+use App\Controllers\Admin\ProductController as AdminProductController;
+use App\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Controllers\Admin\CustomerController as AdminCustomerController;
+use App\Controllers\Admin\CommentController as AdminCommentController;
+use App\Controllers\Admin\RaitingController as AdminRaitingController;
+use App\Controllers\Admin\OrderController as AdminOrderController;
+use App\Controllers\Admin\PostController as AdminPostController;
+use App\Controllers\Admin\VoucherController as AdminVoucherController;
+use App\Controllers\Admin\RoleController as AdminRoleController;
 
 use App\Router;
+use App\View\Client\Pages\About;
+
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -31,23 +37,44 @@ $router = new Router();
 // ***** Client *****
 $router->add("/", [HomeController::class, 'index']);
 $router->add("/product", [ProductController::class, 'index']);
-$router->add("/about", [HomeController::class, 'about']);
-$router->add("/service", [HomeController::class, 'service']);
-$router->add("/blog", [HomeController::class, 'blog']);
-$router->add("/contact", [HomeController::class, 'contact']);
+$router->add("/about", [AboutController::class, 'index']);
+$router->add("/service", [ServiceController::class, 'index']);
+$router->add("/blog", [BlogController::class, 'index']);
+$router->add("/contact", [ContactController::class, 'index']);
 
 
 // ***** Admin *****
 
 $router->add("/admin", [AdminHomeController::class, 'index']);
+// Product Admin
 $router->add("/admin/product", [AdminProductController::class, 'index']);
+$router->add("/admin/product/create", [AdminProductController::class, 'create']);
+$router->add("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
+
+// Role Admin
 $router->add("/admin/role", [AdminRoleController::class, 'index']);
+
+// Category Admin
 $router->add("/admin/category", [AdminCategoryController::class, 'index']);
+$router->add("/admin/category/create", [AdminCategoryController::class, 'create']);
+$router->add("/admin/category/edit/{id}", [AdminCategoryController::class, 'edit']);
+
+// Customer Admin
 $router->add("/admin/customer", [AdminCustomerController::class, 'index']);
+
+// Comment Admin
 $router->add("/admin/comment", [AdminCommentController::class, 'index']);
+
+// Raiting Admin
 $router->add("/admin/raiting", [AdminRaitingController::class, 'index']);
+
+// Order Admin
 $router->add("/admin/order", [AdminOrderController::class, 'index']);
+
+// Post Admin
 $router->add("/admin/post", [AdminPostController::class, 'index']);
+
+// Voucher Admin
 $router->add("/admin/voucher", [AdminVoucherController::class, 'index']);
 
 

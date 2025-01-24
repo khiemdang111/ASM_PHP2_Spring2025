@@ -7,8 +7,8 @@ class Router
 
   public function add(string $path, array $params): void
   {
-    $path = preg_replace('/\{(\w+)\}/', '(?P<$1>[^\/]+)', $path); // Chuyển tham số động thành regex
-    $path = '/^' . str_replace('/', '\/', $path) . '$/'; // Thêm ký tự regex
+    $path = preg_replace('#\{(\w+)\}#', '(?P<$1>[^\/]+)', $path);
+    $path = '#^' . str_replace('/', '\/', $path) . '$#';
     $this->routes[] = [
       'path' => $path,
       'params' => $params
