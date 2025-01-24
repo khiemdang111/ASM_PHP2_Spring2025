@@ -886,274 +886,274 @@ class Index extends BaseView
 
 
         <!-- Testimonial Start -->
-        <div class="container-fluid py-3>
-    <div class=" container">
-            <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                <small
-                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Đánh
-                    giá</small>
-                <h1 class="display-5 mb-5">Khách hàng hài lòng!</h1>
-            </div>
-            <div class="owl-carousel owl-theme testimonial-carousel testimonial-carousel-1 mb-4 wow bounceInUp"
-                data-wow-delay="0.1s">
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-1.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-2.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-3.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-4.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel testimonial-carousel testimonial-carousel-2 wow bounceInUp" data-wow-delay="0.3s">
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-1.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-2.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-3.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item rounded bg-light">
-                    <div class="d-flex mb-3">
-                        <img src="/public/client/assets/img/testimonial-4.jpg" class="img-fluid rounded-circle flex-shrink-0"
-                            alt="">
-                        <div class="position-absolute" style="top: 15px; right: 20px;">
-                            <i class="fa fa-quote-right fa-2x"></i>
-                        </div>
-                        <div class="ps-3 my-auto">
-                            <h4 class="mb-0">Person Name</h4>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="d-flex">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                        <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-6">
-            <div class="container">
+        <div class="container-fluid py-3">
+            <div class=" container">
                 <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
                     <small
-                        class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Thông
-                        báo</small>
-                    <h1 class="display-5 mb-5">Thông báo mới nhất</h1>
+                        class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Đánh
+                        giá</small>
+                    <h1 class="display-5 mb-5">Khách hàng hài lòng!</h1>
                 </div>
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/public/client/assets/img/blog-1.jpg" class="img-fluid w-100" alt="">
+                <div class="owl-carousel owl-theme testimonial-carousel testimonial-carousel-1 mb-4 wow bounceInUp"
+                    data-wow-delay="0.1s">
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-1.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
                             </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/public/client/assets/img/blog-2.jpg" class="img-fluid w-100" alt="">
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
                             </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
-                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/public/client/assets/img/blog-3.jpg" class="img-fluid w-100" alt="">
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-2.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
                             </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-3.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-4.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel testimonial-carousel testimonial-carousel-2 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-1.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-2.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-3.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded bg-light">
+                        <div class="d-flex mb-3">
+                            <img src="/public/client/assets/img/testimonial-4.jpg"
+                                class="img-fluid rounded-circle flex-shrink-0" alt="">
+                            <div class="position-absolute" style="top: 15px; right: 20px;">
+                                <i class="fa fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="ps-3 my-auto">
+                                <h4 class="mb-0">Person Name</h4>
+                                <p class="m-0">Profession</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
+                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Start -->
+            <div class="container-fluid blog py-6">
+                <div class="container">
+                    <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+                        <small
+                            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Thông
+                            báo</small>
+                        <h1 class="display-5 mb-5">Thông báo mới nhất</h1>
+                    </div>
+                    <div class="row gx-4 justify-content-center">
+                        <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s">
+                            <div class="blog-item">
+                                <div class="overflow-hidden rounded">
+                                    <img src="/public/client/assets/img/blog-1.jpg" class="img-fluid w-100" alt="">
                                 </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                <div class="blog-content mx-4 d-flex rounded bg-light">
+                                    <div class="text-dark bg-primary rounded-start">
+                                        <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                            <p class="fw-bold mb-0">16</p>
+                                            <p class="fw-bold mb-0">Sep</p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.3s">
+                            <div class="blog-item">
+                                <div class="overflow-hidden rounded">
+                                    <img src="/public/client/assets/img/blog-2.jpg" class="img-fluid w-100" alt="">
+                                </div>
+                                <div class="blog-content mx-4 d-flex rounded bg-light">
+                                    <div class="text-dark bg-primary rounded-start">
+                                        <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                            <p class="fw-bold mb-0">16</p>
+                                            <p class="fw-bold mb-0">Sep</p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.5s">
+                            <div class="blog-item">
+                                <div class="overflow-hidden rounded">
+                                    <img src="/public/client/assets/img/blog-3.jpg" class="img-fluid w-100" alt="">
+                                </div>
+                                <div class="blog-content mx-4 d-flex rounded bg-light">
+                                    <div class="text-dark bg-primary rounded-start">
+                                        <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                            <p class="fw-bold mb-0">16</p>
+                                            <p class="fw-bold mb-0">Sep</p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Blog End -->
+            <!-- Blog End -->
         </div>
         <!-- Testimonial End -->
         <?php

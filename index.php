@@ -96,7 +96,5 @@ if ($route) {
         die("Controller class '{$controllerClass}' không tồn tại.");
     }
 } else {
-    die("Route không khớp.");
+    header('Location: App/Views/Errors/404.php');
 }
-
-// include_once './View/Client/index.php';

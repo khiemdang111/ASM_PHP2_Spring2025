@@ -29,16 +29,16 @@ class Header extends BaseView
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
       <!-- Libraries Stylesheet -->
-      <link href="/public/client/assets/lib/animate/animate.min.css" rel="stylesheet">
-      <link href="/public/client/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-      <link href="/public/client/assets/lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/lib/animate/animate.min.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
 
       <!-- Customized Bootstrap Stylesheet -->
-      <link href="/public/client/assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/css/bootstrap.min.css" rel="stylesheet">
 
       <!-- Template Stylesheet -->
-      <link href="/public/client/assets/css/style.css" rel="stylesheet">
-      <link href="/public/client/assets/css/custom.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/css/style.css" rel="stylesheet">
+      <link href="<?= APP_URL ?>/public/client/assets/css/custom.css" rel="stylesheet">
 
     </head>
 
