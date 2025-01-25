@@ -33,11 +33,11 @@ class Blog extends BaseView
               <div class="blog-content mx-4 d-flex rounded bg-light">
                 <div class="text-dark bg-primary rounded-start">
                   <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                    <p class="fw-bold mb-0">16</p>
-                    <p class="fw-bold mb-0">Sep</p>
+                    <p class="fw-bold mb-0">4</p>
+                    <p class="fw-bold mb-0">2024</p>
                   </div>
                 </div>
-                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
               </div>
             </div>
           </div>
@@ -49,11 +49,11 @@ class Blog extends BaseView
               <div class="blog-content mx-4 d-flex rounded bg-light">
                 <div class="text-dark bg-primary rounded-start">
                   <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                    <p class="fw-bold mb-0">16</p>
-                    <p class="fw-bold mb-0">Sep</p>
+                    <p class="fw-bold mb-0">5</p>
+                    <p class="fw-bold mb-0">2024</p>
                   </div>
                 </div>
-                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
               </div>
             </div>
           </div>
@@ -65,11 +65,11 @@ class Blog extends BaseView
               <div class="blog-content mx-4 d-flex rounded bg-light">
                 <div class="text-dark bg-primary rounded-start">
                   <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                    <p class="fw-bold mb-0">16</p>
-                    <p class="fw-bold mb-0">Sep</p>
+                    <p class="fw-bold mb-0">6</p>
+                    <p class="fw-bold mb-0">2024</p>
                   </div>
                 </div>
-                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
               </div>
             </div>
           </div>

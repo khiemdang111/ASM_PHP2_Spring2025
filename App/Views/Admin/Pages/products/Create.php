@@ -78,8 +78,11 @@ class Create extends BaseView
               <div class="form-group">
                 <label class="control-label" for="category_id">Danh mục <span class="text-danger">*</span></label>
                 <select class="form-control" name="category_id" id="category_id" aria-label="Default select example">
-                  <option value="0" selected>Không nổi bật</option>
-                  <option value="1">Nổi bật</option>
+                  <option value="0" selected>Chọn</option>
+                  <option value="1">Pizza</option>
+                  <option value="2">Burger</option>
+                  <option value="3">Sushi</option>
+                  <option value="4">Sandwich</option>
                 </select>
               </div>
             </div>

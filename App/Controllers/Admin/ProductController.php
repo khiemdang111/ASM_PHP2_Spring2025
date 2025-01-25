@@ -6,6 +6,7 @@ use App\Views\Admin\Pages\Products\Index;
 use App\Views\Admin\Pages\Products\Create;
 use App\Views\Admin\Pages\Products\Edit;
 use App\Models\Product;
+use App\Models\Category;
 class ProductController
 {
   public function index()

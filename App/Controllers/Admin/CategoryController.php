@@ -5,12 +5,15 @@ use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Categories\Index;
 use App\Views\Admin\Pages\Categories\Create;
 use App\Views\Admin\Pages\Categories\Edit;
+use App\Models\Category;
 class CategoryController
 {
   public function index()
   {
+    $categories = new Category();
+    $data = $categories->getAllCategories();
     Header::render();
-    Index::render();
+    Index::render($data);
     Footer::render();
   }
 

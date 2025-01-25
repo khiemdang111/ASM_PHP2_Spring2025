@@ -97,6 +97,10 @@ class Index extends BaseView
                           </td>
                         </tr>
                       <?php endforeach;
+                      else:
+                      ?>
+                      <h2 class="text-danger">Chưa có sản phẩm trong cơ sở dữ liệu!</h2>
+                      <?php
                     endif;
                     ?>
                   </tbody>

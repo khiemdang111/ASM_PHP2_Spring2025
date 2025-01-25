@@ -253,7 +253,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Paneer</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -267,7 +267,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet Potato</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -281,7 +281,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sabudana Tikki</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -295,7 +295,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Pizza</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -309,7 +309,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Bacon</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -323,7 +323,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Chicken</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -337,7 +337,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Blooming</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -351,7 +351,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -369,7 +369,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Argentinian</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -383,7 +383,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Crispy</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -397,7 +397,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sabudana Tikki</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -411,7 +411,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Blooming</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -425,7 +425,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Argentinian</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -439,7 +439,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Lemon</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -453,7 +453,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Water Drink</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -467,7 +467,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Salty lemon</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -485,7 +485,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Crispy water</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -499,7 +499,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Juice</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -513,7 +513,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Orange</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -527,7 +527,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Apple Juice</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -541,7 +541,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Banana</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -555,7 +555,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet Water</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -569,7 +569,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Hot Coffee</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -582,7 +582,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet Potato</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -599,7 +599,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sabudana Tikki</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -612,7 +612,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Crispy</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -625,7 +625,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Pizza</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -638,7 +638,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Bacon</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -651,7 +651,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Chicken</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -664,7 +664,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Blooming</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -677,7 +677,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -690,7 +690,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Argentinian</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -707,7 +707,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sabudana Tikki</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -720,7 +720,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Crispy</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -733,7 +733,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Pizza</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -746,7 +746,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Bacon</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -759,7 +759,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Chicken</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -772,7 +772,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Blooming</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -785,7 +785,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Sweet</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -798,7 +798,7 @@ class Index extends BaseView
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                 <h4>Argentinian</h4>
-                                                <h4 class="text-primary">$90</h4>
+                                                <h4 class="text-primary">199k</h4>
                                             </div>
                                             <p class="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut
                                                 labore.</p>
@@ -870,7 +870,7 @@ class Index extends BaseView
                                         placeholder="Ngày đặt">
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill">Submit Now</button>
+                                    <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill">Đặt ngay</button>
                                 </div>
                             </div>
                         </div>
@@ -904,8 +904,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -916,8 +916,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -928,8 +927,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -940,8 +939,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -952,8 +950,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -964,8 +962,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -976,8 +973,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -988,8 +985,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                 </div>
@@ -1002,8 +998,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -1014,8 +1010,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -1026,8 +1021,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -1038,8 +1033,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -1050,8 +1044,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -1062,8 +1056,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                     <div class="testimonial-item rounded bg-light">
@@ -1074,8 +1067,8 @@ class Index extends BaseView
                                 <i class="fa fa-quote-right fa-2x"></i>
                             </div>
                             <div class="ps-3 my-auto">
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="m-0">Profession</p>
+                                <h4 class="mb-0">Khách hàng</h4>
+                                <p class="m-0">Đã trải nghiệm dịch vụ</p>
                             </div>
                         </div>
                         <div class="testimonial-content">
@@ -1086,8 +1079,7 @@ class Index extends BaseView
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                                magna aliqua.</p>
+                            <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                         </div>
                     </div>
                 </div>
@@ -1110,11 +1102,11 @@ class Index extends BaseView
                                 <div class="blog-content mx-4 d-flex rounded bg-light">
                                     <div class="text-dark bg-primary rounded-start">
                                         <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                            <p class="fw-bold mb-0">16</p>
-                                            <p class="fw-bold mb-0">Sep</p>
+                                            <p class="fw-bold mb-0">6</p>
+                                            <p class="fw-bold mb-0">2024</p>
                                         </div>
                                     </div>
-                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
                                 </div>
                             </div>
                         </div>
@@ -1126,11 +1118,11 @@ class Index extends BaseView
                                 <div class="blog-content mx-4 d-flex rounded bg-light">
                                     <div class="text-dark bg-primary rounded-start">
                                         <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                            <p class="fw-bold mb-0">16</p>
-                                            <p class="fw-bold mb-0">Sep</p>
+                                            <p class="fw-bold mb-0">5</p>
+                                            <p class="fw-bold mb-0">2024</p>
                                         </div>
                                     </div>
-                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
                                 </div>
                             </div>
                         </div>
@@ -1142,11 +1134,11 @@ class Index extends BaseView
                                 <div class="blog-content mx-4 d-flex rounded bg-light">
                                     <div class="text-dark bg-primary rounded-start">
                                         <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                            <p class="fw-bold mb-0">16</p>
-                                            <p class="fw-bold mb-0">Sep</p>
+                                            <p class="fw-bold mb-0">4</p>
+                                            <p class="fw-bold mb-0">2024</p>
                                         </div>
                                     </div>
-                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                    <a href="#" class="h5 lh-base my-auto h-100 p-3">Làm thế nào để có thêm nhiều thử nghiệm trong thực phẩm của bạn từ</a>
                                 </div>
                             </div>
                         </div>
