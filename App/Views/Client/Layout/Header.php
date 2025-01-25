@@ -66,7 +66,7 @@ class Header extends BaseView
               <div class="navbar-nav mx-auto">
                 <a href="/" class="nav-item nav-link active">Trang chủ</a>
                 <div class="nav-item dropdown">
-                  <a href="/product" class="nav-link active dropdown-toggle">Thực đơn</a>
+                  <a href="/product" class="nav-link dropdown-toggle">Thực đơn</a>
                   <div class="dropdown-menu bg-light">
                     <a href="book.html" class="dropdown-item">Burger</a>
                     <a href="blog.html" class="dropdown-item">Pizza</a>

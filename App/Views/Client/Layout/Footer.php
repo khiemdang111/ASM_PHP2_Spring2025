@@ -10,7 +10,7 @@ class Footer extends BaseView
 
     ?>
 <!-- Footer Start -->
-<div class="container-fluid footer py-6 mb-0 bg-light wow bounceInUp" data-wow-delay="0.1s">
+<div class="container-fluid footer py-5 mb-0 bg-light wow bounceInUp footer-top" data-wow-delay="0.1s">
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-6">

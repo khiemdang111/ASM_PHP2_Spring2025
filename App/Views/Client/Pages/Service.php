@@ -67,7 +67,7 @@ class Service extends BaseView
                         <div class="service-content-icon text-center">
                             <i class="fas fa-walking fa-7x text-primary mb-4"></i>
                             <h4 class="mb-3">Giao hàng tận nhà</h4>
-                            <p class="mb-4">Dịch vụ nhanh chóng tiện lợi, giá cả phù hợp, đồ ăn chất lượng, ngon miệng..
+                            <p class="mb-4">Dịch vụ nhanh chóng tiện lợi, giá cả phù hợp, đồ ăn chất lượng, ngon miệng.
                             </p>
                             <a href="#" class="btn btn-primary px-4 py-2 rounded-pill">Đọc thêm</a>
                         </div>
@@ -99,8 +99,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -111,8 +111,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -123,8 +122,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -135,8 +134,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -147,8 +145,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -159,8 +157,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -171,8 +168,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -183,8 +180,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
         </div>
@@ -197,8 +193,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -209,8 +205,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -221,8 +216,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -233,8 +228,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -245,8 +239,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -257,8 +251,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
             <div class="testimonial-item rounded bg-light">
@@ -269,8 +262,8 @@ class Service extends BaseView
                         <i class="fa fa-quote-right fa-2x"></i>
                     </div>
                     <div class="ps-3 my-auto">
-                        <h4 class="mb-0">Person Name</h4>
-                        <p class="m-0">Profession</p>
+                        <h4 class="mb-0">Khách hàng</h4>
+                        <p class="m-0">Đã trải nghiệm dịch vụ</p>
                     </div>
                 </div>
                 <div class="testimonial-content">
@@ -281,8 +274,7 @@ class Service extends BaseView
                         <i class="fas fa-star text-primary"></i>
                         <i class="fas fa-star text-primary"></i>
                     </div>
-                    <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore
-                        magna aliqua.</p>
+                    <p class="fs-5 m-0 pt-3">Chúng tôi rất hài lòng về dịch vụ ở đây. Đồ ăn rất ngon và hợp với giá tiền, phục vụ nhanh và rất chu đáo, chúng tôi đánh giá cao về dịch vụ ở đây.</p>
                 </div>
             </div>
         </div>

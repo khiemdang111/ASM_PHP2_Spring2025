@@ -1085,7 +1085,7 @@ class Index extends BaseView
                 </div>
             </div>
             <!-- Blog Start -->
-            <div class="container-fluid blog py-6">
+            <div class="container-fluid blog">
                 <div class="container">
                     <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
                         <small
