@@ -21,6 +21,7 @@ class Header extends BaseView
             <title>K-Food Dashboard</title>
 
             <link href="/public/admin/assets/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/public/admin/assets/css/custom.css" rel="stylesheet">
             <link href="/public/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
             <!-- Toastr style -->

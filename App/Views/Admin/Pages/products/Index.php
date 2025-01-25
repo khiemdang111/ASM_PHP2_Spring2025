@@ -65,26 +65,43 @@ class Index extends BaseView
                     <tr>
 
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
-                      <th>Tên </th>
+                      <th>Tên</th>
                       <th>Hình ảnh </th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
+                      <th>Giá(VNĐ)</th>
+                      <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><input type="checkbox" class="i-checks" name="input[]"></td>
-                      <td>Project<small>This is example of project</small></td>
-                      <td><span class="pie">0.52/1.561</span></td>
-                      <td>20%</td>
-                      <td>Jul 14, 2013</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                    </tr>
+                    <?php
+                    if ($data != null):
+                      foreach ($data as $item):
+                        ?>
+                        <tr>
+                          <td><input type="checkbox" class="i-checks" name="input[]"></td>
+                          <td style="width: 40%"><?= $item['name'] ?></td>
+                          <td><img width="80px" height="80px" src="/public/assets/images/<?= $item['image'] ?>"
+                              class="card-img-top" alt="..."></td>
+                          <td><?= number_format($item['price']) ?></td>
+                          <td>
+                            <label class="switch">
+                              <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
+                                data-field="publish" data-model="User" value="">
+                              <span class="slider"></span>
+                            </label>
+                          </td>
+
+                          <td class="d-flex justify-content-between align-items-center">
+                            <a href="#"><i class="fa fa-edit fa-2x text-success"></i></a>
+                            <a href="#"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                          </td>
+                        </tr>
+                      <?php endforeach;
+                    endif;
+                    ?>
                   </tbody>
                 </table>
               </div>
-
             </div>
           </div>
         </div>

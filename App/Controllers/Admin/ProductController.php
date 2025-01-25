@@ -5,12 +5,15 @@ use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Products\Index;
 use App\Views\Admin\Pages\Products\Create;
 use App\Views\Admin\Pages\Products\Edit;
+use App\Models\Product;
 class ProductController
 {
   public function index()
   {
+    $products = new Product();
+    $data = $products->getAllProducts();
     Header::render();
-    Index::render();
+    Index::render($data);
     Footer::render();
   }
 
