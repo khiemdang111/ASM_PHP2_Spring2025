@@ -1,5 +1,5 @@
 <?php
-namespace App\Views\Admin\Pages\Customers;
+namespace App\Views\Admin\Pages\Users;
 
 use App\Views\BaseView;
 
@@ -11,13 +11,13 @@ class Index extends BaseView
     <div class="row wrapper border-bottom white-bg page-heading">
       <div class="row">
         <div class="col-lg-10">
-          <h2>Quản lí khách hàng</h2>
+          <h2>Quản lí người dùng</h2>
           <ol class="breadcrumb">
             <li>
               <a href="index.html">Trang chủ</a>
             </li>
             <li class="active">
-              <a>Quản lí khách hàng</a>
+              <a>Quản lí người dùng</a>
             </li>
           </ol>
         </div>
@@ -33,7 +33,7 @@ class Index extends BaseView
         <div class="col-lg-12">
           <div class="ibox float-e-margins">
             <div class="ibox-title">
-              <h5>Tất cả khách hàng </h5>
+              <h5>Tất cả người dùng </h5>
               <div class="ibox-tools">
                 <a class="collapse-link">
                   <i class="fa fa-chevron-up"></i>

@@ -21,7 +21,7 @@ use App\Controllers\Admin\RaitingController as AdminRaitingController;
 use App\Controllers\Admin\OrderController as AdminOrderController;
 use App\Controllers\Admin\PostController as AdminPostController;
 use App\Controllers\Admin\VoucherController as AdminVoucherController;
-use App\Controllers\Admin\RoleController as AdminRoleController;
+use App\Controllers\Admin\UserController as AdminUserController;
 
 use App\Router;
 use App\View\Client\Pages\About;
@@ -51,9 +51,9 @@ $router->add("/admin/product", [AdminProductController::class, 'index']);
 $router->add("/admin/product/create", [AdminProductController::class, 'create']);
 $router->add("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
 
-// Role Admin
-$router->add("/admin/role", [AdminRoleController::class, 'index']);
-
+// User Admin
+$router->add("/admin/user", [AdminUserController::class, 'index']);
+$router->add("/admin/user/create", [AdminUserController::class, 'create']);
 // Category Admin
 $router->add("/admin/category", [AdminCategoryController::class, 'index']);
 $router->add("/admin/category/create", [AdminCategoryController::class, 'create']);

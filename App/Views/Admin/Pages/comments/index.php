@@ -65,26 +65,27 @@ class Index extends BaseView
                     <tr>
 
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
-                      <th>Tên </th>
-                      <th>Hình ảnh </th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
+                      <th>Người dùng </th>
+                      <th>Sản phẩm </th>
+                      <th>Nội dung</th>
+                      <th>Ngày</th>
+                      <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input type="checkbox" class="i-checks" name="input[]"></td>
-                      <td>Project<small>This is example of project</small></td>
-                      <td><span class="pie">0.52/1.561</span></td>
-                      <td>20%</td>
-                      <td>Jul 14, 2013</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-
+              <h2 class="text-danger text-center">Chưa có bình luận !</h2>
             </div>
           </div>
         </div>

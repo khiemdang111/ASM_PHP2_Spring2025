@@ -92,7 +92,7 @@ class Index extends BaseView
                           </td>
 
                           <td class="d-flex justify-content-between align-items-center">
-                            <a href="#"><i class="fa fa-edit fa-2x text-success"></i></a>
+                            <a href="/admin/product/edit/<?=$item['id']?>"><i class="fa fa-edit fa-2x text-success"></i></a>
                             <a href="#"><i class="fa fa-trash fa-2x text-danger"></i></a>
                           </td>
                         </tr>

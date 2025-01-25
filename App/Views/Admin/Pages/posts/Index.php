@@ -28,7 +28,7 @@ class Index extends BaseView
         <div class="col-lg-12">
           <div class="ibox float-e-margins">
             <div class="ibox-title">
-              <h5>Tất cả khách hàng </h5>
+              <h5>Tất cả bài viết </h5>
               <div class="ibox-tools">
                 <a class="collapse-link">
                   <i class="fa fa-chevron-up"></i>
@@ -65,26 +65,26 @@ class Index extends BaseView
                     <tr>
 
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
-                      <th>Tên </th>
+                      <th>Tiêu đề </th>
                       <th>Hình ảnh </th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
+                      <th>Mô tả ngắn</th>
+                      <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input type="checkbox" class="i-checks" name="input[]"></td>
-                      <td>Project<small>This is example of project</small></td>
-                      <td><span class="pie">0.52/1.561</span></td>
-                      <td>20%</td>
-                      <td>Jul 14, 2013</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-
+              <h2 class="text-danger text-center">Chưa có bài viết!</h2>
             </div>
           </div>
         </div>

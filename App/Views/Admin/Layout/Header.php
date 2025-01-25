@@ -63,7 +63,7 @@ class Header extends BaseView
                                 <a href="/admin"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
                             </li>
                             <li class="active">
-                                <a href="/admin/role"><i class="fa fa-diamond"></i> <span class="nav-label">Vai trò</span></a>
+                                <a href="/admin/user"><i class="fa fa-diamond"></i> <span class="nav-label">Người dùng</span></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
@@ -97,10 +97,10 @@ class Header extends BaseView
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/admin/order">Tất cả</a></li>
-                                    <li><a href="./pages/orders/index.php">Chờ xử lí</a></li>
-                                    <li><a href="./pages/orders/index.php">Đang giao</a></li>
-                                    <li><a href="./pages/orders/index.php">Đã giao</a></li>
-                                    <li><a href="./pages/orders/index.php">Đã hủy</a></li>
+                                    <li><a href="/admin/order">Chờ xử lí</a></li>
+                                    <li><a href="/admin/order">Đang giao</a></li>
+                                    <li><a href="/admin/order">Đã giao</a></li>
+                                    <li><a href="/admin/order">Đã hủy</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -121,12 +121,12 @@ class Header extends BaseView
                                 <a href="#"><i class="fa fa-trash"></i> <span class="nav-label">Thùng rác </span><span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li><a href="./pages/products/index.php">Sản phẩm</a></li>
+                                    <li><a href="#">Sản phẩm</a></li>
                                     <li>
-                                        <a href="./pages/products/index.php">Bài viết</a>
+                                        <a href="#">Bài viết</a>
                                     </li>
                                     <li>
-                                        <a href="./pages/products/index.php">Người dùng</a>
+                                        <a href="#">Người dùng</a>
                                     </li>
                                 </ul>
                             </li>

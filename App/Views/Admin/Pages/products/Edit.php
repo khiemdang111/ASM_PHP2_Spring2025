@@ -15,9 +15,6 @@ class Edit extends BaseView
           <li>
             <a href="index.html">Trang chủ</a>
           </li>
-          <li>
-            <a href="index.html">Sản phẩm</a>
-          </li>
           <li class="active">
             <strong>Sửa sản phẩm</strong>
           </li>
@@ -34,38 +31,82 @@ class Edit extends BaseView
       <div class="ibox-content m-b-sm border-bottom">
         <form action="">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-12">
               <div class="form-group">
-                <label class="control-label" for="order_id">Order ID</label>
-                <input type="text" id="order_id" name="order_id" value="" placeholder="Order ID" class="form-control">
+                <label class="control-label" for="name">Tên sản phẩm <span class="text-danger">*</span></label>
+                <input type="text" id="name" name="name" value="" placeholder="Tên sản phẩm" class="form-control">
               </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="status">Order status</label>
-                <input type="text" id="status" name="status" value="" placeholder="Status" class="form-control">
+                <label class="control-label" for="price">Giá <span class="text-danger">*</span></label>
+                <input type="text" id="price" name="price" value="" placeholder="Giá sản phẩm" class="form-control">
               </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="customer">Customer</label>
-                <input type="text" id="customer" name="customer" value="" placeholder="Customer" class="form-control">
+                <label class="control-label" for="discout_price">Giảm giá</label>
+                <input type="text" id="discout_price" name="discout_price" value="" placeholder="Giảm giá"
+                  class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label" for="image">Hình ảnh <span class="text-danger">*</span></label>
+                <input type="file" id="image" name="image" value="" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label" for="is_featured">Nổi bật</label>
+                <select class="form-control" name="is_featured" id="is_featured" aria-label="Default select example">
+                  <option value="0" selected>Không nổi bật</option>
+                  <option value="1">Nổi bật</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label" for="status">Trạng thái <span class="text-danger">*</span></label>
+                <select class="form-control" id="status" name="status" aria-label="Default select example">
+                  <option value="0" selected>Hiển thị</option>
+                  <option value="1">Ẩn</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label" for="category_id">Danh mục <span class="text-danger">*</span></label>
+                <select class="form-control" name="category_id" id="category_id" aria-label="Default select example">
+                  <option value="0" selected>Chọn</option>
+                  <option value="1">Pizza</option>
+                  <option value="2">Burger</option>
+                  <option value="3">Sushi</option>
+                  <option value="4">Sandwich</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="control-label" for="description">Mô tả <span class="text-danger">*</span></label>
+                <textarea name="description" class="form-control description" id="description" rows="8" placeholder="Nhập mô tả"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
-                <button class="btn btn-primary">Sửa</button>
+                <button class="btn btn-primary">Cập nhật</button>
                 <button class="btn btn-success">Nhập lại</button>
               </div>
-
             </div>
-
           </div>
         </form>
       </div>
     </div>
+    <script>
+        CKEDITOR.replace('description');
+      </script>
     <?php
   }
 }

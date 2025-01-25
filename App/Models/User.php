@@ -7,13 +7,15 @@ use mysqli;
 class User extends Database 
 {
     protected $_conn;
+    protected $table = 'users';
+    protected $id = 'id';
 
     public function __construct()
     {
         $this->_conn = new Database();
     }
 
-    public function getAll()
+    public function getAllUser()
     {
         $result = [];
         try {
