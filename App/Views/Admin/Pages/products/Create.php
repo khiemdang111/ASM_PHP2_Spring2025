@@ -86,7 +86,7 @@ class Create extends BaseView
             <div class="col-sm-12">
               <div class="form-group">
                 <label class="control-label" for="description">Mô tả <span class="text-danger">*</span></label>
-                <textarea name="" class="form-control" id="" rows="8" placeholder="Nhập mô tả"></textarea>
+                <textarea name="description" class="form-control description" id="description" rows="8" placeholder="Nhập mô tả"></textarea>
               </div>
             </div>
           </div>
@@ -101,6 +101,9 @@ class Create extends BaseView
         </form>
       </div>
     </div>
+    <script>
+        CKEDITOR.replace('description');
+      </script>
     <?php
   }
 }

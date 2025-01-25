@@ -20,19 +20,19 @@ class Header extends BaseView
 
             <title>K-Food Dashboard</title>
 
-            <link href="/public/admin/assets/css/bootstrap.min.css" rel="stylesheet">
-            <link href="/public/admin/assets/css/custom.css" rel="stylesheet">
-            <link href="/public/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/css/bootstrap.min.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/css/custom.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
             <!-- Toastr style -->
-            <link href="/public/admin/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
             <!-- Gritter -->
-            <link href="/public/admin/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-            <link href="/public/admin/assets/css/animate.css" rel="stylesheet">
-            <link href="/public/admin/assets/css/style.css" rel="stylesheet">
-
+            <link href="<?= APP_URL ?>/public/admin/assets/css/animate.css" rel="stylesheet">
+            <link href="<?= APP_URL ?>/public/admin/assets/css/style.css" rel="stylesheet">
+            <script src="<?= APP_URL ?>/public/library/ckeditor4/ckeditor/ckeditor.js"></script>
         </head>
 
         <body>
