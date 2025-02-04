@@ -49,12 +49,18 @@ class Header extends BaseView
         <div class="spinner-grow text-primary" role="status"></div>
       </div>
       <!-- Spinner End -->
-
-
+    <div class="row"></div>
       <!-- Navbar start -->
       <div class="container-fluid nav-bar">
         <div class="container">
-          <nav class="navbar navbar-light navbar-expand-lg py-4">
+          <div class="row py-2">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+              <a href="/login" class="text-primary fw-bold">Đăng nhập</a>
+              <a href="/register" class="text-primary fw-bold mx-2">Đăng ký</a>
+            </div>
+          </div>
+          <nav class="navbar navbar-light navbar-expand-lg py-2">
             <a href="index.html" class="navbar-brand">
               <h1 class="text-primary fw-bold mb-0">K<span class="text-dark">-Food</span> </h1>
             </a>
@@ -94,7 +100,6 @@ class Header extends BaseView
                   </div>
                 </div>
               </div>
-              <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill text-light">Đặt nhanh</a>
               <div class="cart-icon px-2">
                 <a class="button">
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"

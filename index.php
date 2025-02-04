@@ -22,7 +22,7 @@ use App\Controllers\Admin\OrderController as AdminOrderController;
 use App\Controllers\Admin\PostController as AdminPostController;
 use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
-
+use App\Controllers\Client\AuthController;
 use App\Router;
 use App\View\Client\Pages\About;
 
@@ -41,7 +41,8 @@ $router->add("/about", [AboutController::class, 'index']);
 $router->add("/service", [ServiceController::class, 'index']);
 $router->add("/blog", [BlogController::class, 'index']);
 $router->add("/contact", [ContactController::class, 'index']);
-
+$router->add("/login", [AuthController::class, 'login']);
+$router->add("/register", [AuthController::class, 'register']);
 
 // ***** Admin *****
 
@@ -54,6 +55,7 @@ $router->add("/admin/product/edit/{id}", [AdminProductController::class, 'edit']
 // User Admin
 $router->add("/admin/user", [AdminUserController::class, 'index']);
 $router->add("/admin/user/create", [AdminUserController::class, 'create']);
+
 // Category Admin
 $router->add("/admin/category", [AdminCategoryController::class, 'index']);
 $router->add("/admin/category/create", [AdminCategoryController::class, 'create']);
