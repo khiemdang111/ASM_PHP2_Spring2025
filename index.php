@@ -5,7 +5,6 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 ini_set('log_errors', TRUE); 
 ini_set('error_log', './logs/php/php-errors.log');
-
 use App\Controllers\Client\HomeController;
 use App\Controllers\Client\ProductController;
 use App\Controllers\Client\AboutController;
@@ -22,6 +21,7 @@ use App\Controllers\Admin\OrderController as AdminOrderController;
 use App\Controllers\Admin\PostController as AdminPostController;
 use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
+use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
 use App\Router;
 use App\View\Client\Pages\About;
@@ -79,6 +79,10 @@ $router->add("/admin/post", [AdminPostController::class, 'index']);
 // Voucher Admin
 $router->add("/admin/voucher", [AdminVoucherController::class, 'index']);
 
+// Recycler Admin
+$router->add("/admin/recycle/product", [RecycleController::class, 'product']);
+$router->add("/admin/recycle/post", [RecycleController::class, 'post']);
+$router->add("/admin/recycle/user", [RecycleController::class, 'user']);
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $route = $router->match($path);

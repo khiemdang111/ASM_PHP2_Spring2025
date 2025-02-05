@@ -1,9 +1,9 @@
 <?php
-namespace App\Views\Admin\Pages\Users;
+namespace App\Views\Admin\Pages\Recycles;
 
 use App\Views\BaseView;
 
-class Index extends BaseView
+class User extends BaseView
 {
   public static function render($data = null)
   {
@@ -86,7 +86,7 @@ class Index extends BaseView
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
                           <td><?= $item['username'] ?></td>
                           <td><img width="60px" height="60px" src="/public/assets/images/<?= $item['avatar'] ?> "
-                          class="card-img-top" alt="..."></td>
+                              class="card-img-top" alt="..."></td>
                           <td><?= $item['email'] ?></td>
                           <td><?= $item['phone'] ?></td>
                           <td>
@@ -103,16 +103,16 @@ class Index extends BaseView
                         </tr>
                       <?php endforeach; ?>
                     </tbody>
-                    <?php
+
+                  </table>
+                </div>
+                <?php
                     else:
                       ?>
-                    <h2 class="text-danger">Chưa có tài khoản người dùng!</h2>
-                    <?php
+                <h2 class="text-danger">Thùng rác trống!</h2>
+                <?php
                     endif;
                     ?>
-                </table>
-              </div>
-
             </div>
           </div>
         </div>

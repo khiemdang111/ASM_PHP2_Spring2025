@@ -122,7 +122,7 @@ class About extends BaseView
                     <small
                         class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Đầu
                         bếp</small>
-                    <h1 class="display-5 mb-5">Chúng tôi có những đầu bếp thượng hạng/h1>
+                    <h1 class="display-5 mb-5">Chúng tôi có những đầu bếp thượng hạng</h1>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">

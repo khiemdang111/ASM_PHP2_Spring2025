@@ -121,12 +121,12 @@ class Header extends BaseView
                                 <a href="#"><i class="fa fa-trash"></i> <span class="nav-label">Thùng rác </span><span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li><a href="#">Sản phẩm</a></li>
+                                    <li><a href="/admin/recycle/product">Sản phẩm</a></li>
                                     <li>
-                                        <a href="#">Bài viết</a>
+                                        <a href="/admin/recycle/post">Bài viết</a>
                                     </li>
                                     <li>
-                                        <a href="#">Người dùng</a>
+                                        <a href="/admin/recycle/user">Người dùng</a>
                                     </li>
                                 </ul>
                             </li>
