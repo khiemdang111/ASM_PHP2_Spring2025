@@ -5,6 +5,8 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 ini_set('log_errors', TRUE); 
 ini_set('error_log', './logs/php/php-errors.log');
+
+use App\Controllers\Admin\AjaxController;
 use App\Controllers\Client\HomeController;
 use App\Controllers\Client\ProductController;
 use App\Controllers\Client\AboutController;
@@ -23,7 +25,7 @@ use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
-use App\Router;
+use App\Route;
 use App\View\Client\Pages\About;
 
 require_once 'vendor/autoload.php';
@@ -32,75 +34,59 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 require_once 'config.php';
 
-$router = new Router();
-
 // ***** Client *****
-$router->add("/", [HomeController::class, 'index']);
-$router->add("/product", [ProductController::class, 'index']);
-$router->add("/about", [AboutController::class, 'index']);
-$router->add("/service", [ServiceController::class, 'index']);
-$router->add("/blog", [BlogController::class, 'index']);
-$router->add("/contact", [ContactController::class, 'index']);
-$router->add("/login", [AuthController::class, 'login']);
-$router->add("/register", [AuthController::class, 'register']);
+Route::get("/", [HomeController::class, 'index']);
+Route::get("/product", [ProductController::class, 'index']);
+Route::get("/about", [AboutController::class, 'index']);
+Route::get("/service", [ServiceController::class, 'index']);
+Route::get("/blog", [BlogController::class, 'index']);
+Route::get("/contact", [ContactController::class, 'index']);
+Route::get("/login", [AuthController::class, 'login']);
+Route::get("/register", [AuthController::class, 'register']);
 
 // ***** Admin *****
 
-$router->add("/admin", [AdminHomeController::class, 'index']);
+Route::get("/admin", [AdminHomeController::class, 'index']);
 // Product Admin
-$router->add("/admin/product", [AdminProductController::class, 'index']);
-$router->add("/admin/product/create", [AdminProductController::class, 'create']);
-$router->add("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
+Route::get("/admin/product", [AdminProductController::class, 'index']);
+Route::get("/admin/product/create", [AdminProductController::class, 'create']);
+Route::get("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
 
 // User Admin
-$router->add("/admin/user", [AdminUserController::class, 'index']);
-$router->add("/admin/user/create", [AdminUserController::class, 'create']);
+Route::get("/admin/user", [AdminUserController::class, 'index']);
+Route::get("/admin/user/create", [AdminUserController::class, 'create']);
 
 // Category Admin
-$router->add("/admin/category", [AdminCategoryController::class, 'index']);
-$router->add("/admin/category/create", [AdminCategoryController::class, 'create']);
-$router->add("/admin/category/edit/{id}", [AdminCategoryController::class, 'edit']);
+Route::get("/admin/category", [AdminCategoryController::class, 'index']);
+Route::get("/admin/category/create", [AdminCategoryController::class, 'create']);
+Route::get("/admin/category/edit/{id}", [AdminCategoryController::class, 'edit']);
 
 // Customer Admin
-$router->add("/admin/customer", [AdminCustomerController::class, 'index']);
+Route::get("/admin/customer", [AdminCustomerController::class, 'index']);
 
 // Comment Admin
-$router->add("/admin/comment", [AdminCommentController::class, 'index']);
+Route::get("/admin/comment", [AdminCommentController::class, 'index']);
 
 // Raiting Admin
-$router->add("/admin/raiting", [AdminRaitingController::class, 'index']);
+Route::get("/admin/raiting", [AdminRaitingController::class, 'index']);
 
 // Order Admin
-$router->add("/admin/order", [AdminOrderController::class, 'index']);
+Route::get("/admin/order", [AdminOrderController::class, 'index']);
 
 // Post Admin
-$router->add("/admin/post", [AdminPostController::class, 'index']);
+Route::get("/admin/post", [AdminPostController::class, 'index']);
 
 // Voucher Admin
-$router->add("/admin/voucher", [AdminVoucherController::class, 'index']);
+Route::get("/admin/voucher", [AdminVoucherController::class, 'index']);
 
 // Recycler Admin
-$router->add("/admin/recycle/product", [RecycleController::class, 'product']);
-$router->add("/admin/recycle/post", [RecycleController::class, 'post']);
-$router->add("/admin/recycle/user", [RecycleController::class, 'user']);
+Route::get("/admin/recycle/product", [RecycleController::class, 'product']);
+Route::get("/admin/recycle/post", [RecycleController::class, 'post']);
+Route::get("/admin/recycle/user", [RecycleController::class, 'user']);
 
-$path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-$route = $router->match($path);
+// Ajax controller
+Route::post("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
+// Route::get("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
 
-if ($route) {
-    [$controllerClass, $action] = $route;
 
-    if (class_exists($controllerClass)) {
-        $controller = new $controllerClass();
-
-        if (method_exists($controller, $action)) {
-            $controller->$action();
-        } else {
-            die("Method '{$action}' không tồn tại trong class '{$controllerClass}'.");
-        }
-    } else {
-        die("Controller class '{$controllerClass}' không tồn tại.");
-    }
-} else {
-    header('Location: App/Views/Errors/404.php');
-}
+Route::dispatch($_SERVER['REQUEST_URI']);

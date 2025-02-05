@@ -78,6 +78,7 @@ class Index extends BaseView
                       foreach ($data as $item):
                         ?>
                         <tr>
+                          <input type="hidden" name="method" value="POST">
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
                           <td style="width: 40%"><?= $item['name'] ?></td>
                           <td><img width="80px" height="80px" src="/public/assets/images/<?= $item['image'] ?>"
@@ -86,7 +87,7 @@ class Index extends BaseView
                           <td>
                             <label class="switch">
                               <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
-                                data-field="publish" data-model="User" value="">
+                                data-field="status" data-model="products" data-modelId="<?=$item['id']?>" value="<?= $item['status'] ?>">
                               <span class="slider"></span>
                             </label>
                           </td>
