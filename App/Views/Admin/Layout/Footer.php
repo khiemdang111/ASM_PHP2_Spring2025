@@ -544,7 +544,7 @@ class Footer extends BaseView
             closeButton: true,
             progressBar: true,
             showMethod: 'slideDown',
-            timeOut: 4000
+            timeOut: 2000
           };
           toastr.success('', 'Chào mừng đến K-Food');
 

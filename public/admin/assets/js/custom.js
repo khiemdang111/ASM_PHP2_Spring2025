@@ -30,6 +30,13 @@
             console.log('Error:', xhr.responseText);
           }
         });
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          showMethod: 'slideDown',
+          timeOut: 1000
+        };
+        toastr.success('', 'Cập nhật thành công');
       e.preventDefault();
     });
   };

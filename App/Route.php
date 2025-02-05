@@ -60,7 +60,7 @@ class Route
     }
 
     // Nếu không tìm thấy route
-    echo '404 Not Found';
+    header("Location: /notfound");
 }
 
 

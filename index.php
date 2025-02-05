@@ -25,6 +25,7 @@ use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
+use App\Controllers\ErrorController;
 use App\Route;
 use App\View\Client\Pages\About;
 
@@ -88,5 +89,7 @@ Route::get("/admin/recycle/user", [RecycleController::class, 'user']);
 Route::post("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
 // Route::get("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
 
+// **** Error ****
+Route::get("/notfound", [ErrorController::class, 'notFound']);
 
 Route::dispatch($_SERVER['REQUEST_URI']);
