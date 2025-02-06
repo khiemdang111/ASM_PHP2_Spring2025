@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -27,7 +28,6 @@ use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
 use App\Controllers\ErrorController;
 use App\Route;
-use App\View\Client\Pages\About;
 
 require_once 'vendor/autoload.php';
 
@@ -42,8 +42,12 @@ Route::get("/about", [AboutController::class, 'index']);
 Route::get("/service", [ServiceController::class, 'index']);
 Route::get("/blog", [BlogController::class, 'index']);
 Route::get("/contact", [ContactController::class, 'index']);
+// Auth Client
 Route::get("/login", [AuthController::class, 'login']);
 Route::get("/register", [AuthController::class, 'register']);
+Route::post("/register/user", [AuthController::class, 'registerAction']);
+Route::post("/login/user", [AuthController::class, 'loginAction']);
+Route::get("/logout", [AuthController::class, 'logout']);
 
 // ***** Admin *****
 

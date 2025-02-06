@@ -13,9 +13,14 @@ class Login extends BaseView
       <!-- From Uiverse.io by akshat-patel28 -->
       <div class="form-container mx-auto my-3 py-3">
         <h3 class="title">Đăng nhập</h3>
-        <form class="form">
-          <input type="email" class="input" placeholder="Email">
-          <input type="password" class="input" placeholder="Mật khẩu">
+        <form action="/login/user" method="post" class="form">
+          <input type="hidden" name="method" value="POST">
+          <input type="email" class="input" placeholder="Email" name="email">
+          <input type="password" class="input" name="password" placeholder="Mật khẩu">
+          <div class="remember-login">
+            <input class="checkbox" type="checkbox" value="" name="remember" name checked>
+            <span class=" ml-1">Ghi nhớ</span>
+          </div>
           <button class="form-btn btn-primary">Đăng nhập</button>
         </form>
         <p class="sign-up-label">

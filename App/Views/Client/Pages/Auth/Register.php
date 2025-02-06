@@ -9,11 +9,20 @@ class Register extends BaseView
   public static function render($data = null)
   {
     ?>
+    <?php
+    if (isset($_SESSION['success_message'])) {
+      echo '<div class="alert alert-success mt-3">' . $_SESSION['success_message'] . '</div>';
+    } elseif (isset($_SESSION['error_message'])) {
+      echo '<div class="alert alert-danger mt-3">' . $_SESSION['error_message'] . '</div>';
+      unset($_SESSION['error_message']);
+    }
+    ?>
     <div class="register">
       <!-- From Uiverse.io by akshat-patel28 -->
       <div class="form-container mx-auto my-3 py-3">
         <h3 class="title">Đăng kí tài khoản</h3>
-        <form class="form" method="post">
+        <form action="/register/user" class="form" method="post">
+          <input type="hidden" name="method" value="POST">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="username" class="form-label">Username <span class="text-danger"> *</span></label>
@@ -40,8 +49,8 @@ class Register extends BaseView
               <input type="password" id="password" name="password" class="input">
             </div>
             <div class="col-md-6 mb-3">
-              <label for="pre_password" class="form-label">Nhập lại mật khẩu <span class="text-danger"> *</span></label>
-              <input type="password" id="pre_password" name="pre_password" class="input">
+              <label for="re_password" class="form-label">Nhập lại mật khẩu <span class="text-danger"> *</span></label>
+              <input type="password" id="re_password" name="re_password" class="input">
             </div>
             <button class="form-btn btn-primary">Đăng kí</button>
           </div>

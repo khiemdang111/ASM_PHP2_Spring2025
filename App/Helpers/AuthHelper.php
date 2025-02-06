@@ -10,7 +10,7 @@ class AuthHelper
  {
   $user = new User();
 
-  $is_exist = $user->getOneUserByUsername($data['username']);
+  $is_exist = $user->getOneUserByEmail($data['email']);
   if ($is_exist) {
    NotificationHelper::error('exit_register', 'Tên đăng nhập đã tồn tại');
    return false;
@@ -28,7 +28,7 @@ class AuthHelper
  public static function login($data)
  {
   $user = new User();
-  $is_exist = $user->getOneUserByUsername($data['username']);
+  $is_exist = $user->getOneUserByEmail($data['email']);
 
   // Kiểm tra xem có tồn tại username trong database hay không => nếu không: thông báo tài khoảng ko tồn tại
   if (!$is_exist) {

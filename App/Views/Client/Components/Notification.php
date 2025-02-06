@@ -8,29 +8,27 @@ class Notification extends BaseView
 {
     public static function render($data = null)
     {
-        if (isset($_SESSION['success'])) :
-            foreach ($_SESSION['success'] as $key => $value) :
-?>
-
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        if (isset($_SESSION['success'])):
+            foreach ($_SESSION['success'] as $key => $value):
+                ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong><?= $value ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-
-        <?php
+                <?php
             endforeach;
         endif;
         ?>
 
         <?php
-        if (isset($_SESSION['error'])) :
-            foreach ($_SESSION['error'] as $key => $value) :
-        ?>
-                <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        if (isset($_SESSION['error'])):
+            foreach ($_SESSION['error'] as $key => $value):
+                ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <strong><?= $value ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-<?php
+                <?php
             endforeach;
 
         endif;

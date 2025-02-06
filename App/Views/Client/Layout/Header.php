@@ -2,12 +2,13 @@
 namespace App\Views\Client\Layout;
 
 use App\Views\BaseView;
+use App\Helpers\AuthHelper;
 
 class Header extends BaseView
 {
   public static function render($data = null)
   {
-
+    $is_login = AuthHelper::checkLogin();
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -49,15 +50,34 @@ class Header extends BaseView
         <div class="spinner-grow text-primary" role="status"></div>
       </div>
       <!-- Spinner End -->
-    <div class="row"></div>
+      <div class="row"></div>
       <!-- Navbar start -->
       <div class="container-fluid nav-bar">
         <div class="container">
           <div class="row py-2">
             <div class="col-md-10"></div>
             <div class="col-md-2">
-              <a href="/login" class="text-primary fw-bold">Đăng nhập</a>
-              <a href="/register" class="text-primary fw-bold mx-2">Đăng ký</a>
+              <?php
+              if(isset($is_login) && isset($_SESSION['user'])):
+                ?>
+                <div class="dropdown">
+                  <p class="text-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tài khoản
+                  </p>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" style="color: #000"
+                        href="/users/<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['username'] ?></a></li>
+                    <li><a class="dropdown-item" style="color: #000" href="/logout">Đăng xuất</a></li>
+                  </ul>
+                </div>
+                <?php
+              else:
+                ?>
+                <a href="/login" class="text-primary fw-bold">Đăng nhập</a>
+                <a href="/register" class="text-primary fw-bold mx-2">Đăng ký</a>
+                <?php
+              endif;
+              ?>
             </div>
           </div>
           <nav class="navbar navbar-light navbar-expand-lg py-2">
