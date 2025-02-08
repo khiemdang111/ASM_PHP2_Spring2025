@@ -27,12 +27,18 @@ use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
 use App\Controllers\ErrorController;
+use App\Helpers\AuthHelper;
+use App\Controllers\Client\GoogleController;
 use App\Route;
 
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+
+AuthHelper::middleware();
+
+
 require_once 'config.php';
 
 // ***** Client *****
@@ -48,6 +54,8 @@ Route::get("/register", [AuthController::class, 'register']);
 Route::post("/register/user", [AuthController::class, 'registerAction']);
 Route::post("/login/user", [AuthController::class, 'loginAction']);
 Route::get("/logout", [AuthController::class, 'logout']);
+Route::get("/login-google", controllerMethod: [GoogleController::class, 'loginGoogle']);
+Route::get("/login-googleAction", controllerMethod: [GoogleController::class, 'callbackGoogle']);
 
 // ***** Admin *****
 

@@ -27,7 +27,8 @@ class Login extends BaseView
           <span class="sign-up-link">Quên mật khẩu</span>
         </p>
         <div class="buttons-container">
-          <div class="google-login-button">
+         <a href="/login-google">
+         <div class="google-login-button">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px"
               class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
@@ -43,6 +44,7 @@ class Login extends BaseView
             </svg>
             <span>Đăng nhập bằng Google</span>
           </div>
+         </a>
         </div>
       </div>
     </div>
