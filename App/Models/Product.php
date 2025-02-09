@@ -47,4 +47,15 @@ class Product extends BaseModel
   public function deleteProduct($id){
     return $this->delete($id);
   }
+  public function searchProduct($keyword){
+    $result = [];
+    try {
+      $sql = "SELECT * FROM products WHERE name LIKE '%$keyword%' OR price LIKE '%$keyword%'";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi tìm kiếm dữ liệu: '. $th->getMessage());
+      return $result;
+    }
+  }
 }

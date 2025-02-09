@@ -162,4 +162,16 @@ class ProductController
       header("Location: /admin/product");
     }
   }
+  public function search(){
+    $keyword = trim($_GET['keyword']);
+    $_SESSION['keyword'] = $keyword;
+    $products = new Product();
+    $data = $products->searchProduct($keyword);
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    Index::render($data);
+    Footer::render();
+    unset($_SESSION['keyword']);
+  }
 }

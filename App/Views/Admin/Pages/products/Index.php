@@ -54,9 +54,13 @@ class Index extends BaseView
                 <div class="col-sm-4 m-b-xs">
                 </div>
                 <div class="col-sm-3">
-                  <div class="input-group"><input type="text" placeholder="Tìm kiếm" class="input-sm form-control"> <span
-                      class="input-group-btn">
-                      <button type="button" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span></div>
+                  <form action="/product/search" method="get">
+                    <div class="input-group">
+                    <input type="text" name="keyword" class="input-sm form-control" value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>" placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span>
+                    </div>
+                  </form>
                 </div>
               </div>
               <div class="table-responsive">
@@ -94,10 +98,13 @@ class Index extends BaseView
                           </td>
 
                           <td class="d-flex justify-content-between align-items-center">
-                            <a class="btn btn-outline-primary" href="/admin/product/edit/<?= $item['id'] ?>"><i class="fa fa-edit fa-2x text-success"></i></a>
-                            <form action="/admin/product/delete/<?= $item['id'] ?>" method="post"  style="display: inline-block;">
+                            <a class="btn btn-outline-primary" href="/admin/product/edit/<?= $item['id'] ?>"><i
+                                class="fa fa-edit fa-2x text-success"></i></a>
+                            <form action="/admin/product/delete/<?= $item['id'] ?>" method="post"
+                              style="display: inline-block;">
                               <input type="hidden" name="method" value="POST">
-                              <button type="submit" class="btn btn-outline-primary delete-button"><i class="fa fa-trash fa-2x text-danger"></i></button>
+                              <button type="submit" class="btn btn-outline-primary delete-button"><i
+                                  class="fa fa-trash fa-2x text-danger"></i></button>
                             </form>
                           </td>
                         </tr>

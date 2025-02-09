@@ -75,6 +75,7 @@ Route::get("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
 Route::post("/product/create", [AdminProductController::class, 'store']);
 Route::put("/update/product/{id}", [AdminProductController::class, 'update']);
 Route::post("/admin/product/delete/{id}", [AdminProductController::class, 'delete']);
+Route::get("/product/search", [AdminProductController::class, 'search']);
 
 // User Admin
 Route::get("/admin/user", [AdminUserController::class, 'index']);
