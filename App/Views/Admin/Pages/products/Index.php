@@ -87,18 +87,22 @@ class Index extends BaseView
                           <td>
                             <label class="switch">
                               <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
-                                data-field="status" data-model="products" data-modelId="<?=$item['id']?>" value="<?= $item['status'] ?>">
+                                data-field="status" data-model="products" data-modelId="<?= $item['id'] ?>"
+                                value="<?= $item['status'] ?>">
                               <span class="slider"></span>
                             </label>
                           </td>
 
                           <td class="d-flex justify-content-between align-items-center">
-                            <a href="/admin/product/edit/<?=$item['id']?>"><i class="fa fa-edit fa-2x text-success"></i></a>
-                            <a href="#"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                            <a class="btn btn-outline-primary" href="/admin/product/edit/<?= $item['id'] ?>"><i class="fa fa-edit fa-2x text-success"></i></a>
+                            <form action="/admin/product/delete/<?= $item['id'] ?>" method="post"  style="display: inline-block;">
+                              <input type="hidden" name="method" value="POST">
+                              <button type="submit" class="btn btn-outline-primary delete-button"><i class="fa fa-trash fa-2x text-danger"></i></button>
+                            </form>
                           </td>
                         </tr>
                       <?php endforeach;
-                      else:
+                    else:
                       ?>
                       <h2 class="text-danger">Chưa có sản phẩm trong cơ sở dữ liệu!</h2>
                       <?php

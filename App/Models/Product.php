@@ -10,6 +10,10 @@ class Product extends BaseModel
   {
     return $this->getAll();
   }
+  public function getOneProduct($id)
+  {
+    return $this->getOne($id);
+  }
   public function changeStatus($id, $data)
   {
     return $this->update($id, $data);
@@ -21,5 +25,26 @@ class Product extends BaseModel
   public function createProduct($data)
   {
     return $this->create($data);
+  }
+  public function getOneProductJoinCategory($id)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT products.*, categories.name AS category_name 
+                 FROM products 
+                 INNER JOIN categories ON products.category_id = categories.id WHERE products.id = $id";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
+  public function updateProduct($id, $data)
+  {
+    return $this->update($id, $data);
+  }
+  public function deleteProduct($id){
+    return $this->delete($id);
   }
 }

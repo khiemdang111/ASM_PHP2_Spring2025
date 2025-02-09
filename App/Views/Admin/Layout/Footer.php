@@ -500,6 +500,7 @@ class Footer extends BaseView
     </script>
     <!-- Mainly scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/public/admin/assets/js/sweetalert.js"></script>
     <script src="/public/admin/assets/js/jquery-3.1.1.min.js"></script>
     <script src="/public/admin/assets/js/bootstrap.min.js"></script>
     <script src="/public/admin/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>

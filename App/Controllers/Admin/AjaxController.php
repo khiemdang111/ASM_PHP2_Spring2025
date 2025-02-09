@@ -21,7 +21,7 @@ class AjaxController
         $field = $option['field'] ?? '';
 
         // Đổi trạng thái: nếu 1 -> 0, nếu 0 -> 1
-        $newValue = ($value == 1) ? 0 : 1;
+        $newValue = ($value == 1) ? 2 : 1;
         $data = [
             'status' => $newValue
         ];
