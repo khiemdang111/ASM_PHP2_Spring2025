@@ -56,6 +56,10 @@ Route::post("/login/user", [AuthController::class, 'loginAction']);
 Route::get("/logout", [AuthController::class, 'logout']);
 Route::get("/login-google", controllerMethod: [GoogleController::class, 'loginGoogle']);
 Route::get("/login-googleAction", controllerMethod: [GoogleController::class, 'callbackGoogle']);
+Route::get("/users/{id}", controllerMethod: [AuthController::class, 'edit']);
+Route::post("/users/update/{id}", controllerMethod: [AuthController::class, 'upload']);
+Route::get("/user/changepassword/{id}", controllerMethod: [AuthController::class, 'changePassword']);
+Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, 'uploadPassword']);
 
 // ***** Admin *****
 

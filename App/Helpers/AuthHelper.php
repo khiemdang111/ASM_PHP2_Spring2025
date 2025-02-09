@@ -239,4 +239,15 @@ class AuthHelper
     header('Location: /admin');
     exit();
   }
+  public static function checkPassword($id, $oldpassword){
+    $user = new User();
+    $result = $user->getOneUser($id);
+    if($result){
+      return password_verify($oldpassword, $result['password']);
+    }
+    else{
+      NotificationHelper::error('errorOldPassword', 'Mật khẩu cũ không chính xác');
+      return false;
+    }
+  }
 }

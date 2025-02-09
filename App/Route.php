@@ -31,37 +31,86 @@ class Route
     }
 
     public static function dispatch($uri)
-{
-    // Nếu đường dẫn rỗng hoặc chỉ là '/', chuyển về '/'
-    if ($uri == '' || $uri == '/') {
-        $uri = '/';
-    } else {
-        // Loại bỏ query string nếu có
-        $uri = explode('?', $uri)[0];
+    {
+        // Kiểm tra routes đã được khởi tạo chưa
+        if (!isset(self::$routes) || !is_array(self::$routes)) {
+            die("Lỗi: Routes chưa được khởi tạo!");
+        }
 
-        // Cắt dấu / nếu xuất hiện ở cuối URI
-        $uri = rtrim($uri, '/');
-    }
+        // Nếu đường dẫn rỗng hoặc chỉ là '/', chuyển về '/'
+        if ($uri == '' || $uri == '/') {
+            $uri = '/';
+        } else {
+            // Loại bỏ query string nếu có
+            if (strpos($uri, '?') !== false) {
+                $uri = explode('?', $uri)[0];
+            }
+            // Cắt dấu / nếu xuất hiện ở cuối URI
+            $uri = rtrim($uri, '/');
+        }
 
-    // Kiểm tra route có tồn tại không
-    if (array_key_exists($uri, self::$routes)) {
-        $controllerMethod = self::$routes[$uri];
+        // Kiểm tra route có tồn tại không
+        if (array_key_exists($uri, self::$routes)) {
+            $controllerMethod = self::$routes[$uri];
 
-        // Kiểm tra xem route có phải dạng mảng [Controller::class, 'method'] không
-        if (is_array($controllerMethod) && count($controllerMethod) === 2) {
-            [$controller, $method] = $controllerMethod;
-            
-            // Tạo instance của controller và gọi phương thức
+            // Kiểm tra xem route có phải dạng mảng [Controller::class, 'method'] không
+            if (is_array($controllerMethod) && count($controllerMethod) === 2) {
+                [$controller, $method] = $controllerMethod;
+            } elseif (is_string($controllerMethod)) {
+                [$controller, $method] = explode("@", $controllerMethod);
+            } else {
+                die("Lỗi: Route không hợp lệ!");
+            }
+
+            // Kiểm tra controller và method có tồn tại không
+            if (!class_exists($controller)) {
+                die("Lỗi: Controller không tồn tại!");
+            }
+
             $controllerInstance = new $controller();
+
+            if (!method_exists($controllerInstance, $method)) {
+                die("Lỗi: Method không tồn tại trong controller!");
+            }
+
             return $controllerInstance->$method();
         } else {
-            die("Lỗi: Route không hợp lệ!");
+            // Xử lý route có tham số {id}
+            $uriParts = explode('/', trim($uri, '/'));
+            $part1 = '/' . $uriParts[0]; // Phần đầu tiên của URI (ví dụ: /users)
+            $part2 = $uriParts[1] ?? null; // Phần thứ hai của URI (ví dụ: id)
+
+            foreach (self::$routes as $route => $controllerMethod) {
+                if (strpos($route, '{id}') !== false) {
+                    // Thay thế {id} bằng regex để so khớp
+                    $pattern = str_replace('{id}', '(\d+)', $route);
+                    if (preg_match('#^' . $pattern . '$#', $uri, $matches)) {
+                        $id = $matches[1]; // Lấy giá trị của {id}
+                        // Xử lý cả hai định dạng: chuỗi hoặc mảng
+                        if (is_array($controllerMethod) && count($controllerMethod) === 2) {
+                            [$controller, $method] = $controllerMethod;
+                        } elseif (is_string($controllerMethod)) {
+                            [$controller, $method] = explode("@", $controllerMethod);
+                        } else {
+                            die("Lỗi: Route không hợp lệ!");
+                        }
+                        // Kiểm tra controller và method có tồn tại không
+                        if (!class_exists($controller)) {
+                            die("Lỗi: Controller không tồn tại!");
+                        }
+                        $controllerInstance = new $controller();
+                        if (!method_exists($controllerInstance, $method)) {
+                            die("Lỗi: Method không tồn tại trong controller!");
+                        }
+                        return $controllerInstance->$method($id);
+                    }
+                }
+            }
+
+            // Nếu không tìm thấy route
+            header("Location: /notfound");
+            exit;
         }
+
     }
-
-    // Nếu không tìm thấy route
-    header("Location: /notfound");
-}
-
-
 }

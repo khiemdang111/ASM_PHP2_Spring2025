@@ -11,6 +11,7 @@ use App\Views\Client\Layout\Footer;
 use App\Views\Client\Pages\Auth\Register;
 use App\Views\Client\Pages\Auth\Login;
 use App\Views\Client\Pages\Auth\Edit;
+use App\Views\Client\Pages\Auth\ChangePassword;
 
 use App\Models\User;
 use App\Validations\AuthValidation;
@@ -126,56 +127,91 @@ class AuthController
         header('Location: /');
     }
 
-    //  public static function edit($id){
-//   $resutl = AuthHelper::edit($id);
-//   if(!$resutl){
-//    if(isset($_SESSION['error']['login'])){
-//     header('Location: /login');
-//     exit();
-//    }
+    public static function edit($id)
+    {
+        $resutl = AuthHelper::edit($id);
+        if (!$resutl) {
+            if (isset($_SESSION['error']['login'])) {
+                header('Location: /login');
+                exit();
+            }
 
-    //    if(isset($_SESSION['error']['user_id'])){
+            if (isset($_SESSION['error']['user_id'])) {
 
-    //     $data = $_SESSION['user'];
-//     $user_id = $data['id'];
-//     header("Location: /users/$user_id");
-//     exit();
-//    }
-//   }
+                $data = $_SESSION['user'];
+                $user_id = $data['id'];
+                header("Location: /users/$user_id");
+                exit();
+            }
+        }
 
-    //   $data = $_SESSION['user'];
-//   Header::render();
-//   Notification::render();
-//   NotificationHelper::unset();
+        $data = $_SESSION['user'];
+        Header::render();
+        Notification::render();
+        NotificationHelper::unset();
+        Edit::render($data);
+        Footer::render();
+    }
 
-    //   // Giao diện thông tin User
-//   Edit::render($data);
-//   Footer::render();
-//  }
+    public static function upload($id)
+    {
+        $is_valid = AuthValidation::edit();
 
-    //  public static function upload($id){
-//   $is_valid = AuthValidation::edit();
+        if (!$is_valid) {
+            NotificationHelper::error('upload_user', 'Cập nhật thất bại');
+            header("Location: /users/$id");
+            exit();
+        }
+        $data = [
+            'username' => $_POST['username'],
+            'email' => $_POST['email'],
+            'name' => $_POST['name'],
+            'phone' => $_POST['phone'],
+            'address' => $_POST['address'],
+        ];
 
-    //   if (!$is_valid) {
-//    NotificationHelper::error('upload_user', 'Cập nhật thất bại');
-//    header("Location: /users/$id");
-//    exit();
-//   }
-//   $data = [
-//     'email' => $_POST['email'],
-//     'name' => $_POST['name'],
+        // Kiểm trá có upload hình ảnh ko, nếu có thì kiểm tra có hợp lệ hay không
+        $is_upload = AuthValidation::uploadAvatar();
+        if ($is_upload) {
+            $data['avatar'] = $is_upload;
+        }
 
-    //   ];
+        // Gọi helper để upload
+        $result = AuthHelper::update($id, $data);
+        // Kiểm tra kết quả trả về và chuyển hướng
+        header("Location: /users/$id");
+    }
+    public static function changePassword($id){
+        // $id = $_GET['id'];
+        $data = $_SESSION['user'];
+        Header::render();
+        Notification::render();
+        NotificationHelper::unset();
+        ChangePassword::render($data);
+        Footer::render();
+    }
+    public static function uploadPassword($id){
+        // var_dump($id);
+        // var_dump($_POST); die;
+        $oldpassword = $_POST['oldpassword'];
+        $checkpassword = AuthHelper::checkPassword($id, $oldpassword);
+        if($checkpassword){
+            $newpassword = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
+            $data = [
+                'password' => $newpassword
+            ];
+            $result = AuthHelper::update($id, $data);
+            if($result){
+                NotificationHelper::success('change_password', 'Đổi mật khẩu thành công');
+                header('Location: /users/'.$id);
+            }else{
+                NotificationHelper::error('change_password', 'Đổi mật khẩu thất bại');
+                header('Location: /user/changepassword/'.$id);
+            }
+        }else{
+            NotificationHelper::error('change_password', 'Mật khẩu cũ không đúng');
+            header('Location: /user/changepassword/'.$id);
+        }
 
-    //   // Kiểm trá có upload hình ảnh ko, nếu có thì kiểm tra có hợp lệ hay không
-//   $is_upload = AuthValidation::uploadAvatar();
-//   if($is_upload){
-//     $data['avatar'] = $is_upload;
-//   }
-
-    //   // Gọi helper để upload
-//   $result = AuthHelper::update($id, $data);
-//   // Kiểm tra kết quả trả về và chuyển hướng
-//   header("Location: /users/$id");
-//  }
+    }
 }

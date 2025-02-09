@@ -53,7 +53,7 @@ class GoogleController
             'email'     => $data['email'],
             'username'  => $data['name'],
             'name'      => $data['given_name'],
-            'avatar'    => $data['picture'],
+            // 'avatar'    => $data['picture'],
         ];
          $user = AuthHelper::checkExistedInfo('google_id', $dataUser['google_id']);
 
