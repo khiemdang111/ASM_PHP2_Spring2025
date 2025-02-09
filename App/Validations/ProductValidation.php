@@ -13,7 +13,7 @@ class ProductValidation
 
   // Tên đăng nhập
   if (!isset($_POST['name']) || $_POST['name'] === '') {
-   NotificationHelper::error('name', 'Không để trống tên');
+   NotificationHelper::error('name', 'Không để trống tên sản phẩm');
    $is_valid = false;
   }
 
@@ -43,7 +43,10 @@ class ProductValidation
    NotificationHelper::error('category_id', 'Không để trống loại sản phẩm');
    $is_valid = false;
   }
-
+  if (!isset($_POST['description']) || $_POST['description'] === '') {
+    NotificationHelper::error('description', 'Không để trống mô tả');
+    $is_valid = false;
+   }
   // Nổi bật
   if (!isset($_POST['is_featured']) || $_POST['is_featured'] === '') {
    NotificationHelper::error('is_featured', 'Không để trống nổi bật');
@@ -72,7 +75,7 @@ class ProductValidation
   }
 
   /// Nơi lưu trữ hình ảnh trong source code
-  $target_dir = 'public/uploads/products/';
+  $target_dir = 'public/assets/images/';
 
   // Kiểm tra loại file upload có hợp lệ hay không
   $imageFileType = strtolower(pathinfo(basename($_FILES['image']['name']), PATHINFO_EXTENSION));

@@ -64,6 +64,7 @@ Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, '
 Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
 Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
 
+
 // ***** Admin *****
 
 Route::get("/admin", [AdminHomeController::class, 'index']);
@@ -71,6 +72,7 @@ Route::get("/admin", [AdminHomeController::class, 'index']);
 Route::get("/admin/product", [AdminProductController::class, 'index']);
 Route::get("/admin/product/create", [AdminProductController::class, 'create']);
 Route::get("/admin/product/edit/{id}", [AdminProductController::class, 'edit']);
+Route::post("/product/create", [AdminProductController::class, 'store']);
 
 // User Admin
 Route::get("/admin/user", [AdminUserController::class, 'index']);

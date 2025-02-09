@@ -33,6 +33,7 @@ class Header extends BaseView
             <link href="<?= APP_URL ?>/public/admin/assets/css/animate.css" rel="stylesheet">
             <link href="<?= APP_URL ?>/public/admin/assets/css/style.css" rel="stylesheet">
             <script src="<?= APP_URL ?>/public/library/ckeditor4/ckeditor/ckeditor.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </head>
 
         <body>

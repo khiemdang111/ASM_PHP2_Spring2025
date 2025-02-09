@@ -29,7 +29,8 @@ class Create extends BaseView
 
 
       <div class="ibox-content m-b-sm border-bottom">
-        <form action="">
+        <form action="/product/create" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="method" value="POST">
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group">
@@ -45,8 +46,8 @@ class Create extends BaseView
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="discout_price">Giảm giá</label>
-                <input type="text" id="discout_price" name="discout_price" value="" placeholder="Giảm giá"
+                <label class="control-label" for="discount_price">Giảm giá</label>
+                <input type="text" id="discount_price" name="discount_price" value="" placeholder="Giảm giá"
                   class="form-control">
               </div>
             </div>
@@ -78,26 +79,37 @@ class Create extends BaseView
               <div class="form-group">
                 <label class="control-label" for="category_id">Danh mục <span class="text-danger">*</span></label>
                 <select class="form-control" name="category_id" id="category_id" aria-label="Default select example">
-                  <option value="0" selected>Chọn</option>
-                  <option value="1">Pizza</option>
-                  <option value="2">Burger</option>
-                  <option value="3">Sushi</option>
-                  <option value="4">Sandwich</option>
+                <option value="" selected>Chọn</option>
+                  <?php
+                  if (isset($data)):
+                    foreach ($data as $item):
+                      ?>
+                      <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                      <?php
+                    endforeach;
+                  else:
+                    ?>
+                    <option value="" selected>Chọn</option>
+                    <option value="">Vui lòng thêm danh mục để chọn</option>
+                  <?php
+                  endif;
+                  ?>
                 </select>
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label class="control-label" for="description">Mô tả <span class="text-danger">*</span></label>
-                <textarea name="description" class="form-control description" id="description" rows="8" placeholder="Nhập mô tả"></textarea>
+                <textarea name="description" class="form-control description" id="description" rows="8"
+                  placeholder="Nhập mô tả"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
-                <button class="btn btn-primary">Thêm</button>
-                <button class="btn btn-success">Nhập lại</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
+                <button type="reset" class="btn btn-success">Nhập lại</button>
               </div>
             </div>
           </div>
@@ -105,8 +117,8 @@ class Create extends BaseView
       </div>
     </div>
     <script>
-        CKEDITOR.replace('description');
-      </script>
+      CKEDITOR.replace('description');
+    </script>
     <?php
   }
 }

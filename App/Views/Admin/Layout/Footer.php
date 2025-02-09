@@ -499,6 +499,7 @@ class Footer extends BaseView
       });
     </script>
     <!-- Mainly scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/public/admin/assets/js/jquery-3.1.1.min.js"></script>
     <script src="/public/admin/assets/js/bootstrap.min.js"></script>
     <script src="/public/admin/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -537,7 +538,7 @@ class Footer extends BaseView
     <!-- Toastr -->
     <script src="/public/admin/assets/js/plugins/toastr/toastr.min.js"></script>
 
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         setTimeout(function () {
           toastr.options = {
@@ -636,7 +637,7 @@ class Footer extends BaseView
         new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
 
       });
-    </script>
+    </script> -->
     </body>
 
     </html>

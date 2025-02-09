@@ -14,4 +14,12 @@ class Product extends BaseModel
   {
     return $this->update($id, $data);
   }
+  public function getOneProductByName($name)
+  {
+    return $this->getOneByName($name);
+  }
+  public function createProduct($data)
+  {
+    return $this->create($data);
+  }
 }
