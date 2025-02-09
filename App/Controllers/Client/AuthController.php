@@ -12,6 +12,7 @@ use App\Views\Client\Pages\Auth\Register;
 use App\Views\Client\Pages\Auth\Login;
 use App\Views\Client\Pages\Auth\Edit;
 use App\Views\Client\Pages\Auth\ChangePassword;
+use App\Views\Client\Pages\Auth\ForgotPassword;
 
 use App\Models\User;
 use App\Validations\AuthValidation;
@@ -68,7 +69,6 @@ class AuthController
         Header::render();
         // Hiển thị trang đăng ký
         Notification::render();
-
         ///////////////////////////
         NotificationHelper::unset();
 
@@ -181,7 +181,8 @@ class AuthController
         // Kiểm tra kết quả trả về và chuyển hướng
         header("Location: /users/$id");
     }
-    public static function changePassword($id){
+    public static function changePassword($id)
+    {
         // $id = $_GET['id'];
         $data = $_SESSION['user'];
         Header::render();
@@ -190,28 +191,44 @@ class AuthController
         ChangePassword::render($data);
         Footer::render();
     }
-    public static function uploadPassword($id){
+    public static function uploadPassword($id)
+    {
         // var_dump($id);
         // var_dump($_POST); die;
         $oldpassword = $_POST['oldpassword'];
         $checkpassword = AuthHelper::checkPassword($id, $oldpassword);
-        if($checkpassword){
+        if ($checkpassword) {
             $newpassword = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
             $data = [
                 'password' => $newpassword
             ];
             $result = AuthHelper::update($id, $data);
-            if($result){
+            if ($result) {
                 NotificationHelper::success('change_password', 'Đổi mật khẩu thành công');
-                header('Location: /users/'.$id);
-            }else{
+                header('Location: /users/' . $id);
+            } else {
                 NotificationHelper::error('change_password', 'Đổi mật khẩu thất bại');
-                header('Location: /user/changepassword/'.$id);
+                header('Location: /user/changepassword/' . $id);
             }
-        }else{
+        } else {
             NotificationHelper::error('change_password', 'Mật khẩu cũ không đúng');
-            header('Location: /user/changepassword/'.$id);
+            header('Location: /user/changepassword/' . $id);
         }
 
+    }
+    public function forgotPassword()
+    {
+        $mail = new EmailController();
+        $email = $_GET['email'];
+        $check = $mail->checkEmail($email);
+        if (!$check) {
+            header('Location: /login');
+            exit();
+        }
+        Header::render();
+        Notification::render();
+        NotificationHelper::unset();
+        ForgotPassword::render();
+        Footer::render();
     }
 }

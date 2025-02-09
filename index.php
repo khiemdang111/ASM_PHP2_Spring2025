@@ -26,6 +26,7 @@ use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
+use App\Controllers\Client\EmailController;
 use App\Controllers\ErrorController;
 use App\Helpers\AuthHelper;
 use App\Controllers\Client\GoogleController;
@@ -60,6 +61,8 @@ Route::get("/users/{id}", controllerMethod: [AuthController::class, 'edit']);
 Route::post("/users/update/{id}", controllerMethod: [AuthController::class, 'upload']);
 Route::get("/user/changepassword/{id}", controllerMethod: [AuthController::class, 'changePassword']);
 Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, 'uploadPassword']);
+Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
+Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
 
 // ***** Admin *****
 

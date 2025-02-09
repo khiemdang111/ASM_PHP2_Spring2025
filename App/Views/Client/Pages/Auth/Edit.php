@@ -33,12 +33,34 @@ class Edit extends BaseView
                 <h5 class="my-3"><?= $data['username'] ?></h5>
                 <!-- <p class="text-muted mb-1">Đăng xuất</p>
             <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
-                <div class="d-flex justify-content-center mb-2">
+                <!-- <div class="d-flex justify-content-center mb-2">
                   <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Đổi
                     avatar</button>
                   <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Đổi
                     mật khẩu</button>
-                </div>
+                </div> -->
+                <ul class="list-group list-group-flush rounded-3">
+                  <li class="list-group-item d-flex align-items-center p-3">
+                    <i class="bi bi-gear"></i>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="">Cài đặt</a></p>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center p-3">
+                    <i class="bi bi-cart"></i>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="">Giỏ hàng</a></p>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center p-3">
+                    <i class="bi bi-bag-check"></i>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="">Đơn hàng</a></p>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center p-3">
+                    <i class="bi bi-wallet2"></i>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="">Số dư ví</a></p>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center p-3">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="/users/<?= $_SESSION['user']['id'] ?>">Đăng xuất</a></p>
+                  </li>
+                </ul>
               </div>
             </div>
             <!-- <div class="card mb-4 mb-lg-0">

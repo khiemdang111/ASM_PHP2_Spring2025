@@ -14,3 +14,4 @@ package-lock.json
 package.json
 node_modules
 /public/library
+/App/Mail/PHPMailer
