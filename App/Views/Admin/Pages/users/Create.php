@@ -29,7 +29,8 @@ class Create extends BaseView
 
 
       <div class="ibox-content m-b-sm border-bottom">
-        <form action="">
+        <form action="/user/create" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="method" value="POST">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
@@ -81,8 +82,8 @@ class Create extends BaseView
               <div class="form-group">
                 <label class="control-label" for="status">Trạng thái <span class="text-danger">*</span></label>
                 <select class="form-control" id="status" name="status" aria-label="Default select example">
-                  <option value="0" selected>Hiển thị</option>
-                  <option value="1">Ẩn</option>
+                  <option value="1" selected>Hiển thị</option>
+                  <option value="0">Ẩn</option>
                 </select>
               </div>
             </div>
@@ -94,16 +95,16 @@ class Create extends BaseView
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="pre_password">Nhập lại mật khẩu <span class="text-danger">*</span></label>
-                <input type="password" id="pre_password" name="pre_password" value="" class="form-control">
+                <label class="control-label" for="re_password">Nhập lại mật khẩu <span class="text-danger">*</span></label>
+                <input type="password" id="re_password" name="re_password" value="" class="form-control">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
-                <button class="btn btn-primary">Thêm</button>
-                <button class="btn btn-success">Nhập lại</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
+                <button type="reset" class="btn btn-success">Nhập lại</button>
               </div>
             </div>
           </div>

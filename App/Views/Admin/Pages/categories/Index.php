@@ -95,13 +95,56 @@ class Index extends BaseView
                             </label>
                           </td>
                           <td class="d-flex justify-content-between align-items-center">
-                            <a href="/admin/category/edit/<?= $item['id'] ?>"><i class="fa fa-edit fa-2x text-success"></i></a>
+                            <!-- <a href="/admin/category/edit/<?= $item['id'] ?>"><i class="fa fa-edit fa-2x text-success"></i></a>
                             <form action="/admin/category/delete/<?= $item['id'] ?>" method="post"
                               style="display: inline-block;">
                               <input type="hidden" name="method" value="POST">
                               <button type="submit" class="btn btn-outline-primary delete-button"><i
                                   class="fa fa-trash fa-2x text-danger"></i></button>
-                            </form>
+                            </form> -->
+                            <div class="custom-icon-detail">
+                              <!-- From Uiverse.io by Galahhad -->
+                              <label class="popup">
+                                <input type="checkbox">
+                                <div class="burger" tabindex="0">
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+                                <nav class="popup-window">
+                                  <ul>
+                                    <li>
+                                      <a href="/admin/category/edit/<?= $item['id'] ?>">
+                                        <button>
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                                          </svg>
+                                          <span>Sửa</span>
+                                        </button>
+                                      </a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                      <form action="/admin/category/delete/<?= $item['id'] ?>" method="post"
+                                        style="display: inline-block;">
+                                        <input type="hidden" name="method" value="POST">
+                                        <button type="submit">
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y2="18" x2="6" y1="6" x1="18"></line>
+                                            <line y2="18" x2="18" y1="6" x1="6"></line>
+                                          </svg>
+                                          <span>Xóa</span>
+                                        </button>
+                                      </form>
+                                    </li>
+                                  </ul>
+                                </nav>
+                              </label>
+                            </div>
                           </td>
                         </tr>
                       <?php endforeach;

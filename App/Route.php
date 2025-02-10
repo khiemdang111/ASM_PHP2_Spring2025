@@ -108,8 +108,8 @@ class Route
             }
 
             // Nếu không tìm thấy route
-            // header("Location: /notfound");
-            // exit;
+            header("Location: /notfound");
+            exit;
         }
 
     }

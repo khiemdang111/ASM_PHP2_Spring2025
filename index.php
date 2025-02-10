@@ -85,11 +85,14 @@ Route::post("/category/create", [AdminCategoryController::class, 'store']);
 Route::put("/update/category/{id}", [AdminCategoryController::class, 'update']);
 Route::post("/admin/category/delete/{id}", [AdminCategoryController::class, 'delete']);
 Route::get("/category/search", [AdminCategoryController::class, 'search']);
+Route::post("/user/create", [AdminUserController::class, 'store']);
 
 
 // User Admin
 Route::get("/admin/user", [AdminUserController::class, 'index']);
 Route::get("/admin/user/create", [AdminUserController::class, 'create']);
+Route::get("/admin/user/edit/{id}", [AdminUserController::class, 'edit']);
+Route::put("/update/user/{id}", [AdminUserController::class, 'update']);
 
 
 // Customer Admin

@@ -24,7 +24,35 @@ class User extends BaseModel
                 throw new \Exception('Kết nối MySQL không thành công.');
             }
 
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT * FROM users WHERE role != 0";
+            $query = $conn->query($sql);
+
+            if ($query === false) {
+                throw new \Exception('Lỗi khi thực hiện truy vấn: ' . $conn->error);
+            }
+
+            $result = $query->fetch_all(MYSQLI_ASSOC);
+
+            // Giải phóng bộ nhớ và đóng kết nối
+            $query->free();
+            $conn->close();
+
+            return $result;
+        } catch (\Throwable $th) {
+            error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
+            return $result;
+        }
+    }
+    public function getAllCustomer()
+    {
+        $result = [];
+        try {
+            $conn = $this->_conn->connect();
+            if (!$conn) {
+                throw new \Exception('Kết nối MySQL không thành công.');
+            }
+
+            $sql = "SELECT * FROM users WHERE role = 0 ORDER BY id DESC";
             $query = $conn->query($sql);
 
             if ($query === false) {
@@ -66,6 +94,10 @@ class User extends BaseModel
     public function getOneUser($id)
     {
         return $this->getOne($id);
+    }
+    public function updateUser($id, $data)
+    {
+        return $this->update($id, $data);
     }
     public function getOneUserByInfo($column, $info)
     {
