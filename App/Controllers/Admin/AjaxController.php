@@ -4,6 +4,7 @@ use App\Views\Admin\Layout\Header;
 use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Raitings\Index;
 use App\Models\Product;
+use App\Models\BaseModel;
 class AjaxController
 {
   public function changeStatus()
@@ -19,7 +20,7 @@ class AjaxController
         $modelId = isset($option['modelId']) ? (int) $option['modelId'] : 0;
         $model = $option['model'] ?? '';
         $field = $option['field'] ?? '';
-
+        $table = $model;
         // Đổi trạng thái: nếu 1 -> 0, nếu 0 -> 1
         $newValue = ($value == 1) ? 2 : 1;
         $data = [
@@ -34,7 +35,7 @@ class AjaxController
 
         // Cập nhật trạng thái
         $products = new Product();
-        $change = $products->changeStatus($modelId, $data);
+        $change = $products->changeStatus($modelId, $data, $table);
 
         if ($change) {
             echo json_encode([

@@ -29,7 +29,8 @@ class Create extends BaseView
 
 
       <div class="ibox-content m-b-sm border-bottom">
-        <form action="">
+        <form action="/category/create" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="method" value="POST">
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group">
@@ -47,8 +48,8 @@ class Create extends BaseView
               <div class="form-group">
                 <label class="control-label" for="status">Trạng thái <span class="text-danger">*</span></label>
                 <select class="form-control" id="status" name="status" aria-label="Default select example">
-                  <option value="0" selected>Hiển thị</option>
-                  <option value="1">Ẩn</option>
+                  <option value="1" selected>Hiển thị</option>
+                  <option value="0">Ẩn</option>
                 </select>
               </div>
             </div>
@@ -62,8 +63,8 @@ class Create extends BaseView
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
-                <button class="btn btn-primary">Thêm</button>
-                <button class="btn btn-success">Nhập lại</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
+                <button type="reset" class="btn btn-success">Nhập lại</button>
               </div>
             </div>
           </div>

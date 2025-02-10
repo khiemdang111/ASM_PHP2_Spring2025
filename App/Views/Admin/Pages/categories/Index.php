@@ -54,9 +54,15 @@ class Index extends BaseView
                 <div class="col-sm-4 m-b-xs">
                 </div>
                 <div class="col-sm-3">
-                  <div class="input-group"><input type="text" placeholder="Tìm kiếm" class="input-sm form-control"> <span
-                      class="input-group-btn">
-                      <button type="button" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span></div>
+                  <form action="/category/search" method="get">
+                    <div class="input-group">
+                      <input type="text" name="keyword" class="input-sm form-control"
+                        value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>"
+                        placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span>
+                    </div>
+                  </form>
                 </div>
               </div>
               <div class="table-responsive">
@@ -83,13 +89,19 @@ class Index extends BaseView
                           <td>
                             <label class="switch">
                               <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
-                                data-field="publish" data-model="User" value="">
+                                data-field="status" data-model="categories" data-modelId="<?= $item['id'] ?>"
+                                value="<?= $item['status'] ?>">
                               <span class="slider"></span>
                             </label>
                           </td>
                           <td class="d-flex justify-content-between align-items-center">
                             <a href="/admin/category/edit/<?= $item['id'] ?>"><i class="fa fa-edit fa-2x text-success"></i></a>
-                            <a href="#"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                            <form action="/admin/category/delete/<?= $item['id'] ?>" method="post"
+                              style="display: inline-block;">
+                              <input type="hidden" name="method" value="POST">
+                              <button type="submit" class="btn btn-outline-primary delete-button"><i
+                                  class="fa fa-trash fa-2x text-danger"></i></button>
+                            </form>
                           </td>
                         </tr>
                       <?php endforeach;

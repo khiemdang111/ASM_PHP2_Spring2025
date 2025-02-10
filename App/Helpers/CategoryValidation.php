@@ -16,11 +16,10 @@ class CategoryValidation
       NotificationHelper::error('name', 'Không để trống tên danh mục');
       $is_valid = false;
     }
-
-    // Mật khẩu
+    //   var_dump($_POST['status']);
+// die;
     if (!isset($_POST['status']) || $_POST['status'] === '') {
       NotificationHelper::error('status', 'Không để trống trạng thái');
-      // var_dump($_POST['status']);
       $is_valid = false;
     }
 

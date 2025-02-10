@@ -77,14 +77,20 @@ Route::put("/update/product/{id}", [AdminProductController::class, 'update']);
 Route::post("/admin/product/delete/{id}", [AdminProductController::class, 'delete']);
 Route::get("/product/search", [AdminProductController::class, 'search']);
 
-// User Admin
-Route::get("/admin/user", [AdminUserController::class, 'index']);
-Route::get("/admin/user/create", [AdminUserController::class, 'create']);
-
 // Category Admin
 Route::get("/admin/category", [AdminCategoryController::class, 'index']);
 Route::get("/admin/category/create", [AdminCategoryController::class, 'create']);
 Route::get("/admin/category/edit/{id}", [AdminCategoryController::class, 'edit']);
+Route::post("/category/create", [AdminCategoryController::class, 'store']);
+Route::put("/update/category/{id}", [AdminCategoryController::class, 'update']);
+Route::post("/admin/category/delete/{id}", [AdminCategoryController::class, 'delete']);
+Route::get("/category/search", [AdminCategoryController::class, 'search']);
+
+
+// User Admin
+Route::get("/admin/user", [AdminUserController::class, 'index']);
+Route::get("/admin/user/create", [AdminUserController::class, 'create']);
+
 
 // Customer Admin
 Route::get("/admin/customer", [AdminCustomerController::class, 'index']);

@@ -14,9 +14,9 @@ class Product extends BaseModel
   {
     return $this->getOne($id);
   }
-  public function changeStatus($id, $data)
+  public function changeStatusProduct($id, $data, $table)
   {
-    return $this->update($id, $data);
+    return $this->changeStatus($id, $data, $table);
   }
   public function getOneProductByName($name)
   {

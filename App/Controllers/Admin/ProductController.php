@@ -109,7 +109,7 @@ class ProductController
       exit();
     }
     $name = $_POST['name'];
-    $product = new product();
+    $product = new Product();
     $is_exist = $product->getOneproductByName($name);
 
     if ($is_exist && $is_exist['id'] != $id) {
