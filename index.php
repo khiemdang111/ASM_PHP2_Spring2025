@@ -116,10 +116,21 @@ Route::get("/admin/post", [AdminPostController::class, 'index']);
 // Voucher Admin
 Route::get("/admin/voucher", [AdminVoucherController::class, 'index']);
 
-// Recycler Admin
+// *** Recycler Admin ***
+// product
 Route::get("/admin/recycle/product", [RecycleController::class, 'product']);
+Route::post("/admin/product/restore/{id}", [RecycleController::class, 'restore']);
+Route::post("/admin/product/deletePermanently/{id}", [RecycleController::class, 'deletePermanently']);
+
+// post
 Route::get("/admin/recycle/post", [RecycleController::class, 'post']);
+Route::post("/admin/post/restore/{id}", [RecycleController::class, 'restore']);
+Route::post("/admin/post/deletePermanently/{id}", [RecycleController::class, 'deletePermanently']);
+
+// user
 Route::get("/admin/recycle/user", [RecycleController::class, 'user']);
+Route::post("/admin/user/restore/{id}", [RecycleController::class, 'restore']);
+Route::post("/admin/user/deletePermanently/{id}", [RecycleController::class, 'deletePermanently']);
 
 // Ajax controller
 Route::post("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);

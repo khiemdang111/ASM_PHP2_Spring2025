@@ -137,11 +137,14 @@ class Index extends BaseView
                                         style="display: inline-block;">
                                         <input type="hidden" name="method" value="POST">
                                         <button type="submit">
-                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                        <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
                                             stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <line y2="18" x2="6" y1="6" x1="18"></line>
-                                            <line y2="18" x2="18" y1="6" x1="6"></line>
+                                            <path d="M3 6h18" />
+                                            <path d="M8 6V4h8v2" />
+                                            <path d="M10 11l4 4" />
+                                            <path d="M14 11l-4 4" />
+                                            <path d="M19 6l-1 14H6L5 6" />
                                           </svg>
                                           <span>Xóa</span>
                                         </button>
