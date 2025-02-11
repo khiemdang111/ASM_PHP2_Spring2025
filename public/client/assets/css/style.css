@@ -472,7 +472,11 @@ h4, h5, h6, .h4, .h5, .h6 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.description-product > p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .name-product{
     white-space: nowrap;
     overflow: hidden;

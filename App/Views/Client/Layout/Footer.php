@@ -110,6 +110,9 @@ class Footer extends BaseView
 
 <!-- Template Javascript -->
 <script src="<?= APP_URL ?>/public/client/assets/js/main.js"></script>
+<script src="<?= APP_URL ?>/public/client/assets/js/cart.js"></script>
+<script src="<?= APP_URL ?>/public/client/assets/js/changeCart.js"></script>
+
 </body>
 
 </html>

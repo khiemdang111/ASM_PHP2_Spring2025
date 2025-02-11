@@ -98,17 +98,26 @@ class Product extends BaseView
                                     ?>
                                     <div class="col-4 col-md-4 col-xl-4 mb-3">
                                         <div class="card">
-                                            <img width="200px" height="200px" src="/public/assets/images/<?= $item['image'] ?>"
-                                                class="card-img-top" alt="...">
+                                            <a href="/product/<?= $item['id'] ?>">
+                                                <img width="200px" height="200px" src="/public/assets/images/<?= $item['image'] ?>"
+                                                    class="card-img-top" alt="...">
+                                            </a>
                                             <div class="card-body">
-                                                <h6 class="card-title name-product"><?= $item['name'] ?></h6>
-                                                <p class="card-text product-menu-description mb-0"><?= $item['description'] ?></p>
-                                                <p>Giá chỉ từ: <span class="text-danger fs-3"> <?= number_format($item['price']) ?>
-                                                        đ</span> <span class="text-secondary" style=" text-decoration: line-through;">
-                                                        <?php
-                                                        $item['discount_price'] ? $item['discout_price'] : '';
-                                                        ?>
-                                                    </span></p>
+                                                <a href="/product/<?= $item['id'] ?>">
+                                                    <h6 class="card-title name-product"><?= $item['name'] ?></h6>
+                                                    <div class="description-product">
+                                                        <p class="card-text product-menu-description mb-0"><?= $item['description'] ?>
+                                                        </p>
+                                                    </div>
+                                                    <p>Giá chỉ từ: <span class="text-danger fs-3"> <?= number_format($item['price']) ?>
+                                                            đ</span> <span class="text-secondary"
+                                                            style=" text-decoration: line-through;">
+                                                            <?php
+                                                            $item['discount_price'] ? $item['discout_price'] : '';
+                                                            ?>
+                                                        </span>
+                                                    </p>
+                                                </a>
                                                 <a href="#" class="btn btn-primary">Giỏ hàng</a>
                                                 <a href="#" class="btn btn-danger">Mua ngay</a>
                                             </div>
@@ -146,7 +155,7 @@ class Product extends BaseView
                                     </div>
                                 </div>
                             </div> -->
-                                <?php
+                                    <?php
                                 endforeach;
                             endif;
                             ?>

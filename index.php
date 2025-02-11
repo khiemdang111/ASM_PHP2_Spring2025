@@ -26,6 +26,8 @@ use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Client\AuthController;
+use App\Controllers\Client\CartController;
+use App\Controllers\Client\AjaxController AS ClientAjaxController;
 use App\Controllers\Client\EmailController;
 use App\Controllers\ErrorController;
 use App\Helpers\AuthHelper;
@@ -44,7 +46,17 @@ require_once 'config.php';
 
 // ***** Client *****
 Route::get("/", [HomeController::class, 'index']);
+
+// products
 Route::get("/product", [ProductController::class, 'index']);
+Route::get("/product/{id}", [ProductController::class, 'detail']);
+
+// cart
+Route::get("/cart", [CartController::class, 'index']);
+Route::post("/cart/add/{id}", [CartController::class, 'addToCart']);
+Route::post("/ajax/cart/changeQuantity", [ClientAjaxController::class, 'changeQuantity']);
+
+
 Route::get("/about", [AboutController::class, 'index']);
 Route::get("/service", [ServiceController::class, 'index']);
 Route::get("/blog", [BlogController::class, 'index']);
