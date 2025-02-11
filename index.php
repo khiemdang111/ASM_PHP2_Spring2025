@@ -93,10 +93,13 @@ Route::get("/admin/user", [AdminUserController::class, 'index']);
 Route::get("/admin/user/create", [AdminUserController::class, 'create']);
 Route::get("/admin/user/edit/{id}", [AdminUserController::class, 'edit']);
 Route::put("/update/user/{id}", [AdminUserController::class, 'update']);
+Route::post("/admin/user/delete/{id}", [AdminUserController::class, 'delete']);
 
 
 // Customer Admin
 Route::get("/admin/customer", [AdminCustomerController::class, 'index']);
+Route::get("/admin/customer/edit/{id}", [AdminCustomerController::class, 'edit']);
+Route::put("/update/customer/{id}", [AdminCustomerController::class, 'update']);
 
 // Comment Admin
 Route::get("/admin/comment", [AdminCommentController::class, 'index']);

@@ -52,7 +52,7 @@ class User extends BaseModel
                 throw new \Exception('Kết nối MySQL không thành công.');
             }
 
-            $sql = "SELECT * FROM users WHERE role = 0 ORDER BY id DESC";
+            $sql = "SELECT * FROM users WHERE role = 0 AND status != 0 ORDER BY id DESC";
             $query = $conn->query($sql);
 
             if ($query === false) {

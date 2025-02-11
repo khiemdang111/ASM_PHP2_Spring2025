@@ -86,19 +86,62 @@ class Index extends BaseView
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
                           <td><?= $item['username'] ?></td>
                           <td><img width="80px" height="80px" src="/public/assets/images/<?= $item['avatar'] ?> "
-                          class="card-img-top" alt="..."></td>
+                              class="card-img-top" alt="..."></td>
                           <td><?= $item['email'] ?></td>
                           <td><?= $item['phone'] ?></td>
                           <td>
-                            <label class="switch">
-                              <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
-                                data-field="publish" data-model="User" value="">
-                              <span class="slider"></span>
-                            </label>
+                            <?php
+                            if ($item['status'] == 1) {
+                              echo '<span class="label label-primary">Hoạt động</span>';
+                            } else {
+                              echo '<span class="label label-warning">Bị khóa</span>';
+                            }
+                            ?>
                           </td>
                           <td class="d-flex justify-content-between align-items-center">
-                            <a href="#"><i class="fa fa-edit fa-2x text-success"></i></a>
-                            <a href="#"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                            <div class="custom-icon-detail">
+                              <!-- From Uiverse.io by Galahhad -->
+                              <label class="popup">
+                                <input type="checkbox">
+                                <div class="burger" tabindex="0">
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+                                <nav class="popup-window">
+                                  <ul>
+                                    <li>
+                                      <a href="/admin/customer/edit/<?= $item['id'] ?>">
+                                        <button>
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                                          </svg>
+                                          <span>Sửa</span>
+                                        </button>
+                                      </a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                      <form action="/admin/user/delete/<?= $item['id'] ?>" method="post"
+                                        style="display: inline-block;">
+                                        <input type="hidden" name="method" value="POST">
+                                        <button type="submit">
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y2="18" x2="6" y1="6" x1="18"></line>
+                                            <line y2="18" x2="18" y1="6" x1="6"></line>
+                                          </svg>
+                                          <span>Xóa</span>
+                                        </button>
+                                      </form>
+                                    </li>
+                                  </ul>
+                                </nav>
+                              </label>
+                            </div>
                           </td>
                         </tr>
                       <?php endforeach; ?>

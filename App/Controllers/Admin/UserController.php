@@ -97,7 +97,7 @@ class UserController
 
     $is_valid = AuthValidation::edit();
     if (!$is_valid) {
-      NotificationHelper::error('update_product2', 'Cập nhật sản phẩm thất bại  !');
+      NotificationHelper::error('update_product2', 'Cập nhật người dùng thất bại  !');
       header("Location: /admin/user/$id");
       exit();
     }
@@ -120,6 +120,7 @@ class UserController
       'phone' => $_POST['phone'],
       'address' => $_POST['address'],
       'role' => $_POST['role'],
+      'status' => $_POST['status'],
     ];
     $is_upload = ProductValidation::updateImage();
     if ($is_upload) {
@@ -127,11 +128,34 @@ class UserController
     }
     $result = $user->updateUser($id, $data);
     if ($result) {
-      NotificationHelper::success('update_user', 'Cập nhật sản phẩm thành công!');
+      NotificationHelper::success('update_user', 'Cập nhật người dùng thành công!');
       header("Location: /admin/user");
     } else {
-      NotificationHelper::error('update_user', 'Cập nhật sản phẩm thất bại!');
+      NotificationHelper::error('update_user', 'Cập nhật người dùng thất bại!');
       header("Location: /admin/user/edit/$id");
+    }
+  }
+  public function delete($id)
+  {
+    $users = new User();
+    $is_exit = $users->getOneUser($id);
+    // var_dump($is_exit['id']); die;
+    if ($is_exit && $is_exit['id'] == $id) {
+      $data = [
+        'status' => 0
+      ];
+    }else{
+      NotificationHelper::error('delete_user', 'Người dùng không tồn tại!');
+      header("Location: /admin/user");
+      exit();
+    }
+    $result = $users->updateUser($id, $data);
+    if ($result) {
+      NotificationHelper::success('delete_user', 'Xóa người dùng thành công!');
+      header('Location: /admin/user');
+    } else {
+      NotificationHelper::error('delete_user', 'Xóa người dùng thất bại!');
+      header("Location: /admin/user");
     }
   }
 }
