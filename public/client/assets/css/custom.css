@@ -358,3 +358,6 @@
 .active-bg-tr{
   background-color: #eee;
 }
+#errorName, #errorEmail, #errorPhone, #errorProvince, #errorDistrict, #errorWard, #errorAddress {
+  font-size: 13px;
+}

@@ -101,6 +101,9 @@ class Footer extends BaseView
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script src="<?= APP_URL ?>/public/client/assets/lib/wow/wow.min.js"></script>
 <script src="<?= APP_URL ?>/public/client/assets/lib/easing/easing.min.js"></script>
 <script src="<?= APP_URL ?>/public/client/assets/lib/waypoints/waypoints.min.js"></script>
@@ -112,6 +115,8 @@ class Footer extends BaseView
 <script src="<?= APP_URL ?>/public/client/assets/js/main.js"></script>
 <script src="<?= APP_URL ?>/public/client/assets/js/cart.js"></script>
 <script src="<?= APP_URL ?>/public/client/assets/js/changeCart.js"></script>
+<script src="<?= APP_URL ?>/public/client/assets/js/ValidationCart.js"></script>
+<script src="<?= APP_URL ?>/public/client/assets/js/API-Address.js"></script>
 
 </body>
 

@@ -55,6 +55,8 @@ Route::get("/product/{id}", [ProductController::class, 'detail']);
 Route::get("/cart", [CartController::class, 'index']);
 Route::post("/cart/add/{id}", [CartController::class, 'addToCart']);
 Route::post("/ajax/cart/changeQuantity", [ClientAjaxController::class, 'changeQuantity']);
+Route::post("/checkout", [CartController::class, 'checkout']);
+Route::get("/cart/remove/{id}", [CartController::class, 'remove']);
 
 
 Route::get("/about", [AboutController::class, 'index']);

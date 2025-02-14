@@ -118,8 +118,19 @@ class Product extends BaseView
                                                         </span>
                                                     </p>
                                                 </a>
-                                                <a href="#" class="btn btn-primary">Giỏ hàng</a>
-                                                <a href="#" class="btn btn-danger">Mua ngay</a>
+                                                <div class="row">
+                                                    <div class="w-50">
+                                                        <form action="/cart/add/<?= $item['id'] ?>" method="post">
+                                                            <input type="hidden" name="method" value="POST">
+                                                            <button type="submit" class="btn btn-primary ">
+                                                                Giỏ hàng
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="w-50">
+                                                        <a href="#" class="btn btn-danger">Mua ngay</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

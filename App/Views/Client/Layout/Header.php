@@ -40,7 +40,7 @@ class Header extends BaseView
       <!-- Template Stylesheet -->
       <link href="<?= APP_URL ?>/public/client/assets/css/style.css" rel="stylesheet">
       <link href="<?= APP_URL ?>/public/client/assets/css/custom.css" rel="stylesheet">
-
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -58,7 +58,7 @@ class Header extends BaseView
             <div class="col-md-10"></div>
             <div class="col-md-2">
               <?php
-              if(isset($is_login) && isset($_SESSION['user'])):
+              if (isset($is_login) && isset($_SESSION['user'])):
                 ?>
                 <div class="dropdown">
                   <p class="text-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -121,7 +121,7 @@ class Header extends BaseView
                 </div>
               </div>
               <div class="cart-icon px-2">
-                <a class="button">
+                <a class="button" href="/cart">
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                     class="bi bi-cart-check" viewBox="0 0 16 16">
                     <path
