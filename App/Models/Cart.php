@@ -32,9 +32,30 @@ class Cart extends BaseModel
       ];
     }
 
-    // Lưu lại giỏ hàng vào cookie
     setcookie('cart', json_encode($cart), time() + (86400 * 1000), "/"); // Lưu cookie trong 30 ngày
 
     return true; // Trả về true nếu cập nhật thành công
   }
+  public function removeProduct(array $product_id)
+  {
+    if (isset($_COOKIE['cart'])) {
+      $cart = json_decode($_COOKIE['cart'], true);
+
+      if (!is_array($cart)) {
+        $cart = [];
+      }
+
+      $cart = array_filter($cart, function ($product) use ($product_id) {
+        return !in_array($product['id'], $product_id);
+      });
+
+      $cart = array_values($cart);
+
+      setcookie('cart', json_encode($cart), time() + (86400 * 30), "/");
+    } else {
+      echo "Cookie 'cart' không tồn tại.";
+    }
+  }
+
+
 }

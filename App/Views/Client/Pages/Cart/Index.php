@@ -37,7 +37,7 @@ class Index extends BaseView
                 </thead>
                 <tbody>
                   <?php foreach ($data as $item): ?>
-                    <tr data-id="<?= $item['id'] ?>" class="">
+                    <tr data-id="<?= $item['id'] ?>" class="product-id">
                       <th class="align-middle">
                         <div class="form-check">
                           <input class="form-check-input checkout-product" data-id="<?= $item['id'] ?>" type="checkbox"

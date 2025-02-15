@@ -49,6 +49,9 @@
           // Lấy giá trị tổng từ class total-product-detail
           let totalValue = row.find('.total-product-detail').text().trim();
 
+          let product_id = row.data('id');
+
+
           let quantity = row.find('.quantity-input').val();
 
           console.log(productName);
@@ -56,6 +59,7 @@
 
           let menu = document.getElementById("slidebar-cart")
           menu.innerHTML += `<tr>
+                <input type="hidden" name="product_id[]" id="product_id" value="${product_id}">
                 <th>${productName}</th>
                 <input type="hidden" name="product_name[]" id="product_name" value="${productName}">
                 <td class="price-slidebar">${totalValue}</td>

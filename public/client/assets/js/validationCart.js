@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
           district: form.elements['district'].value,
           ward: form.elements['ward'].value
         };
-
         // tên
         if (obj.name === '') {
           document.getElementById("errorName").innerHTML = "Vui lòng nhập họ tên"
@@ -52,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("errorProvince").innerHTML = "Vui lòng chọn tỉnh/thành phố"
         } else {
           errorProvince.innerHTML = "";
+          return true;
         }
 
         // quận/huyện
