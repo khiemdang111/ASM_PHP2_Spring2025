@@ -175,7 +175,8 @@ class Checkout extends BaseView
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="payment" id="pay-bank" value="BANK">
+                                            <input class="form-check-input" type="radio" name="payment" id="pay-bank"
+                                                value="BANK">
                                             <label class="form-check-label" for="pay-bank">
                                                 Chuyển khoản ngân hàng
                                             </label>
@@ -204,7 +205,7 @@ class Checkout extends BaseView
                 totalPrice += price * quantity;
             }
             document.getElementById('total-price-hidden').value = totalPrice + '000';
-            document.getElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ'; // Định dạng số với dấu phân cách
+            etElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ'; // Định dạng số với dấu phân cách
         </script>
         <?php
     }

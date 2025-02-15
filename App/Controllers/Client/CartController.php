@@ -131,8 +131,8 @@ class CartController
       $order = new Order;
       $order->createOrder($data);
       $_SESSION['QR'] = "https://api.vietqr.io/image/970423-00003718641-pPEios2.jpg?accountName=DANG%20QUOC%20KHIEM&amount=" . $data['total'];
-      NotificationHelper::success('success_pay', 'Thanh toán thành công');
-      header('Location: /checkout');
+      // NotificationHelper::success('success_pay', 'Thanh toán thành công');
+      header('Location: /cart');
     }
     // die;
   }

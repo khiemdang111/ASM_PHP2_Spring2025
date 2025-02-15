@@ -9,7 +9,30 @@ class Index extends BaseView
   public static function render($data = null)
   {
     ?>
-
+    <?php
+    if (isset($_SESSION['QR'])):
+      ?>
+      <div class="modal-12">
+        <div class="card">
+          <div class="card-content">
+            <h6 class="card-heading">Vui lòng thanh quét mã thanh toán! </h6>
+            <p>Chúng tôi sẽ lên đơn ngay sau khi thanh toán</p>
+          </div>
+          <div class="card-button-wrapper text-center">
+            <img width="300px" src="<?= $_SESSION['QR'] ?>" alt="">
+          </div>
+          <button class="exit-button">
+            <svg height="20px" viewBox="0 0 384 512">
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <?php
+    endif;
+    ?>
     <section class="h-100 h-custom">
       <div class="pt-3">
         <h1 class="text-center">Giỏ hàng</h1>
@@ -75,7 +98,8 @@ class Index extends BaseView
                       <td class="align-middle">
                         <b class="total-product-detail"></b> đ
                       </td>
-                      <th class="align-middle"><a href="/cart/remove/<?= $item['id'] ?>"><i class="bi bi-x-circle"></i></a></th>
+                      <th class="align-middle"><a href="/cart/remove/<?= $item['id'] ?>"><i class="bi bi-x-circle"></i></a>
+                      </th>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -113,11 +137,10 @@ class Index extends BaseView
                 <div class="col-7"></div>
                 <div class="col-5">
                   <button type="submit" class="btn btn-primary">Mua ngay</button>
-                </div>              
-              </div>             
+                </div>
+              </div>
             </form>
           </div>
-
         </div>
       </div>
       </div>
@@ -126,8 +149,15 @@ class Index extends BaseView
     if ($data == null) {
       echo '<h1 class="text-center text-danger">Chưa có sản phẩm trong giỏ hàng</h1>';
     }
-  ?>
-  <?php
+    ?>
+    <script>
+      document.querySelector(".exit-button").addEventListener("click", function () {
+        document.querySelector(".modal-12").style.display = "none";
+      });
+
+    </script>
+    <?php
+    unset($_SESSION['QR']);
   }
 }
 ?>
