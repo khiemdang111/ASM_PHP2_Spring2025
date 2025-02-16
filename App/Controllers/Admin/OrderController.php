@@ -5,6 +5,8 @@ use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Orders\Index;
 use App\Views\Admin\Pages\Orders\Create;
 use App\Views\Admin\Pages\Orders\Edit;
+use App\Views\Client\Components\Notification;
+use App\Helpers\NotificationHelper;
 class OrderController
 {
   public function index()
@@ -27,4 +29,12 @@ class OrderController
     Edit::render();
     Footer::render();
   }
+  // public function waitPay($id){
+  //   Header::render();
+  //   Notification::render();
+  //   //hủy thông báo     
+  //   NotificationHelper::unset();
+  //   Index::render($data);
+  //   Footer::render();
+  // }
 }

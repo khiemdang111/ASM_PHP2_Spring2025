@@ -95,12 +95,15 @@ class CartController
   public function createOrder()
   {
     $_SESSION['product_name'] = $_POST['product_name'];
+    echo '<pre>';
+    // var_dump($_POST);
+    $order = new Order;
     $is_valid = CartValidation::checkInfoOrder();
-    // if (!$is_valid) {
-    //   NotificationHelper::success('create_product', 'Đặt hàng không thành công');
-    //   header('Location: /checkout');
-    //   exit;
-    // }
+    if (!$is_valid) {
+      NotificationHelper::success('create_product', 'Đặt hàng không thành công');
+      header('Location: /checkout');
+      exit;
+    }
     $payment = $_POST['payment'];
     $value = $_POST['product_id'];
     $data = [
@@ -115,7 +118,7 @@ class CartController
       'total' => $_POST['total'],
       // 'quantity' => $_POST['product_quantity'],
       // 'price' => $_POST['product_price'],
-      // 'payment' => $_POST['payment'],
+      'payment' => $_POST['payment'],
       'user_id' => $_SESSION['user']['id'],
     ];
     $cart = new Cart;
@@ -124,16 +127,36 @@ class CartController
     if ($payment === 'LIVE') {
       $order = new Order;
       $order->createOrder($data);
-      NotificationHelper::success('success_pay', 'Thanh toán thành công');
+      $order_id_max = $order->getMaxOrderId();
+      // $count = count($_POST['product_id']);
+      $order_id = array_fill(0, count($_POST['product_id']), $order_id_max);
+      $data_order_detail = [
+        'product_id' => $_POST['product_id'],
+        'quantity' => $_POST['product_quantity'],
+        'price' => $_POST['product_price'],
+        'order_id' => $order_id,
+      ];
+      $order->createOrderDetail($data_order_detail);
+      NotificationHelper::success('success_pay', 'Đặt hàng thành công');
       header('Location: /cart');
     }
     if ($payment === 'BANK') {
       $order = new Order;
-      $order->createOrder($data);
       $_SESSION['QR'] = "https://api.vietqr.io/image/970423-00003718641-pPEios2.jpg?accountName=DANG%20QUOC%20KHIEM&amount=" . $data['total'];
-      // NotificationHelper::success('success_pay', 'Thanh toán thành công');
+      $data['QR'] = $_SESSION['QR'];
+      $order->createOrder($data);
+      $order_id_max = $order->getMaxOrderId();
+      // $count = count($_POST['product_id']);
+      $order_id = array_fill(0, count($_POST['product_id']), $order_id_max);
+      $data_order_detail = [
+        'product_id' => $_POST['product_id'],
+        'quantity' => $_POST['product_quantity'],
+        'price' => $_POST['product_price'],
+        'order_id' => $order_id,
+      ];
+      $order->createOrderDetail($data_order_detail);
+      NotificationHelper::success('success_pay', 'Đặt hàng thành công');
       header('Location: /cart');
     }
-    // die;
   }
 }

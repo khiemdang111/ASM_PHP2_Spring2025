@@ -2,6 +2,8 @@
 namespace App\Models;
 
 use mysqli;
+use PDO;
+use PDOException;
 
 class Database
 {
@@ -32,12 +34,25 @@ class Database
     return $mysqli;
   }
   public function MySQLi()
-    {
-        $conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
+  {
+    $conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        return $conn;
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
     }
+    return $conn;
+  }
+  public function Pdo()
+  {
+    try {
+      $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->password);
+      // set the PDO error mode to exception
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      return $conn;
+    } catch (PDOException $e) {
+      echo "Connection failed: " . $e->getMessage();
+    }
+  }
+
 }

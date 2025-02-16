@@ -29,6 +29,7 @@ use App\Controllers\Client\AuthController;
 use App\Controllers\Client\CartController;
 use App\Controllers\Client\AjaxController AS ClientAjaxController;
 use App\Controllers\Client\EmailController;
+use App\Controllers\Client\OrderController;
 use App\Controllers\ErrorController;
 use App\Helpers\AuthHelper;
 use App\Controllers\Client\GoogleController;
@@ -78,6 +79,7 @@ Route::get("/user/changepassword/{id}", controllerMethod: [AuthController::class
 Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, 'uploadPassword']);
 Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
 Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
+Route::get("/user/order/waitpay/{id}", controllerMethod: [OrderController::class, 'waitPay']);
 
 
 // ***** Admin *****

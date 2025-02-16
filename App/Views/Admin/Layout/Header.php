@@ -7,7 +7,7 @@ class Header extends BaseView
 {
     public static function render($data = null)
     {
-
+        $currentPath = strtok($_SERVER['REQUEST_URI'], '?');
         ?>
         <!DOCTYPE html>
         <html>
@@ -60,10 +60,10 @@ class Header extends BaseView
                                     K-Food
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="<?= strpos($currentPath, '/admin') === 0 ? 'active' : '' ?>">
                                 <a href="/admin"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
                             </li>
-                            <li class="active">
+                            <li class="<?= strpos($currentPath, '/admin/user') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/user"><i class="fa fa-diamond"></i> <span class="nav-label">Người dùng</span></a>
                             </li>
                             <li>
@@ -82,15 +82,15 @@ class Header extends BaseView
                                     <li><a href="/admin/category/create">Thêm mới</a></li>
                                 </ul>
                             </li>
-                            <li class="active">
+                            <li class="<?= strpos($currentPath, '/admin/customer') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/customer"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="<?= strpos($currentPath, '/admin/comment') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/comment"><i class="fa fa-comment"></i> <span class="nav-label">Bình luận</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="<?= strpos($currentPath, '/admin/raiting') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/raiting"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
                             </li>
                             <li>

@@ -205,7 +205,7 @@ class Checkout extends BaseView
                 totalPrice += price * quantity;
             }
             document.getElementById('total-price-hidden').value = totalPrice + '000';
-            etElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ'; // Định dạng số với dấu phân cách
+            document.getElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ'; // Định dạng số với dấu phân cách
         </script>
         <?php
     }

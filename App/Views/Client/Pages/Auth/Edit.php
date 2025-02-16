@@ -48,9 +48,31 @@ class Edit extends BaseView
                     <i class="bi bi-cart"></i>
                     <p class="mb-0 mx-2"><a class="text-dark" href="">Giỏ hàng</a></p>
                   </li>
-                  <li class="list-group-item d-flex align-items-center p-3">
-                    <i class="bi bi-bag-check"></i>
-                    <p class="mb-0 mx-2"><a class="text-dark" href="">Đơn hàng</a></p>
+                  <li id="order" class="list-group-item d-flex align-items-center p-3">
+                    <!-- From Uiverse.io by ilkhoeri -->
+                    <input hidden="" class="sr-only" name="state-dropdown" id="state-dropdown" type="checkbox" />
+                    <label aria-label="dropdown scrollbar" for="state-dropdown" class="trigger d-flex justify-content-between align-items-center">
+                      <p class="m-0"><i class="bi bi-bag-check me-1"></i>Đơn hàng</p>
+                      <i class="bi bi-chevron-double-down"></i>
+                    </label>
+                    <ul class="list webkit-scrollbar" dir="auto" >
+                      <li class=" d-flex align-items-center">
+                        <i class="bi bi-hourglass mx-2"></i>
+                        <a class="text-dark" href="/user/order/waitpay/<?= $_SESSION['user']['id'] ?>">Chờ thanh toán</a>
+                      </li>
+                      <li class=" d-flex align-items-center">
+                        <i class="bi bi-truck mx-2"></i>
+                        <a class="text-dark" href="">Đang giao</a>
+                      </li>
+                      <li class=" d-flex align-items-center">
+                        <i class="bi bi-flower3 mx-2"></i>
+                        <a class="text-dark" href="">Đã giao</a>
+                      </li>
+                      <li class=" d-flex align-items-center">
+                        <i class="bi bi-x-circle mx-2"></i>
+                        <a class="text-dark" href="">Đã hủy</a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="list-group-item d-flex align-items-center p-3">
                     <i class="bi bi-wallet2"></i>
