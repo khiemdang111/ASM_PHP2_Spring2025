@@ -17,7 +17,7 @@ class Order extends BaseModel
   {
     $result = [];
     try {
-      $sql = "SELECT * FROM orders WHERE id = $id AND status = $status";
+      $sql = "SELECT orders.total AS total, orders.QR AS QR, orders.date AS date,  order_details.order_id AS order_id, order_details.price AS price, order_details.quantity AS quantity, products.name AS name FROM `orders` INNER JOIN `order_details` ON orders.id = order_details.order_id INNER JOIN products ON order_details.product_id = products.id WHERE orders.status = $status AND orders.user_id = $id";
       $result = $this->_conn->MySQLi()->query($sql);
       return $result->fetch_all(MYSQLI_ASSOC);
     } catch (\Throwable $th) {

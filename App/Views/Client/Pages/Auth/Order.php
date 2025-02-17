@@ -21,16 +21,16 @@ class Order extends BaseView
               <div class="">
                 <p><a
                     class="<?= strpos($currentPath, "/user/order/waitpay/" . $_SESSION['user']['id']) === 0 ? 'text-primary' : 'text-dark' ?>"
-                    href="">Chưa thanh toán</a></p>
+                    href="/user/order/waitpay/<?= $_SESSION['user']['id'] ?>">Chưa thanh toán</a></p>
                 <p><a
                     class="<?= strpos($currentPath, "/user/order/work/" . $_SESSION['user']['id']) === 0 ? 'text-primary' : 'text-dark' ?>"
-                    href="">Đang giao</a></p>
+                    href="/user/order/work/<?= $_SESSION['user']['id'] ?>">Đang giao</a></p>
                 <p><a
                     class="<?= strpos($currentPath, "/user/order/success/" . $_SESSION['user']['id']) === 0 ? 'text-primary' : 'text-dark' ?>"
-                    href="">Đã giao</a></p>
+                    href="/user/order/success/<?= $_SESSION['user']['id'] ?>">Đã giao</a></p>
                 <p><a
                     class="<?= strpos($currentPath, "/user/order/cancel/" . $_SESSION['user']['id']) === 0 ? 'text-primary' : 'text-dark' ?>"
-                    href="">Đã hủy</a></p>
+                    href="/user/order/cancel/<?= $_SESSION['user']['id'] ?>">Đã hủy</a></p>
               </div>
             </div>
           </div>
@@ -52,43 +52,50 @@ class Order extends BaseView
                 <div class="col-md-2">
                   <h6 class="card-title">Tổng đơn</h6>
                 </div>
-                <?php if ($data['QR']): ?>
+                <?php if (isset($data[0]['QR'])): ?>
                   <div class="col-md-2">
                     <h6>Mã QR</h6>
                   </div>
                   <?php
+                  else: ?>
+                  <?php
+              echo '<p></p>';
                 endif;
                 ?>
               </div>
             </div>
             <div class="card-body">
               <?php
-              if ($data != null):
+              if (!empty($data)):
                 foreach ($data as $item):
+                  if (!is_array($item))
+                    continue;
                   ?>
                   <div class="row cart-item mb-3">
                     <div class="col-md-3">
-                      <h6 class="card-title"><?= $data['name_product'] ? $data['name_product'] : '' ?></h6>
+                      <h6 class="card-title"><?= htmlspecialchars($item['name'] ?? 'Không có tên') ?></h6>
                     </div>
                     <div class="col-md-3">
-                      <span><?= $data['price'] ? $data['price'] : '' ?>x<?= $data['quantity'] ? $data['price'] : '' ?></span>
+                      <span><?= htmlspecialchars($item['price'] ?? '0') ?> x
+                        <?= htmlspecialchars($item['quantity'] ?? '0') ?></span>
                     </div>
                     <div class="col-md-2">
-                      <p class="fw-bold"><?= $data['date'] ? $data['date'] : '' ?></p>
+                      <p class="fw-bold"><?= htmlspecialchars($item['date'] ?? 'Không có ngày') ?></p>
                     </div>
                     <div class="col-md-2">
-                      <p><?= $data['total'] ? $data['total'] : '' ?></p>
+                      <p><?= htmlspecialchars($item['total'] ?? '0') ?></p>
                     </div>
-                    <?php if ($data['QR']): ?>
+
+                    <?php if (!empty($item['QR'])): ?>
                       <div class="col-md-2">
-                        <div class="modal-12">
+                        <!-- <div class="modal-12">
                           <div class="card">
                             <div class="card-content">
-                              <h6 class="card-heading">Vui lòng thanh quét mã thanh toán! </h6>
+                              <h6 class="card-heading">Vui lòng quét mã thanh toán!</h6>
                               <p>Chúng tôi sẽ lên đơn ngay sau khi thanh toán</p>
                             </div>
                             <div class="card-button-wrapper text-center">
-                              <img width="300px" src="<?= $data['QR'] ?>" alt="">
+                              <img width="300px" src="<?= htmlspecialchars($item['QR']) ?>" alt="QR Code">
                             </div>
                             <button class="exit-button">
                               <svg height="20px" viewBox="0 0 384 512">
@@ -98,23 +105,23 @@ class Order extends BaseView
                               </svg>
                             </button>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                     <?php endif; ?>
                   </div>
                   <hr>
                   <?php
                 endforeach;
+              else:
+                ?>
+                <p>Không có đơn hàng nào</p>
+                <?php
               endif;
               ?>
+
             </div>
           </div>
           <!-- Continue Shopping Button -->
-          <div class="text-start mb-4">
-            <a href="#" class="btn btn-outline-primary">
-              <i class="bi bi-arrow-left me-2"></i>Continue Shopping
-            </a>
-          </div>
         </div>
       </div>
     </div>

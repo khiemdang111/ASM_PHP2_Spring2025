@@ -80,6 +80,9 @@ Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, '
 Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
 Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
 Route::get("/user/order/waitpay/{id}", controllerMethod: [OrderController::class, 'waitPay']);
+Route::get("/user/order/work/{id}", controllerMethod: [OrderController::class, 'workOrder']);
+Route::get("/user/order/success/{id}", controllerMethod: [OrderController::class, 'successOrder']);
+Route::get("/user/order/cancel/{id}", controllerMethod: [OrderController::class, 'cancelOrder']);
 
 
 // ***** Admin *****
