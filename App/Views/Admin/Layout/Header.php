@@ -64,7 +64,8 @@ class Header extends BaseView
                                 <a href="/admin"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
                             </li>
                             <li class="<?= strpos($currentPath, '/admin/user') === 0 ? 'active' : '' ?>">
-                                <a href="/admin/user"><i class="fa fa-diamond"></i> <span class="nav-label">Người dùng</span></a>
+                                <a href="/admin/user"><i class="fa fa-diamond"></i> <span class="nav-label">Người
+                                        dùng</span></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
@@ -72,6 +73,15 @@ class Header extends BaseView
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/admin/product">Tất cả</a></li>
                                     <li><a href="/admin/product/create">Thêm mới</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Kho hàng</span><span
+                                        class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li><a href="/admin/warehouse">Tất cả</a></li>
+                                    <li><a href="/admin/warehouse/raw_material">Nguyên liệu</a></li>
+                                    <li><a href="/admin/warehouse/create">Nhập đơn hàng</a></li>
                                 </ul>
                             </li>
                             <li>

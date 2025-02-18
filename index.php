@@ -25,6 +25,7 @@ use App\Controllers\Admin\PostController as AdminPostController;
 use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
+use App\Controllers\Admin\WareHouseController;
 use App\Controllers\Client\AuthController;
 use App\Controllers\Client\CartController;
 use App\Controllers\Client\AjaxController AS ClientAjaxController;
@@ -96,6 +97,15 @@ Route::post("/product/create", [AdminProductController::class, 'store']);
 Route::put("/update/product/{id}", [AdminProductController::class, 'update']);
 Route::post("/admin/product/delete/{id}", [AdminProductController::class, 'delete']);
 Route::get("/product/search", [AdminProductController::class, 'search']);
+
+// Ware House
+Route::get("/admin/warehouse", [WareHouseController::class, 'index']);
+
+//Raw_material
+Route::get("/admin/warehouse/raw_material", [WareHouseController::class, 'raw_material']);
+Route::get("/admin/warehouse/rawmaterial/create", [WareHouseController::class, 'createRawmaterial']);
+Route::post("/rawmaterial/store", [WareHouseController::class, 'storeRawmaterial']);
+
 
 // Category Admin
 Route::get("/admin/category", [AdminCategoryController::class, 'index']);
