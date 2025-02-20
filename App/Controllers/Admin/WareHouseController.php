@@ -13,8 +13,10 @@ class WareHouseController
 {
   public function index()
   {
-    $products = new WareHouse();
-    $data = $products->getAll();
+    $wares = new WareHouse();
+    $data = $wares->getAllInventory();
+    // echo '<pre>';
+    // var_dump($data); die;
     Header::render();
     Notification::render();
     NotificationHelper::unset();
@@ -24,10 +26,12 @@ class WareHouseController
 
   public function raw_material()
   {
+    $raw_metal = new WareHouse();
+    $data = $raw_metal->getAllRawMaterial();
     Header::render();
     Notification::render();
     NotificationHelper::unset();
-    RawMaterial::render();
+    RawMaterial::render($data);
     Footer::render();
   }
   public function createRawmaterial()
@@ -55,12 +59,21 @@ class WareHouseController
     $data = [
       'name' => $_POST['name'],
       'unit' => $_POST['unit'],
-      'min_stock_level' => $_POST['min_stock_level'],
-      'max_stock_level' => $_POST['max_stock_level']
+      'quantity' => $_POST['quantity'],
     ];
+
+    $name = $data['name'];
+    $unit = $data['unit'];
+    $quantity = $data['quantity'];
     $warehouse = new WareHouse();
+    $check = $warehouse->checkRawmaterial($name, $unit);
+    if ($check['name'] == $name && $check['unit'] === $unit) {
+      $date = date('Y-m-d H:i:s');
+      $id_rawmaterial = $check['id'];
+      $warehouse->updateInventory($id_rawmaterial, $quantity, $date);
+    }
     $result = $warehouse->createRawMaterial($data);
-    if(!$result){
+    if (!$result) {
       NotificationHelper::error('store_rawmaterial', 'Thêm nguyên liệu thất bại');
       header('location: /admin/warehouse/raw_material/create');
       exit;

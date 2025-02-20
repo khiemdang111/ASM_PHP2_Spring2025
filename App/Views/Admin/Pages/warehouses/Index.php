@@ -72,8 +72,8 @@ class Index extends BaseView
 
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
                       <th>Tên</th>
-                      <th>Hình ảnh </th>
-                      <th>Giá(VNĐ)</th>
+                      <th>Số lượng </th>
+                      <th>Ngày nhập gần nhất</th>
                       <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>
                     </tr>
@@ -87,18 +87,19 @@ class Index extends BaseView
                           <input type="hidden" name="method" value="POST">
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
                           <td style="width: 40%"><?= $item['name'] ?></td>
-                          <td><img width="80px" height="80px" src="/public/assets/images/<?= $item['image'] ?>"
-                              class="card-img-top" alt="..."></td>
-                          <td><?= number_format($item['price']) ?></td>
+                          <td><?= $item['quantity'] ?></td>
+                          <td><?= date('d-m-Y', strtotime($item['recentdate'])) ?></td>
                           <td>
-                            <label class="switch">
-                              <input type="checkbox" <?= $item['status'] == 1 ? 'checked' : '' ?> class="status"
-                                data-field="status" data-model="products" data-modelId="<?= $item['id'] ?>"
-                                value="<?= $item['status'] ?>">
-                              <span class="slider"></span>
-                            </label>
+                            <?php
+                            if ($item['quantity'] >= 15) {
+                              echo '<span class="label label-primary">Còn hàng</span>';
+                            }elseif($item['quantity'] >=1){
+                              echo '<span class="label label-warning">Sắp hết hàng</span>';
+                            } else {
+                              echo '<span class="label label-danger">Hết hàng</span>';
+                            }
+                            ?>
                           </td>
-
                           <td class="d-flex justify-content-between align-items-center">
                             <!-- <a class="btn btn-outline-primary" href="/admin/product/edit/<?= $item['id'] ?>"><i
                                 class="fa fa-edit fa-2x text-success"></i></a>
@@ -137,7 +138,7 @@ class Index extends BaseView
                                         style="display: inline-block;">
                                         <input type="hidden" name="method" value="POST">
                                         <button type="submit">
-                                        <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
                                             stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 6h18" />

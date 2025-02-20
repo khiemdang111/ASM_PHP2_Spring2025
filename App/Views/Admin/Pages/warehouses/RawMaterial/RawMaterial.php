@@ -73,7 +73,6 @@ class RawMaterial extends BaseView
 
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
                       <th>Tên</th>
-                      <th>Hình ảnh </th>
                       <th>Giá(VNĐ)</th>
                       <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>

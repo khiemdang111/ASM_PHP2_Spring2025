@@ -26,6 +26,7 @@ use App\Controllers\Admin\VoucherController as AdminVoucherController;
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Admin\WareHouseController;
+use App\Controllers\Admin\PurchaseOrdersController;
 use App\Controllers\Client\AuthController;
 use App\Controllers\Client\CartController;
 use App\Controllers\Client\AjaxController AS ClientAjaxController;
@@ -100,6 +101,10 @@ Route::get("/product/search", [AdminProductController::class, 'search']);
 
 // Ware House
 Route::get("/admin/warehouse", [WareHouseController::class, 'index']);
+
+// purchase_orders
+Route::get("/admin/warehouse/create", [PurchaseOrdersController::class, 'createPurchaseOrders']);
+Route::post("/purchase_order/store", [PurchaseOrdersController::class, 'storePurchaseOrder']);
 
 //Raw_material
 Route::get("/admin/warehouse/raw_material", [WareHouseController::class, 'raw_material']);

@@ -57,4 +57,29 @@ class WareHouseValidation {
 
   return $is_valid;
  }
+ 
+ public static function createPurchaseOrder(){
+  $is_valid = true;
+
+  if (!isset($_POST['name']) || $_POST['name'] === '') {
+   NotificationHelper::error('name', 'Không để trống tên đơn hàng');
+   $is_valid = false;
+  } 
+
+  if (!isset($_POST['quantity']) || $_POST['quantity'] === '') {
+   NotificationHelper::error('quantity', 'Không để trống số lượng');
+   $is_valid = false;
+  } 
+  if (!isset($_POST['unit_price']) || $_POST['unit_price'] === '') {
+    NotificationHelper::error('unit_price', 'Không để trống giá');
+    $is_valid = false;
+   } 
+   if (!isset($_POST['status']) || $_POST['status'] === '') {
+    NotificationHelper::error('status', 'Không để trống trạng thái');
+    $is_valid = false;
+   } 
+  // Tên đăng nhập
+ 
+  return $is_valid;
+ }
 }
