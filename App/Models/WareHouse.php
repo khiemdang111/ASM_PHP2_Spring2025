@@ -178,5 +178,89 @@ class WareHouse extends BaseModel
       return false;
     }
   }
+  public function checkRecipesId($idArray)
+  {
+    $result = [];
+    try {
+      if (!is_array($idArray) || empty($idArray)) {
+        return $result;
+      }
+
+      $idArray = array_map('intval', $idArray);
+
+      $placeholders = implode(',', array_fill(0, count($idArray), '?'));
+      $sql = "SELECT * FROM product_recipes WHERE product_id IN ($placeholders)";
+
+      $conn = $this->_conn->MySQLi();
+      $stmt = $conn->prepare($sql);
+
+      $types = str_repeat('i', count($idArray)); // Tạo chuỗi kiểu dữ liệu ('i' cho số nguyên)
+      $stmt->bind_param($types, ...$idArray);
+
+      $stmt->execute();
+      return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi lấy dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
+  public function checkIngredientId($idArray)
+  {
+    $result = [];
+    try {
+      if (!is_array($idArray) || empty($idArray)) {
+        return $result;
+      }
+
+      $idArray = array_map('intval', $idArray);
+
+      $placeholders = implode(',', array_fill(0, count($idArray), '?'));
+      $sql = "SELECT * FROM ingredients WHERE product_recipes_id IN ($placeholders)";
+      $conn = $this->_conn->MySQLi();
+      $stmt = $conn->prepare($sql);
+
+      $types = str_repeat('i', count($idArray)); // Tạo chuỗi kiểu dữ liệu ('i' cho số nguyên)
+      $stmt->bind_param($types, ...$idArray);
+
+      $stmt->execute();
+      return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi lấy dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
+  public function updateQuantityInventory($raw_material_id, $quantity)
+  {
+    try {
+      $raw_material_ids = array_map('intval', (array) $raw_material_id);
+      $quantities = array_map('floatval', (array) $quantity);
+
+      $sql = "UPDATE `" . $this->table . "` SET quantity = ? WHERE raw_material_id = ?";
+      $conn = $this->_conn->MySQLi();
+      $stmt = $conn->prepare($sql);
+
+      if (!$stmt) {
+        throw new \Exception("Lỗi khi chuẩn bị câu lệnh SQL: " . $conn->error);
+      }
+      foreach ($raw_material_ids as $key => $id) {
+        $query = "SELECT quantity FROM `inventories` WHERE raw_material_id = ?";
+        $stmtSelect = $conn->prepare($query);
+        $stmtSelect->bind_param("i", $id);
+        $stmtSelect->execute();
+        $stmtSelect->bind_result($currentQuantity);
+        $stmtSelect->fetch();
+        $stmtSelect->close();
+        $newQuantity = number_format(($currentQuantity - $quantities[$key]), 2, '.', '');
+        $stmt->bind_param("di", $newQuantity, $id);
+        $stmt->execute();
+      }
+      $stmt->close();
+      return true;
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi cập nhật dữ liệu trong bảng ' . $this->table . ': ' . $th->getMessage());
+      return false;
+    }
+  }
+
 
 }

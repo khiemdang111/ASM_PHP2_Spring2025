@@ -95,6 +95,7 @@ class Order extends BaseModel
 
       // Commit transaction
       $pdo->commit();
+      return true; // Trả về id của đơn hàng mới tạo
     } catch (PDOException $e) {
       // Rollback nếu có lỗi
       if ($pdo) {

@@ -59,49 +59,54 @@ class Index extends BaseView
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($data as $item): ?>
-                    <tr data-id="<?= $item['id'] ?>" class="product-id">
-                      <th class="align-middle">
-                        <div class="form-check">
-                          <input class="form-check-input checkout-product" data-id="<?= $item['id'] ?>" type="checkbox"
-                            value="" id="flexCheckDefault">
-                        </div>
-                      </th>
-                      <th scope="row" class="align-middle">
-                        <p class="product-name"><?= $item['name'] ?></p>
-                      </th>
-                      <td class="align-middle">
-                        <p class="mb-0" style="font-weight: 500;">
-                          <img src="/public/assets/images/<?= $item['image'] ?>" alt="Product" class="img-fluid rounded-start"
-                            width="100px" height="100px" />
-                        </p>
-                      </td>
-                      <td class="align-middle">
-                        <p class="mb-0 price" style="font-weight: 500;"><?= number_format($item['price']) ?></p>
-                      </td>
-                      <td class="align-middle">
-                        <div class="d-flex flex-row">
-                          <!-- <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2 minus-btn"
+                  <?php
+                  if ($data != null):
+                    foreach ($data as $item): ?>
+                      <tr data-id="<?= $item['id'] ?>" class="product-id">
+                        <th class="align-middle">
+                          <div class="form-check">
+                            <input class="form-check-input checkout-product" data-id="<?= $item['id'] ?>" type="checkbox"
+                              value="" id="flexCheckDefault">
+                          </div>
+                        </th>
+                        <th scope="row" class="align-middle">
+                          <p class="product-name"><?= $item['name'] ?></p>
+                        </th>
+                        <td class="align-middle">
+                          <p class="mb-0" style="font-weight: 500;">
+                            <img src="/public/assets/images/<?= $item['image'] ?>" alt="Product" class="img-fluid rounded-start"
+                              width="100px" height="100px" />
+                          </p>
+                        </td>
+                        <td class="align-middle">
+                          <p class="mb-0 price" style="font-weight: 500;"><?= number_format($item['price']) ?></p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="d-flex flex-row">
+                            <!-- <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2 minus-btn"
                             onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                             <i class="fas fa-minus"></i>
                           </button> -->
-                          <input id="form1 quantity" min="1" name="quantity" value="<?= $item['quantity'] ?>" type="number"
-                            class="form-control form-control-sm quantity-input quantity-value" style="width: 50px;"
-                            data-field="quantity" data-model="products" data-modelId="<?= $item['id'] ?>" />
-                          <!-- <button ata-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2 plus-btn"
+                            <input id="form1 quantity" min="1" name="quantity" value="<?= $item['quantity'] ?>" type="number"
+                              class="form-control form-control-sm quantity-input quantity-value" style="width: 50px;"
+                              data-field="quantity" data-model="products" data-modelId="<?= $item['id'] ?>" />
+                            <!-- <button ata-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2 plus-btn"
                             onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                             <i class="fas fa-plus"></i>
                           </button> -->
 
-                        </div>
-                      </td>
-                      <td class="align-middle">
-                        <b class="total-product-detail"></b> đ
-                      </td>
-                      <th class="align-middle"><a href="/cart/remove/<?= $item['id'] ?>"><i class="bi bi-x-circle"></i></a>
-                      </th>
-                    </tr>
-                  <?php endforeach; ?>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <b class="total-product-detail"></b> đ
+                        </td>
+                        <th class="align-middle"><a href="/cart/remove/<?= $item['id'] ?>"><i class="bi bi-x-circle"></i></a>
+                        </th>
+                      </tr>
+                    <?php
+                    endforeach;
+                  endif;
+                  ?>
                 </tbody>
               </table>
             </div>

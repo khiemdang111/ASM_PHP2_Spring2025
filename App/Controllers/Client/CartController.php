@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Validations\CartValidation;
 use App\Models\Order;
 use App\Models\Cart;
+use App\Models\WareHouse;
 
 class CartController
 {
@@ -98,6 +99,7 @@ class CartController
     echo '<pre>';
     // var_dump($_POST);
     $order = new Order;
+    $ware = new WareHouse();
     $is_valid = CartValidation::checkInfoOrder();
     if (!$is_valid) {
       NotificationHelper::success('create_product', 'Đặt hàng không thành công');
@@ -136,7 +138,24 @@ class CartController
         'price' => $_POST['product_price'],
         'order_id' => $order_id,
       ];
-      $order->createOrderDetail($data_order_detail);
+      $order_detail = $order->createOrderDetail($data_order_detail);
+      if (!$order_detail) {
+        NotificationHelper::error('error_pay', 'Đặt hàng thất bại');
+        header('Location: /cart');
+      }
+      $checkRecipes = $ware->checkRecipesId($data_order_detail['product_id']);
+      $array_id_product = array_column($checkRecipes, 'id'); 
+      $checkIngredient = $ware->checkIngredientId($array_id_product);
+      
+      $material_id = array_column($checkIngredient, 'raw_material_id');
+      $quantity_use = array_column($checkIngredient, 'quantity');
+      
+      $updateInventory = $ware->updateQuantityInventory($material_id, $quantity_use);
+      if (!$updateInventory) {
+        NotificationHelper::error('error_inventory', 'Đã có lỗi xảy ra khi đặt hàng');
+        header('Location: /cart'); 
+        exit();
+      }
       NotificationHelper::success('success_pay', 'Đặt hàng thành công');
       header('Location: /cart');
     }
@@ -154,7 +173,24 @@ class CartController
         'price' => $_POST['product_price'],
         'order_id' => $order_id,
       ];
-      $order->createOrderDetail($data_order_detail);
+      $order_detail = $order->createOrderDetail($data_order_detail);
+      if (!$order_detail) {
+        NotificationHelper::error('error_pay', 'Đặt hàng thất bại');
+        header('Location: /cart');
+      }
+      $checkRecipes = $ware->checkRecipesId($data_order_detail['product_id']);
+      $array_id_product = array_column($checkRecipes, 'id'); 
+      $checkIngredient = $ware->checkIngredientId($array_id_product);
+      
+      $material_id = array_column($checkIngredient, 'raw_material_id');
+      $quantity_use = array_column($checkIngredient, 'quantity');
+      
+      $updateInventory = $ware->updateQuantityInventory($material_id, $quantity_use);
+      if (!$updateInventory) {
+        NotificationHelper::error('error_inventory', 'Đã có lỗi xảy ra khi đặt hàng');
+        header('Location: /cart'); 
+        exit();
+      }
       NotificationHelper::success('success_pay', 'Đặt hàng thành công');
       header('Location: /cart');
     }
