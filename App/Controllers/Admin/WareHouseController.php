@@ -99,4 +99,39 @@ class WareHouseController
     CreateProductRecipe::render($data);
     Footer::render();
   }
+  public function storeProductRecipe(){
+    $ware = new WareHouse();
+    // echo '<pre>';
+    // var_dump($_POST); 
+    $option_product_recipe = [
+      'name' => $_POST['name'],
+      'product_id' => (int) $_POST['product_id'],
+    ];
+    $result = $ware->createProductRecipes($option_product_recipe); 
+    if(!$result){
+      NotificationHelper::error('store_product_recipe', 'Tạo công thức thất bại');
+      header('location: /admin/warehouse/productrecipe');
+      exit;
+    }
+    $id_product_recipes = $ware->getMaxIdProductRecipes();
+    $data_value_recipe = [
+      'id_product_recipes' => (int) $id_product_recipes,
+      'raw_material_id' => $_POST['material_id'],
+      'quantity' =>  $_POST['quantity'],
+      'unit' => $_POST['unit_material'],
+    ];
+    // echo '<pre>';
+    // var_dump($data_value_recipe);  die;
+    $addRecipe = $ware->createInGredients($data_value_recipe);
+    if($addRecipe){
+      NotificationHelper::success('store_product_recipe', 'Tạo công thức thành công');
+      header('location: /admin/warehouse/productrecipe');
+      exit;
+    }
+    else{
+      NotificationHelper::error('store_product_recipe', 'Tạo công thức thất bại');
+      header('location: /admin/warehouse/productrecipe');
+      exit;
+    }
+  }
 }

@@ -27,10 +27,8 @@ class Create extends BaseView
       </div>
     </div>
     <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-
-
       <div class="ibox-content m-b-sm border-bottom">
-        <form action="/purchase_order/store" method="post" enctype="multipart/form-data">
+        <form action="/warehouse/productrecipe/store" method="post" enctype="multipart/form-data">
           <input type="hidden" name="method" value="POST">
           <div class="row">
             <div class="col-sm-6">
@@ -69,7 +67,7 @@ class Create extends BaseView
                     </div>
                     <div class="col-sm-3 mb-3">
                       <label class="control-label" for="quantity">Số lượng <span class="text-danger">*</span></label>
-                      <input class="form-control" name="quantity[]" id="quantity" type="number">
+                      <input class="form-control" name="quantity[]" id="quantity" type="text">
                     </div>
                     <div class="col-sm-3 mb-3">
                       <label class="control-label" for="unit_material">Đơn vị <span class="text-danger">*</span></label>

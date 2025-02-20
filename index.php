@@ -113,6 +113,7 @@ Route::post("/rawmaterial/store", [WareHouseController::class, 'storeRawmaterial
 
 // ProductRecipe
 Route::get("/admin/warehouse/productrecipe", [WareHouseController::class, 'createProductRecipe']);
+Route::post("/warehouse/productrecipe/store", [WareHouseController::class, 'storeProductRecipe']);
 
 
 // Category Admin
