@@ -33,7 +33,9 @@ class Header extends BaseView
             <link href="<?= APP_URL ?>/public/admin/assets/css/animate.css" rel="stylesheet">
             <link href="<?= APP_URL ?>/public/admin/assets/css/style.css" rel="stylesheet">
             <script src="<?= APP_URL ?>/public/library/ckeditor4/ckeditor/ckeditor.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         </head>
 
         <body>
@@ -68,20 +70,21 @@ class Header extends BaseView
                                         dùng</span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
-                                        class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level collapse">
-                                    <li><a href="/admin/product">Tất cả</a></li>
-                                    <li><a href="/admin/product/create">Thêm mới</a></li>
-                                </ul>
-                            </li>
-                            <li>
                                 <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Kho hàng</span><span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/admin/warehouse">Tất cả</a></li>
                                     <li><a href="/admin/warehouse/raw_material">Nguyên liệu</a></li>
                                     <li><a href="/admin/warehouse/create">Nhập đơn hàng</a></li>
+                                    <li><a href="/admin/warehouse/productrecipe">Công thức món</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Sản phẩm</span><span
+                                        class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li><a href="/admin/product">Tất cả</a></li>
+                                    <li><a href="/admin/product/create">Thêm mới</a></li>
                                 </ul>
                             </li>
                             <li>

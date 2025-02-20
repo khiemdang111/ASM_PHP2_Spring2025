@@ -8,7 +8,9 @@ use App\Views\Admin\Pages\Warehouses\RawMaterial\CreateRawMaterial;
 use App\Helpers\NotificationHelper;
 use App\Views\Admin\Components\Notification;
 use App\Models\WareHouse;
+ use App\Models\Product;
 use App\Validations\WareHouseValidation;
+use App\Views\Admin\Pages\Warehouses\ProductRecipe\Create AS CreateProductRecipe;
 class WareHouseController
 {
   public function index()
@@ -81,5 +83,20 @@ class WareHouseController
     NotificationHelper::success('store_rawmaterial', 'Thêm nguyên liệu thành công');
     header('location: /admin/warehouse/raw_material');
     exit;
+  }
+  public function createProductRecipe(){
+    $ware = new WareHouse();
+    $product = new Product();
+    $products = $product->getAll();
+    $rawMaterial = $ware->getAllRawMaterial();
+    $data= [
+      'products' => $products,
+      'rawMaterials' => $rawMaterial,
+    ];
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    CreateProductRecipe::render($data);
+    Footer::render();
   }
 }

@@ -73,6 +73,7 @@ class Index extends BaseView
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
                       <th>Tên</th>
                       <th>Số lượng </th>
+                      <th>Đơn vị</th>
                       <th>Ngày nhập gần nhất</th>
                       <th>Trạng thái</th>
                       <th>Tùy chỉnh</th>
@@ -88,6 +89,7 @@ class Index extends BaseView
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
                           <td style="width: 40%"><?= $item['name'] ?></td>
                           <td><?= $item['quantity'] ?></td>
+                          <td><?= $item['unit'] ?></td>
                           <td><?= date('d-m-Y', strtotime($item['recentdate'])) ?></td>
                           <td>
                             <?php

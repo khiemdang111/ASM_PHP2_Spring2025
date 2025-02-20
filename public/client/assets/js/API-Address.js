@@ -43,7 +43,7 @@
         .catch(err => {
           console.error('Error:', err);
         });
-        $("#province").select2();
+      $("#province").select2();
     });
   };
 
@@ -53,14 +53,14 @@
       let districtID = $("#district").find(":selected").data("id");
       console.log(districtID);
       if (districtID === undefined || districtID === null) return;
-  
+
       fetch(`https://vn-public-apis.fpo.vn/wards/getByDistrict?districtCode=${districtID}&limit=-1`)
         .then(response => response.json())
         .then(data => {
           let wards = data.data.data;
-  
+
           document.getElementById("ward").innerHTML = `<option value="">-----Chọn-----</option>`;
-  
+
           if (wards && Array.isArray(wards) && wards.length > 0) {
             wards.forEach(value => {
               document.getElementById("ward").innerHTML += `<option value="${value.code}">${value.name}</option>`;
@@ -72,14 +72,14 @@
         .catch(err => {
           console.error('Error:', err);
         });
-        $("#district").select2();
+      $("#district").select2();
     });
   };
   HT.changeWard = () => {
     $("#ward").on("change", function (e) {
       $("#ward").select2();
     })
-    }
+  }
   // Khởi tạo khi tài liệu đã sẵn sàng
   $(document).ready(function () {
     // HT.switchery();

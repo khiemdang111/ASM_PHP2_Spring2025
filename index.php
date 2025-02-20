@@ -107,9 +107,12 @@ Route::get("/admin/warehouse/create", [PurchaseOrdersController::class, 'createP
 Route::post("/purchase_order/store", [PurchaseOrdersController::class, 'storePurchaseOrder']);
 
 //Raw_material
-Route::get("/admin/warehouse/raw_material", [WareHouseController::class, 'raw_material']);
+Route::get("/admin/warehouse/raw_material", [WareHouseController::class, 'createRawmaterial']);
 Route::get("/admin/warehouse/rawmaterial/create", [WareHouseController::class, 'createRawmaterial']);
 Route::post("/rawmaterial/store", [WareHouseController::class, 'storeRawmaterial']);
+
+// ProductRecipe
+Route::get("/admin/warehouse/productrecipe", [WareHouseController::class, 'createProductRecipe']);
 
 
 // Category Admin
@@ -169,6 +172,8 @@ Route::post("/admin/user/deletePermanently/{id}", [RecycleController::class, 'de
 
 // Ajax controller
 Route::post("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
+Route::post("/ajax/warehouse/getUnit", [AjaxController::class, 'getUnit']);
+
 // Route::get("/ajax/changeStatus/product", [AjaxController::class, 'changeStatus']);
 
 // **** Error ****
