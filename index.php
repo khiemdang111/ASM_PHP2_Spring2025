@@ -114,7 +114,7 @@ Route::get("/admin/warehouse/rawmaterial/create", [MaterialController::class, 'c
 Route::post("/rawmaterial/store", [MaterialController::class, 'storeRawmaterial']);
 
 // ProductRecipe
-Route::get("/admin/warehouse/productrecipe", [ProductRecipeController::class, 'createProductRecipe']);
+Route::get("/admin/warehouse/productrecipe", [ProductRecipeController::class, 'productRecipe']);
 Route::get("/admin/warehouse/productrecipe/create", [ProductRecipeController::class, 'createProductRecipe']);
 Route::post("/warehouse/productrecipe/store", [ProductRecipeController::class, 'storeProductRecipe']);
 

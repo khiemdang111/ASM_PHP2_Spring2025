@@ -41,6 +41,8 @@ class Header extends BaseView
       <link href="<?= APP_URL ?>/public/client/assets/css/style.css" rel="stylesheet">
       <link href="<?= APP_URL ?>/public/client/assets/css/custom.css" rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+      <script src="https://www.google.com/recaptcha/api.js" async defer>
+      </script>
     </head>
 
     <body>

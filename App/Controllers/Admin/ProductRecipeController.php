@@ -14,8 +14,36 @@ class ProductRecipeController
 {
   public function productRecipe()
   {
-    $ware = new WareHouse();
-    $data = $ware->getAll();
+    $recipes = new ProductRecipe();
+    $data = $recipes->getAllProductRecipe();
+    // $result = [];
+    // foreach ($data as $recipe) {
+    //     $id = $recipe['product_recipes_id'];
+    //     if (!isset($result[$id])) {
+    //         $result[$id] = [
+    //             'product_recipes_id' => $recipe['product_recipes_id'],
+    //             'product_recipes_name' => $recipe['product_recipes_name'],
+    //             'product_name' => $recipe['product_name'],
+    //             'materials' => []
+    //         ];
+    //     }
+    //     $result[$id]['materials'][] = [
+    //         'material_name' => $recipe['material_name'],
+    //         'quantity' => $recipe['quantity'],
+    //         'unit' => $recipe['unit']
+    //     ];
+    // }
+    
+    // // In ra toàn bộ kết quả để kiểm tra
+    // echo '<pre>';
+    // // print_r($result);
+    
+    // // Duyệt qua mảng $result và var_dump tất cả materials
+    // foreach ($result as $id => $recipe) {
+    //     var_dump($recipe['materials']); // In ra mảng materials của từng id
+    // }
+    
+    // die;
     Header::render();
     Notification::render();
     NotificationHelper::unset();

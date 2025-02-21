@@ -7,8 +7,6 @@ class Index extends BaseView
 {
   public static function render($data = null)
   {
-    $product = $data['products'];
-    $rawMaterials = $data['rawMaterials'];
     ?>
     <div class="row wrapper border-bottom white-bg page-heading">
       <div class="col-lg-10">
@@ -22,96 +20,174 @@ class Index extends BaseView
           </li>
         </ol>
       </div>
-      <div class="col-lg-2">
-
+      <div class="col-lg-2 align-end px-3" style="text-align: end">
+        <a href="/admin/warehouse/productrecipe/create" class="btn btn-primary mt-3">Thêm mới</a>
       </div>
     </div>
-    <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-      <div class="ibox-content m-b-sm border-bottom">
-        <form action="/warehouse/productrecipe/store" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="method" value="POST">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="control-label" for="name">Tên công thức <span class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" value="" class="form-control" placeholder="Tên công thức món ăn">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>Tất cả công thức </h5>
+              <div class="ibox-tools">
+                <a class="collapse-link">
+                  <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                  <li><a href="#">Config option 1</a>
+                  </li>
+                  <li><a href="#">Config option 2</a>
+                  </li>
+                </ul>
+                <a class="close-link">
+                  <i class="fa fa-times"></i>
+                </a>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="control-label" for="product_id">Món ăn <span class="text-danger">*</span></label>
-                <select class="Select2 form-control " id="product_id" name="product_id" aria-label="Default select example">
-                  <option value="" selected>Chọn</option>
-                  <?php foreach ($product as $item): ?>
-                    <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
-                  <?php endforeach; ?>
-
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-ms-12 controls">
-              <div class="form">
-                <div class="entry mb-2">
-                  <div id="add-select-productrecipe" class="parent-class">
-                    <div class="col-sm-4 mb-3">
-                      <label class="control-label" for="material_id">Nguyên liệu <span class="text-danger">*</span></label>
-                      <select class="form-control material Select2" id="material_id" name="material_id[]"
-                        aria-label="Default select example" data-model="raw_materials">
-                        <option value="" selected>Chọn</option>
-                        <?php foreach ($rawMaterials as $item): ?>
-                          <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
-                        <?php endforeach; ?>
-                      </select>
+            <div class="ibox-content">
+              <div class="row">
+                <div class="col-sm-5 m-b-xs">
+                </div>
+                <div class="col-sm-4 m-b-xs">
+                </div>
+                <div class="col-sm-3">
+                  <form action="/product/search" method="get">
+                    <div class="input-group">
+                      <input type="text" name="keyword" class="input-sm form-control"
+                        value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>"
+                        placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span>
                     </div>
-                    <div class="col-sm-3 mb-3">
-                      <label class="control-label" for="quantity">Số lượng <span class="text-danger">*</span></label>
-                      <input class="form-control" name="quantity[]" id="quantity" type="text">
-                    </div>
-                    <div class="col-sm-3 mb-3">
-                      <label class="control-label" for="unit_material">Đơn vị <span class="text-danger">*</span></label>
-                      <input class="form-control unit_material" name="unit_material[]" type="text" value="" readonly>
-                    </div>
-
-                    <div class="col-sm-2">
-                      <label class="control-label" for="date" style="margin-top: 37px"></label>
-                      <button class="btn btn-primary btn-add" type="button">
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-sm-4">
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary">Thêm</button>
-                <button type="reset" class="btn btn-success">Nhập lại</button>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox" class="i-checks" name="input[]"></th>
+                      <th>Tên</th>
+                      <th>Sản phẩm </th>
+                      <th>Thành phần</th>
+                      <th>Tùy chỉnh</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                    if (!empty($data)):
+                      $result = [];
+                      // Nhóm các công thức lại dựa trên product_recipes_id
+                      foreach ($data as $recipe) {
+                        $id = $recipe['product_recipes_id'];
+                        if (!isset($result[$id])) {
+                          $result[$id] = [
+                            'product_recipes_id' => $recipe['product_recipes_id'],
+                            'product_recipes_name' => $recipe['product_recipes_name'],
+                            'product_name' => $recipe['product_name'],
+                            'materials' => [] // Đảm bảo materials luôn tồn tại
+                          ];
+                        }
+                        // Thêm thông tin nguyên liệu vào materials
+                        $result[$id]['materials'][] = [
+                          'material_name' => $recipe['material_name'],
+                          'quantity' => $recipe['quantity'],
+                          'unit' => $recipe['unit']
+                        ];
+                      }
+                      ?>
+                      <?php foreach ($result as $recipe): ?>
+                        <tr>
+                          <td>
+                            <input type="checkbox" class="i-checks" name="input[]">
+                            <input type="hidden" name="id" value="<?= htmlspecialchars($recipe['product_recipes_id']); ?>">
+                          </td>
+                          <td><?= htmlspecialchars($recipe['product_recipes_name']) ?></td>
+                          <td><?= htmlspecialchars($recipe['product_name']) ?></td>
+                          <td>
+                            <?php if (!empty($recipe['materials'])): ?>
+                              <ul>
+                                <?php foreach ($recipe['materials'] as $material): ?>
+                                  <li>
+                                    <?= htmlspecialchars($material['material_name']) ?> -
+                                    <?= htmlspecialchars($material['quantity']) ?>
+                                    <?= htmlspecialchars($material['unit']) ?>
+                                  </li>
+                                <?php endforeach; ?>
+                              </ul>
+                            <?php else: ?>
+                              <span class="text-danger">Lỗi công thức món</span>
+                            <?php endif; ?>
+                          </td>
+                          <td>
+                          <div class="custom-icon-detail">
+                              <!-- From Uiverse.io by Galahhad -->
+                              <label class="popup">
+                                <input type="checkbox">
+                                <div class="burger" tabindex="0">
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+                                <nav class="popup-window">
+                                  <ul>
+                                    <li>
+                                      <a href="/admin/product/edit/">
+                                        <button>
+                                          <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                                          </svg>
+                                          <span>Sửa</span>
+                                        </button>
+                                      </a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                      <form action="/admin/product/delete/" method="post"
+                                        style="display: inline-block;">
+                                        <input type="hidden" name="method" value="POST">
+                                        <button type="submit">
+                                        <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+                                            stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 6h18" />
+                                            <path d="M8 6V4h8v2" />
+                                            <path d="M10 11l4 4" />
+                                            <path d="M14 11l-4 4" />
+                                            <path d="M19 6l-1 14H6L5 6" />
+                                          </svg>
+                                          <span>Xóa</span>
+                                        </button>
+                                      </form>
+                                    </li>
+                                  </ul>
+                                </nav>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                    <?php else: ?>
+                      <tr>
+                        <td colspan="4" class="text-center text-danger">Chưa có sản phẩm trong cơ sở dữ liệu!</td>
+                      </tr>
+                    <?php endif; ?>
+                  </tbody>
+
+                </table>
               </div>
             </div>
           </div>
-        </form>
+        </div>
+
       </div>
     </div>
-    <!-- <script>
-      $(document).on('click', '.btn-add', function (e) {
-        e.preventDefault();
-        var controlForm = $('.controls .form:first'),
-          currentEntry = $(this).closest('.entry'),
-          newEntry = $(currentEntry.clone()).appendTo(controlForm);
-
-        newEntry.find('input').val('');
-        controlForm.find('.entry:not(:last) .btn-add')
-          .removeClass('btn-add btn-success').addClass('btn-remove btn-danger')
-          .html('<i class="fa fa-minus"></i>');
-      }).on('click', '.btn-remove', function (e) {
-        e.preventDefault();
-        $(this).closest('.entry').remove();
-      });
-    </script> -->
     <script>
       CKEDITOR.replace('description');
     </script>

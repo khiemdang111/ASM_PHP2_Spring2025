@@ -78,9 +78,22 @@ class AuthController
     }
     public static function loginAction()
     {
-        // Bắt lỗi
-        // validation
+        $recaptcha = $_POST['g-recaptcha-response'];
+        $secret_key = $_ENV['SECRET_KEY'];
 
+        // Hitting request to the URL, Google will
+        // respond with success or error scenario
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret='
+            . $secret_key . '&response=' . $recaptcha;
+        // Making request to verify captcha
+        $response = file_get_contents(filename: $url);
+        $response = json_decode($response);
+        // Checking, if response is true or not
+        if ($response->success == false) {
+            NotificationHelper::error('login', 'Vui lòng xác minh bạn không phải là robot');
+            header('Location: /login');
+            exit();
+        }
         $is_valid = AuthValidation::login();
         if (!$is_valid) {
             NotificationHelper::error('login', ' Đăng nhập thất bại');
