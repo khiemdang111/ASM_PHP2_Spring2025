@@ -55,10 +55,11 @@ class Create extends BaseView
                 <select class="form-control" id="unit" name="unit" aria-label="Default select example">
                   <option value="Kg" selected>Kí</option>
                   <option value="Gr">Gam</option>
+                  <option value="Tấn">Tấn</option>
                   <option value="L">Lít</option>
                   <option value="Ml">Mililit</option>
-                  <option value="Qua">Quả</option>
-                  <option value="Cai">Cái</option>
+                  <option value="Qủa">Quả</option>
+                  <option value="Cái">Cái</option>
                   <option value="Bao">Bao</option>
                   <option value="Bó">Bó</option>
                 </select>

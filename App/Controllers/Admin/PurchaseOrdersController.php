@@ -42,11 +42,24 @@ class PurchaseOrdersController
       header('location: /admin/warehouse/create');
       exit;
     }
+    if ($_POST['unit'] == 'Tấn') {
+      $unit_update = 'Kg';
+      $quantity_update = $_POST['quantity'] * 1000;
+    } else if ($_POST['unit'] == 'Gr') {
+      $unit_update = 'Kg';
+      $quantity_update = $_POST['quantity'] / 1000;
+    } else if ($_POST['unit'] == 'Ml') {
+      $unit_update = 'L';
+      $quantity_update = $_POST['quantity'] / 1000;
+    } else {
+      $unit_update = $_POST['unit'];
+      $quantity_update = $_POST['quantity'];
+    }
     $data = [
       'name' => $_POST['name'],
-      'unit' => $_POST['unit'],
+      'unit' => $unit_update,
       'unit_price' => $_POST['unit_price'],
-      'quantity' => $_POST['quantity'],
+      'quantity' => $quantity_update,
       'date' => $_POST['date'],
       'status' => $_POST['status'],
     ];
