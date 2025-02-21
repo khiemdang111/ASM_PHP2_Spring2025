@@ -11,6 +11,7 @@ use App\Validations\CartValidation;
 use App\Models\Order;
 use App\Models\Cart;
 use App\Models\WareHouse;
+use App\Models\ProductRecipe;
 
 class CartController
 {
@@ -100,6 +101,7 @@ class CartController
     // var_dump($_POST);
     $order = new Order;
     $ware = new WareHouse();
+    $product_recipe = new ProductRecipe;
     $is_valid = CartValidation::checkInfoOrder();
     if (!$is_valid) {
       NotificationHelper::success('create_product', 'Đặt hàng không thành công');
@@ -143,9 +145,9 @@ class CartController
         NotificationHelper::error('error_pay', 'Đặt hàng thất bại');
         header('Location: /cart');
       }
-      $checkRecipes = $ware->checkRecipesId($data_order_detail['product_id']);
+      $checkRecipes = $product_recipe->checkRecipesId($data_order_detail['product_id']);
       $array_id_product = array_column($checkRecipes, 'id'); 
-      $checkIngredient = $ware->checkIngredientId($array_id_product);
+      $checkIngredient = $product_recipe->checkIngredientId($array_id_product);
       
       $material_id = array_column($checkIngredient, 'raw_material_id');
       $quantity_use = array_column($checkIngredient, 'quantity');
@@ -178,9 +180,9 @@ class CartController
         NotificationHelper::error('error_pay', 'Đặt hàng thất bại');
         header('Location: /cart');
       }
-      $checkRecipes = $ware->checkRecipesId($data_order_detail['product_id']);
+      $checkRecipes = $product_recipe->checkRecipesId($data_order_detail['product_id']);
       $array_id_product = array_column($checkRecipes, 'id'); 
-      $checkIngredient = $ware->checkIngredientId($array_id_product);
+      $checkIngredient = $product_recipe->checkIngredientId($array_id_product);
       
       $material_id = array_column($checkIngredient, 'raw_material_id');
       $quantity_use = array_column($checkIngredient, 'quantity');

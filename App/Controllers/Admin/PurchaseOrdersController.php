@@ -3,14 +3,13 @@ namespace App\Controllers\Admin;
 use App\Views\Admin\Layout\Header;
 use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Warehouses\Index;
-// use App\Views\Admin\Pages\Warehouses\PurchaseOrders\Index;
 use App\Views\Admin\Pages\Warehouses\PurchaseOrders\Create;
 use App\Helpers\NotificationHelper;
 use App\Views\Admin\Components\Notification;
 use App\Models\WareHouse;
+use App\Models\Material;
 use App\Models\PurchaseOrders;
 use App\Validations\WareHouseValidation;
-use App\Helpers\WareHouseHelper;
 class PurchaseOrdersController
 {
   public function index()
@@ -26,7 +25,8 @@ class PurchaseOrdersController
 
   public function createPurchaseOrders()
   {
-    $raw_metal = new WareHouse();
+    $raw_metal = new Material();
+    $warehouse = new WareHouse();
     $data = $raw_metal->getAllRawMaterial();
     Header::render();
     Notification::render();
@@ -55,8 +55,9 @@ class PurchaseOrdersController
     $quantity = (int) $data['quantity'];
 
     $date = date('Y-m-d H:i:s');
+    $material = new Material();
     $warehouse = new WareHouse();
-    $check = $warehouse->checkRawmaterial($name, $unit);
+    $check = $material->checkRawmaterial($name, $unit);
     // echo "<pre>";
     if ($check != false || $check != NULL) {
       if ($check['name'] == $name && $check['unit'] === $unit) {
@@ -67,8 +68,9 @@ class PurchaseOrdersController
         'name' => $data['name'],
         'unit' => $data['unit'],
       ];
-      $result = $warehouse->createRawMaterial($dataRawMaterial);
-      $id_rawmaterial = $warehouse->getMaxRawMaterialId() ? $warehouse->getMaxRawMaterialId() : 1;
+      $result = $material->createRawMaterial($dataRawMaterial);
+      $table_name = 'raw_materials';
+      $id_rawmaterial = $material->getMaxRawMaterialId($table_name) ? $material->getMaxRawMaterialId($table_name) : 1;
       if (!$result) {
         NotificationHelper::error('store_rawmaterial', 'Thêm nguyên liệu thất bại');
         header('location: /admin/warehouse/raw_material/create');
@@ -77,12 +79,14 @@ class PurchaseOrdersController
     }
     $data_purchase_orders = [
       'name' => $data['name'],
-      'status' => $data['status'],
+      'status' => (int) $data['status'],
       'date' => $data['date'],
     ];
     $purchaseOrders = new PurchaseOrders();
     $result_purchase_orders = $purchaseOrders->createPurchaseOrders($data_purchase_orders);
-    $order_id_max = $purchaseOrders->getMaxPurchaseOrdersId() ? $purchaseOrders->getMaxPurchaseOrdersId() : 1;
+
+    $table_name_purchase = 'purchase_orders';
+    $order_id_max = $purchaseOrders->getMaxPurchaseOrdersId($table_name_purchase) ? $purchaseOrders->getMaxPurchaseOrdersId($table_name_purchase) : 1;
     $order_id = (int) $order_id_max;
     $data_purchase_order_items = [
       'quantity' => (int) $data['quantity'],
@@ -90,8 +94,7 @@ class PurchaseOrdersController
       'purchase_order_id' => $order_id,
       'raw_material_id' => $id_rawmaterial,
     ];
-    $checkIdMaterial = $warehouse->checkIdRawmaterial($id_rawmaterial);
-
+    $checkIdMaterial = $material->checkIdRawmaterial($id_rawmaterial);
     if ($checkIdMaterial) {
       $quantityUpdate = $checkIdMaterial['quantity'] + $quantity;
       $updateInventory = $warehouse->updateInventory($id_rawmaterial, $quantityUpdate, $date);

@@ -8,15 +8,7 @@ class Material extends BaseModel
 
   public function getAllRawMaterial()
   {
-    $result = [];
-    try {
-      $sql = "SELECT * FROM raw_materials WHERE status != 0 AND status != 5 ORDER BY $this->id DESC ";
-      $result = $this->_conn->MySQLi()->query($sql);
-      return $result->fetch_all(MYSQLI_ASSOC);
-    } catch (\Throwable $th) {
-      error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
-      return $result;
-    }
+    return $this->getAll();
   }
   public function checkRawmaterial($name, $unit)
   {
@@ -39,19 +31,27 @@ class Material extends BaseModel
     return $this->create($data);
   }
 
-  public function getMaxRawMaterialId()
+  public function getMaxRawMaterialId($table_name)
   {
-    $result = [];
-    try {
-      $sql = "SELECT MAX(id) as max_id FROM raw_materials";
-      $result = $this->_conn->MySQLi()->query($sql)->fetch_assoc();
-      return $result['max_id'];
-    } catch (\Throwable $th) {
-      error_log('L��i khi lấy id đơn đặt hàng tới cao nhất: ' . $th->getMessage());
-      return $result;
-    }
+    return $this->getMaxId($table_name);
   }
   public function getOneMaterialById($id){
     return $this->getOne($id);
+  }
+  public function checkIdRawmaterial($id)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT * FROM inventories WHERE raw_material_id=?";
+      $conn = $this->_conn->MySQLi();
+      $stmt = $conn->prepare($sql);
+
+      $stmt->bind_param('i', $id);
+      $stmt->execute();
+      return $stmt->get_result()->fetch_assoc();
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi lấy bằng tên: ' . $th->getMessage());
+      return $result;
+    }
   }
 }

@@ -66,7 +66,7 @@ abstract class BaseModel implements CrudInterface
             // INSERT INTO $this->table (name, description, status, 
             $sql = rtrim($sql, ", ");
             // INSERT INTO $this->table (name, description, status
-            $sql .=   " ) VALUES (";
+            $sql .= " ) VALUES (";
             // INSERT INTO $this->table (name, description, status) VALUES (
             foreach ($data as $key => $value) {
                 $sql .= "'$value', ";
@@ -110,12 +110,9 @@ abstract class BaseModel implements CrudInterface
     {
         try {
             $sql = "DELETE FROM $this->table WHERE $this->id=$id";
-
             $conn = $this->_conn->MySQLi();
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-
-            // trả về số hàng dữ liệu bị ảnh hưởng
             return $stmt->affected_rows;
         } catch (\Throwable $th) {
             error_log('Lỗi khi xóa dữ liệu: ' . $th->getMessage());
@@ -162,6 +159,18 @@ abstract class BaseModel implements CrudInterface
         } catch (\Throwable $th) {
             error_log('Lỗi khi cập nhật dữ liệu: ', $th->getMessage());
             return false;
+        }
+    }
+    public function getMaxId($table_name)
+    {
+        $result = [];
+        try {
+            $sql = "SELECT MAX(id) as max_id FROM $table_name";
+            $result = $this->_conn->MySQLi()->query($sql)->fetch_assoc();
+            return $result['max_id'];
+        } catch (\Throwable $th) {
+            error_log('L��i khi lấy id đơn đặt hàng tới cao nhất: ' . $th->getMessage());
+            return $result;
         }
     }
 }

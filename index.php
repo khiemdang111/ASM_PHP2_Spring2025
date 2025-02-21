@@ -27,6 +27,8 @@ use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\Admin\RecycleController;
 use App\Controllers\Admin\WareHouseController;
 use App\Controllers\Admin\PurchaseOrdersController;
+use App\Controllers\Admin\MaterialController;
+use App\Controllers\Admin\ProductRecipeController;
 use App\Controllers\Client\AuthController;
 use App\Controllers\Client\CartController;
 use App\Controllers\Client\AjaxController AS ClientAjaxController;
@@ -107,13 +109,14 @@ Route::get("/admin/warehouse/create", [PurchaseOrdersController::class, 'createP
 Route::post("/purchase_order/store", [PurchaseOrdersController::class, 'storePurchaseOrder']);
 
 //Raw_material
-Route::get("/admin/warehouse/raw_material", [WareHouseController::class, 'createRawmaterial']);
-Route::get("/admin/warehouse/rawmaterial/create", [WareHouseController::class, 'createRawmaterial']);
-Route::post("/rawmaterial/store", [WareHouseController::class, 'storeRawmaterial']);
+Route::get("/admin/warehouse/raw_material", [MaterialController::class, 'raw_material']);
+Route::get("/admin/warehouse/rawmaterial/create", [MaterialController::class, 'createRawmaterial']);
+Route::post("/rawmaterial/store", [MaterialController::class, 'storeRawmaterial']);
 
 // ProductRecipe
-Route::get("/admin/warehouse/productrecipe", [WareHouseController::class, 'createProductRecipe']);
-Route::post("/warehouse/productrecipe/store", [WareHouseController::class, 'storeProductRecipe']);
+Route::get("/admin/warehouse/productrecipe", [ProductRecipeController::class, 'createProductRecipe']);
+Route::get("/admin/warehouse/productrecipe/create", [ProductRecipeController::class, 'createProductRecipe']);
+Route::post("/warehouse/productrecipe/store", [ProductRecipeController::class, 'storeProductRecipe']);
 
 
 // Category Admin
