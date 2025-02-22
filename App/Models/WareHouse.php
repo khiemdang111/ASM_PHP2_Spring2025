@@ -50,6 +50,55 @@ class WareHouse extends BaseModel
     return $stmt->execute();
   }
 
+  public function checkQuantityInventory($raw_material_id, $quantity)
+  {
+    try {
+      $raw_material_ids = array_map('intval', (array) $raw_material_id);
+      $placeholders = implode(',', array_fill(0, count($raw_material_ids), '?'));
+
+      $sql = "SELECT * FROM $this->table WHERE raw_material_id IN ($placeholders)";
+
+      $conn = $this->_conn->MySQLi();
+      $stmt = $conn->prepare($sql);
+
+      if (!$stmt) {
+        throw new \Exception("Lỗi khi chuẩn bị câu lệnh SQL: " . $conn->error);
+      }
+      $types = str_repeat('i', count($raw_material_ids)); // 'i' cho kiểu integer
+      $stmt->bind_param($types, ...$raw_material_ids);
+
+      $stmt->execute();
+
+      $result = $stmt->get_result();
+
+      $data = [];
+      while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+      }
+
+      $stmt->close();
+
+      $errors = [];
+      foreach ($data as $item) {
+        $dbQuantity = number_format((float) $item['quantity'], 2, '.', '');
+        $userQuantity = number_format((float) $quantity, 2, '.', '');
+        if ($dbQuantity < $userQuantity) {
+          $errors[] = [
+            'raw_material_id' => $item['raw_material_id'],
+            'message' => "Số lượng trong kho không đủ. Có sẵn: {$dbQuantity}, yêu cầu: {$userQuantity}"
+          ];
+        }
+      }
+
+      if (!empty($errors)) {
+        return ['status' => 'error', 'errors' => $errors];
+      }
+      return ['status' => 'success', 'data' => $data];
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi truy vấn dữ liệu trong bảng inventories: ' . $th->getMessage());
+      return ['status' => 'error', 'message' => $th->getMessage()];
+    }
+  }
   // public function checkRawmaterial($name, $unit)
   // {
   //   $result = [];

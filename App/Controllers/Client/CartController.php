@@ -146,16 +146,21 @@ class CartController
         header('Location: /cart');
       }
       $checkRecipes = $product_recipe->checkRecipesId($data_order_detail['product_id']);
-      $array_id_product = array_column($checkRecipes, 'id'); 
+      $array_id_product = array_column($checkRecipes, 'id');
       $checkIngredient = $product_recipe->checkIngredientId($array_id_product);
-      
       $material_id = array_column($checkIngredient, 'raw_material_id');
       $quantity_use = array_column($checkIngredient, 'quantity');
-      
+      $checkQuantiInventory = $ware->checkQuantityInventory($material_id, $quantity_use);
+
+      if ($checkQuantiInventory['status'] == 'error') {
+        NotificationHelper::error('error_inventory', 'Xin lỗi bạn. Số lượng nguyên liệu trong kho không đủ để làm món.');
+        header('Location: /cart');
+        exit();
+      }
       $updateInventory = $ware->updateQuantityInventory($material_id, $quantity_use);
       if (!$updateInventory) {
         NotificationHelper::error('error_inventory', 'Đã có lỗi xảy ra khi đặt hàng');
-        header('Location: /cart'); 
+        header('Location: /cart');
         exit();
       }
       NotificationHelper::success('success_pay', 'Đặt hàng thành công');
@@ -181,16 +186,22 @@ class CartController
         header('Location: /cart');
       }
       $checkRecipes = $product_recipe->checkRecipesId($data_order_detail['product_id']);
-      $array_id_product = array_column($checkRecipes, 'id'); 
+      $array_id_product = array_column($checkRecipes, 'id');
       $checkIngredient = $product_recipe->checkIngredientId($array_id_product);
-      
       $material_id = array_column($checkIngredient, 'raw_material_id');
       $quantity_use = array_column($checkIngredient, 'quantity');
-      
+
+      $checkQuantiInventory = $ware->checkQuantityInventory($material_id, $quantity_use);
+      if ($checkQuantiInventory['status'] == 'error') {
+        NotificationHelper::error('error_inventory', 'Xin lỗi bạn. Số lượng nguyên liệu trong kho không đủ để làm món.');
+        header('Location: /cart');
+        exit();
+      }
+
       $updateInventory = $ware->updateQuantityInventory($material_id, $quantity_use);
       if (!$updateInventory) {
         NotificationHelper::error('error_inventory', 'Đã có lỗi xảy ra khi đặt hàng');
-        header('Location: /cart'); 
+        header('Location: /cart');
         exit();
       }
       NotificationHelper::success('success_pay', 'Đặt hàng thành công');
