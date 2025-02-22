@@ -74,7 +74,7 @@ class Header extends BaseView
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/admin/warehouse">Tất cả</a></li>
-                                    <li><a href="/admin/warehouse/create">Nhập đơn hàng</a></li>
+                                    <li><a href="/admin/warehouse/purchaseorder">Nhập đơn hàng</a></li>
                                     <li><a href="/admin/warehouse/rawmaterial/create">Thêm nguyên liệu</a></li> 
                                     <li><a href="/admin/warehouse/productrecipe">Công thức món</a></li>
                                 </ul>

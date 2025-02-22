@@ -55,14 +55,8 @@ class CreateRawMaterial extends BaseView
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="min_stock_level">Số lượng tối thiểu <span class="text-danger">*</span></label>
-                <input type="number" id="min_stock_level" name="min_stock_level" value="" class="form-control">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="control-label" for="max_stock_level">Số lượng tối đa <span class="text-danger">*</span></label>
-                <input type="number" id="max_stock_level" name="max_stock_level" value="" class="form-control">
+                <label class="control-label" for="quantity">Số lượng tối thiểu <span class="text-danger">*</span></label>
+                <input type="number" id="quantity" name="quantity" value="" class="form-control">
               </div>
             </div>
           </div>

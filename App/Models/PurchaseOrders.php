@@ -42,6 +42,17 @@ class PurchaseOrders extends BaseModel
   //     return $result;
   //   }
   // }
+  public function getAllPurchasesOrder(){
+    $result = [];
+    try {
+      $sql = "SELECT purchase_orders.name AS name, purchase_orders.date AS date,purchase_orders.status AS status, purchase_order_items.quantity AS quantity, purchase_order_items.unit_price AS price, raw_materials.unit as unit FROM `purchase_orders` INNER JOIN purchase_order_items ON purchase_orders.id = purchase_order_items.purchase_order_id INNER JOIN raw_materials ON purchase_order_items.raw_material_id = raw_materials.id ORDER BY purchase_orders.date DESC";
+      $result = $this->_conn->MySQLi()->query($sql)->fetch_all(MYSQLI_ASSOC);
+      return $result;
+    } catch (\Throwable $th) {
+      error_log('L��i khi lấy tất cả kết quả vòng quay: ' . $th->getMessage());
+      return $result;
+    }
+  }
   public function createPurchaseOrderItems($data)
   {
     try {

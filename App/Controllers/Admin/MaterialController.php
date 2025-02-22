@@ -34,34 +34,33 @@ class MaterialController
     $is_valid = WareHouseValidation::createRawmaterial();
     if (!$is_valid) {
       NotificationHelper::error('store_rawmaterial', 'Thêm nguyên liệu thất bại');
-      header('location: /admin/warehouse/raw_material/create');
+      header('location: /admin/warehouse/rawmaterial/create');
       exit;
     }
     $data = [
       'name' => $_POST['name'],
       'unit' => $_POST['unit'],
-      'quantity' => $_POST['quantity'],
     ];
-    var_dump($data); die;
     $name = $data['name'];
     $unit = $data['unit'];
-    $quantity = $data['quantity'];
+    $quantity = $_POST['quantity'];
     $warehouse = new WareHouse();
     $material = new Material();
     $check = $material->checkRawmaterial($name, $unit);
     if ($check['name'] == $name && $check['unit'] === $unit) {
       $date = date('Y-m-d H:i:s');
       $id_rawmaterial = $check['id'];
-      $warehouse->updateInventory($id_rawmaterial, $quantity, $date);
+      $result = $warehouse->updateInventory($id_rawmaterial, $quantity, $date);
+    } else {
+      $result = $material->createRawMaterial($data);
     }
-    $result = $material->createRawMaterial($data);
     if (!$result) {
       NotificationHelper::error('store_rawmaterial', 'Thêm nguyên liệu thất bại');
-      header('location: /admin/warehouse/raw_material/create');
+      header('location: /admin/warehouse/rawmaterial/create');
       exit;
     }
     NotificationHelper::success('store_rawmaterial', 'Thêm nguyên liệu thành công');
-    header('location: /admin/warehouse/raw_material');
+    header('location: /admin/warehouse/rawmaterial/create');
     exit;
   }
 }

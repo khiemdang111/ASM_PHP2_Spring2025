@@ -10,13 +10,13 @@ class Create extends BaseView
     ?>
     <div class="row wrapper border-bottom white-bg page-heading">
       <div class="col-lg-10">
-        <h2>Thêm mới đơn hàng</h2>
+        <h2>Nhập đơn hàng vào kho</h2>
         <ol class="breadcrumb">
           <li>
             <a href="index.html">Trang chủ</a>
           </li>
           <li class="active">
-            <strong>Thêm mới đơn hàng</strong>
+            <strong>Nhập đơn hàng</strong>
           </li>
         </ol>
       </div>
@@ -33,14 +33,20 @@ class Create extends BaseView
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="name">Tên đơn hàng <span class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" value="" class="form-control">
+                <label class="control-label" for="unit">Tên đơn <span class="text-danger">*</span></label>
+                <select class="form-control Select2" id="unit" name="name" aria-label="Default select example"
+                  data-model="raw_materials" >
+                  <option value="" selected>Chọn</option>
+                  <?php foreach ($data as $item): ?>
+                    <option value="<?= $item['name'] ?>" data-id="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                  <?php endforeach; ?>
+                </select>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label class="control-label" for="date">Ngày <span class="text-danger">*</span></label>
-                <input type="date" id="date" name="date" value="" class="form-control">
+                <input type="datetime-local" id="date" name="date" value="" class="form-control">
               </div>
             </div>
             <div class="col-sm-6">
@@ -51,18 +57,8 @@ class Create extends BaseView
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label class="control-label" for="unit">Đơn vị tính: <span class="text-danger">*</span></label>
-                <select class="form-control" id="unit" name="unit" aria-label="Default select example">
-                  <option value="Kg" selected>Kí</option>
-                  <option value="Gr">Gam</option>
-                  <option value="Tấn">Tấn</option>
-                  <option value="L">Lít</option>
-                  <option value="Ml">Mililit</option>
-                  <option value="Qủa">Quả</option>
-                  <option value="Cái">Cái</option>
-                  <option value="Bao">Bao</option>
-                  <option value="Bó">Bó</option>
-                </select>
+                <label class="control-label" for="unit_material">Đơn vị tính: <span class="text-danger">*</span></label>
+                <input class="form-control unit_material" id="unit_material" name="unit" type="text" value="" readonly>
               </div>
             </div>
             <div class="col-sm-6">

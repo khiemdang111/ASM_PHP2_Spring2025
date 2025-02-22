@@ -2,7 +2,7 @@
 namespace App\Controllers\Admin;
 use App\Views\Admin\Layout\Header;
 use App\Views\Admin\Layout\Footer;
-use App\Views\Admin\Pages\Warehouses\Index;
+use App\Views\Admin\Pages\Warehouses\PurchaseOrders\Index;
 use App\Views\Admin\Pages\Warehouses\PurchaseOrders\Create;
 use App\Helpers\NotificationHelper;
 use App\Views\Admin\Components\Notification;
@@ -14,8 +14,8 @@ class PurchaseOrdersController
 {
   public function index()
   {
-    $products = new WareHouse();
-    $data = $products->getAll();
+    $order = new PurchaseOrders();
+    $data = $order->getAllPurchasesOrder();
     Header::render();
     Notification::render();
     NotificationHelper::unset();
