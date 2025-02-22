@@ -48,13 +48,13 @@ class Index extends BaseView
               </div>
             </div>
             <div class="ibox-content">
-              <div class="row">
+              <div class="row mb-3">
                 <div class="col-sm-5 m-b-xs">
                 </div>
-                <div class="col-sm-4 m-b-xs">
+                <div class="col-sm-3 m-b-xs">
                 </div>
-                <div class="col-sm-3">
-                  <form action="/product/search" method="get">
+                <div class="col-sm-4">
+                  <form action="/warehouse/search" method="get">
                     <div class="input-group">
                       <input type="text" name="keyword" class="input-sm form-control"
                         value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>"

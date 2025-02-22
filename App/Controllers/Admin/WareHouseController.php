@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers\Admin;
+use App\Models\Material;
 use App\Views\Admin\Layout\Header;
 use App\Views\Admin\Layout\Footer;
 use App\Views\Admin\Pages\Warehouses\Index;
@@ -19,6 +20,19 @@ class WareHouseController
     $data = $wares->getAllInventory();
     // echo '<pre>';
     // var_dump($data); die;
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    Index::render($data);
+    Footer::render();
+  }
+  public function searchWare(){
+    $materials = new Material();
+    $ware = new Warehouse();
+    $material = $materials->searchMaterial($_GET['keyword']);
+    $_SESSION['keyword'] = $_GET['keyword'];
+    $id = (int) $material[0]['id'];
+    $data = $ware->getOneInventoryByMaterialId($id);
     Header::render();
     Notification::render();
     NotificationHelper::unset();

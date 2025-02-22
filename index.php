@@ -107,6 +107,7 @@ Route::get("/product/search", [AdminProductController::class, 'search']);
 
 // Ware House
 Route::get("/admin/warehouse", [WareHouseController::class, 'index']);
+Route::get("/warehouse/search", [WareHouseController::class, 'searchWare']);
 
 // purchase_orders
 Route::get("/admin/warehouse/purchaseorder", [PurchaseOrdersController::class, 'index']);

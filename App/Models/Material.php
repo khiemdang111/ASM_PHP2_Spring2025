@@ -54,4 +54,16 @@ class Material extends BaseModel
       return $result;
     }
   }
+  public function searchMaterial($keyword)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT * FROM $this->table WHERE name LIKE '%$keyword%'";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi tìm kiếm dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
 }

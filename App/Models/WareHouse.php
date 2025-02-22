@@ -24,6 +24,24 @@ class WareHouse extends BaseModel
       return $result;
     }
   }
+  public function getOneInventoryByMaterialId($id)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT raw_materials.name AS name, MAX(inventories.quantity) AS quantity, MAX(inventories.status) AS status, raw_materials.unit AS unit, raw_materials.id AS materials_id, MAX(inventories.update_at) AS recentdate 
+              FROM inventories 
+              INNER JOIN raw_materials ON inventories.raw_material_id = raw_materials.id 
+              INNER JOIN purchase_order_items ON raw_materials.id = purchase_order_items.raw_material_id 
+              INNER JOIN purchase_orders ON purchase_order_items.purchase_order_id = purchase_orders.id 
+              WHERE raw_materials.id = $id;
+              ";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
   // public function getAllRawMaterial()
   // {
   //   $result = [];
