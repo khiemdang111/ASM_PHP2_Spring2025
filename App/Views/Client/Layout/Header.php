@@ -3,12 +3,15 @@ namespace App\Views\Client\Layout;
 
 use App\Views\BaseView;
 use App\Helpers\AuthHelper;
+use App\Models\Category;
 
 class Header extends BaseView
 {
   public static function render($data = null)
   {
     $is_login = AuthHelper::checkLogin();
+    $category = new Category();
+    $menu = $category->getAllCategories();
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -96,10 +99,13 @@ class Header extends BaseView
                 <div class="nav-item dropdown">
                   <a href="/product" class="nav-link dropdown-toggle">Thực đơn</a>
                   <div class="dropdown-menu bg-light">
-                    <a href="book.html" class="dropdown-item">Burger</a>
-                    <a href="blog.html" class="dropdown-item">Pizza</a>
-                    <a href="team.html" class="dropdown-item">Sushi</a>
-                    <a href="testimonial.html" class="dropdown-item">Sandwiches</a>
+                    <?php
+                    foreach ($menu as $item):
+                      ?>
+                      <a href="/product/categories/<?= $item['id'] ?>" class="dropdown-item"><?= $item['name'] ?></a>
+                    <?php
+                    endforeach;
+                    ?>
                   </div>
                 </div>
                 <a href="/about" class="nav-item nav-link">Giới thiệu</a>

@@ -68,6 +68,17 @@ class Product extends BaseModel
       return $result;
     }
   }
+  public function getAllProductByCategory($id){
+    $result = [];
+    try {
+      $sql = "SELECT * FROM $this->table WHERE category_id = $id";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('L��i khi hiển thị dữ liệu theo danh mục: '. $th->getMessage());
+      return $result;
+    }
+  }
   public function updateProduct($id, $data)
   {
     return $this->update($id, $data);

@@ -16,33 +16,19 @@ class Product extends BaseView
                         <h2 class="mb-2">Bộ lọc</h2>
                         <div class="row mt-3">
                             <h6>Theo danh mục</h6>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Pizza
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Burger
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Sushi
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Sandwich
-                                </label>
-                            </div>
+                            <?php
+                            if (isset($data['categories'])):
+                                foreach ($data['categories'] as $category):
+                                    ?>
+                                    <div class="form-check">
+                                        <input class="form-check-input filter-product" type="radio" data-model="categories" name="category" id="category" value="<?= $category['id'] ?>">
+                                        <label class="form-check-label" for="category">
+                                            <?= $category['name'] ?>
+                                        </label>
+                                    </div>
+                                <?php
+                                endforeach;
+                            endif; ?>
                         </div>
                         <div class="row mt-3">
                             <h6>Theo giá (VND)</h6>
@@ -53,36 +39,31 @@ class Product extends BaseView
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     50-100
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     100-200
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     200-350
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     350-500
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Trên 500
                                 </label>
@@ -93,8 +74,9 @@ class Product extends BaseView
                         <h2 class="text-center mb-3">Sản phẩm nổi bật</h2>
                         <div class="row">
                             <?php
+                            // var_dump($data); die;
                             if ($data != null):
-                                foreach ($data as $item):
+                                foreach ($data['products'] as $item):
                                     ?>
                                     <div class="col-4 col-md-4 col-xl-4 mb-3">
                                         <div class="card">
@@ -168,6 +150,8 @@ class Product extends BaseView
                             </div> -->
                                     <?php
                                 endforeach;
+                            else:
+                                echo '<p class="text-center">Không có sản phẩm nào phù h��p với điều kiện này.</p>';
                             endif;
                             ?>
                         </div>

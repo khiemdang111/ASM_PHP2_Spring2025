@@ -97,7 +97,7 @@ class CartController
   public function createOrder()
   {
     $_SESSION['product_name'] = $_POST['product_name'];
-    echo '<pre>';
+    // echo '<pre>';
     // var_dump($_POST);
     $order = new Order;
     $ware = new WareHouse();

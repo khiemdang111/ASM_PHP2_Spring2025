@@ -21,9 +21,8 @@ class Login extends BaseView
             <input class="checkbox" type="checkbox" value="" name="remember" name checked>
             <span class=" ml-1">Ghi nhớ</span>
           </div>
-          <div class="g-recaptcha" 
-                data-sitekey="6Le2Zt4qAAAAANVH1cZHjeTfOxExzhxawyhPbjtz">
-            </div>
+          <div class="g-recaptcha" data-sitekey="6Le2Zt4qAAAAANVH1cZHjeTfOxExzhxawyhPbjtz">
+          </div>
           <button class="form-btn btn-primary">Đăng nhập</button>
         </form>
         <div class="buttons-container">
@@ -46,7 +45,7 @@ class Login extends BaseView
             </div>
           </a>
         </div>
-        <p class="sign-up-label">
+        <p class="sign-up-label mt-3">
         <form action="/forgotPassword" method="get">
           <!-- Button trigger modal -->
           <a class="text-success" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">

@@ -55,6 +55,10 @@ Route::get("/", [HomeController::class, 'index']);
 // products
 Route::get("/product", [ProductController::class, 'index']);
 Route::get("/product/{id}", [ProductController::class, 'detail']);
+Route::post("/product/filter", [ClientAjaxController::class, 'filterProduct']);
+
+// category
+Route::get("/product/categories/{id}", [ProductController::class, 'category']);
 
 // cart
 Route::get("/cart", [CartController::class, 'index']);

@@ -46,7 +46,7 @@ class EmailController
         unset($_SESSION['code']);
         unset($_SESSION['id_user']);
         $user = new User();
-        $result = $user->update($id,$data);
+        $result = $user->update($id, $data);
         if ($result) {
           header("Location: /login");
           NotificationHelper::success('updatePasswordSuccess', 'Cập nhật mật khẩu thành công');
