@@ -12,7 +12,10 @@ class Order extends BaseModel
   {
     return $this->create($data);
   }
-
+  public function getOneOrderById($id)
+  {
+    return $this->getOne($id);
+  }
   public function getOrderByUserId($id, $status)
   {
     $result = [];
@@ -111,8 +114,9 @@ class Order extends BaseModel
     }
   }
   // var_dump($order_id); var_dump($price); var_dump($quantity);  var_dump($product_id);
-  
-  public function getAllProductByOrderId($data){
+
+  public function getAllProductByOrderId($data)
+  {
     $result = [];
     foreach ($data as $item) {
       $orderId = $item['order_id'];
@@ -139,7 +143,8 @@ class Order extends BaseModel
     return $result;
   }
 
-  public function updateOrder($id, $data){
+  public function updateOrder($id, $data)
+  {
     return $this->update($id, $data);
   }
 }

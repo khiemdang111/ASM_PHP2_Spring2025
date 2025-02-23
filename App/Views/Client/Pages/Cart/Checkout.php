@@ -130,7 +130,7 @@ class Checkout extends BaseView
                                         <tbody>
                                             <?php
                                             if ($data != null):
-                                                foreach ($data['name'] as $index => $productName) {
+                                                foreach ($data['name'] as $index => $productName):
                                                     $product_id = $data['id'][$index];
                                                     $price = $data['price'][$index];
                                                     $quantity = $data['quantity'][$index];
@@ -150,9 +150,27 @@ class Checkout extends BaseView
                                                         </td>
                                                     </tr>
                                                     <?php
-                                                }
+                                                endforeach;
                                             endif;
                                             ?>
+                                            <tr>
+                                                <td class="border-0"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-0"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-0"></td>
+                                            </tr>
+                                            <tr class="mt-3">
+                                                <td>Sử dụng ví: <b><?= number_format($_SESSION['user']['wallet']) ?></b> </td>
+                                                <td class="">
+                                                    <div class="form-check text-end">
+                                                        <input class="form-check-input" type="checkbox" id="checkWallet" name="wallet"
+                                                            value="<?= $_SESSION['user']['wallet'] ?>">
+                                                    </div>
+                                                </td>
+                                            </tr>
                                             <tr class="">
                                                 <div class="row m-3 p-3">
                                                     <td class="font-size-16">Tổng cộng:</td>
@@ -163,6 +181,7 @@ class Checkout extends BaseView
                                                     </td>
                                                 </div>
                                             </tr>
+
                                         </tbody>
                                     </table>
                                     <div class="mt-3">
@@ -204,8 +223,22 @@ class Checkout extends BaseView
 
                 totalPrice += price * quantity;
             }
+
+            let checkWallet = document.getElementById('checkWallet').value;
+
             document.getElementById('total-price-hidden').value = totalPrice + '000';
             document.getElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ'; // Định dạng số với dấu phân cách
+            document.getElementById('checkWallet').addEventListener('change', function () {
+                let walletValue = parseFloat(this.value);
+                if (this.checked) {
+                    document.getElementById('total-price-hidden').value = Math.max(0, (totalPrice + '000' - walletValue));
+                    document.getElementById('total-price').textContent = Math.max(0, (totalPrice + '000' - walletValue)).toLocaleString() + ' VNĐ';
+                } else {
+                    document.getElementById('total-price-hidden').value = totalPrice + '000';
+                    document.getElementById('total-price').textContent = totalPrice.toLocaleString() + '.000 VNĐ';
+                }
+            });
+
         </script>
         <?php
     }

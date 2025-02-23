@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers\Client;
+use App\Models\User;
 use App\Views\Client\Layout\Header;
 use App\Views\Client\Layout\Footer;
 use App\Views\Client\Pages\Cart\Index;
@@ -87,6 +88,8 @@ class CartController
       'price' => $_POST['product_price'],
       'quantity' => $_POST['product_quantity'],
     ];
+    // var_dump($_SESSION['user']['wallet']); die;
+
     Header::render();
     Notification::render();
     NotificationHelper::unset();
@@ -98,9 +101,10 @@ class CartController
   {
     $_SESSION['product_name'] = $_POST['product_name'];
     // echo '<pre>';
-    // var_dump($_POST);
+    // var_dump($_POST); die;
     $order = new Order;
     $ware = new WareHouse();
+    $user = new User();
     $product_recipe = new ProductRecipe;
     $is_valid = CartValidation::checkInfoOrder();
     if (!$is_valid) {
@@ -205,6 +209,21 @@ class CartController
         NotificationHelper::error('error_inventory', 'Đã có lỗi xảy ra khi đặt hàng');
         header('Location: /cart');
         exit();
+      }
+      if (isset($_POST['wallet'])) {
+        if ($_POST['wallet'] > ((int) $_POST['total'])) {
+          $current_wallet = (int) ($_POST['wallet'] > ((int) $_POST['total']));
+          $data_user = [
+            'wallet' => $current_wallet,
+          ];
+          $user->updateUser($_SESSION['user']['id'], $data_user);
+        } else {
+          $current_wallet = ((int) $_SESSION['user']['wallet']) - ((int) $_POST['wallet']);
+          $data_user = [
+            'wallet' => $current_wallet,
+          ];
+          $user->updateUser($_SESSION['user']['id'], $data_user);
+        }
       }
       NotificationHelper::success('success_pay', 'Đặt hàng thành công');
       header('Location: /cart');

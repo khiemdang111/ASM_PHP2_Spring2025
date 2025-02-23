@@ -6,6 +6,7 @@ use App\Views\Client\Pages\Auth\Order as Index;
 use App\Views\Client\Components\Notification;
 use App\Helpers\NotificationHelper;
 use App\Models\Order;
+use App\Models\User;
 class OrderController
 {
   public function index()
@@ -83,6 +84,18 @@ class OrderController
   public function removeOrder($id)
   {
     $orders = new Order();
+    $check = $orders->getOneOrderById($id);
+    if ($check['payment'] == 'BANK') {
+      $money = $check["total"];
+      $user = new User();
+      $user_id = $_SESSION['user']['id'];
+      $get_user = $user->getOneUser($user_id);
+      $wallet = $get_user['wallet'];
+      $data_money = [
+        'wallet' => $wallet + $money,
+      ];
+      $user->updateUser($user_id, $data_money);
+    }
     $data = [
       'status' => 0,
     ];
