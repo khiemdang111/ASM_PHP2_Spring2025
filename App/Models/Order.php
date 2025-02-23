@@ -110,6 +110,33 @@ class Order extends BaseModel
       throw new Exception("Lỗi khi thêm chi tiết đơn hàng: " . $e->getMessage());
     }
   }
-  // var_dump($order_id); var_dump($price); var_dump($quantity);  var_dump($product_id);   
+  // var_dump($order_id); var_dump($price); var_dump($quantity);  var_dump($product_id);
+  
+  public function getAllProductByOrderId($data){
+    $result = [];
+    foreach ($data as $item) {
+      $orderId = $item['order_id'];
+
+      if (!isset($result[$orderId])) {
+        // Nếu order_id chưa có trong kết quả, thêm mới
+        $result[$orderId] = [
+          "total" => $item["total"],
+          "QR" => $item["QR"],
+          "date" => $item["date"],
+          "order_id" => $item["order_id"],
+          "product" => []
+        ];
+      }
+
+      // Thêm thông tin sản phẩm vào danh sách product
+      $result[$orderId]["product"][] = [
+        "price" => $item["price"],
+        "quantity" => $item["quantity"],
+        "name" => $item["name"]
+      ];
+    }
+    $result = array_values($result);
+    return $result;
+  }
 
 }

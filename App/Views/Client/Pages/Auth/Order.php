@@ -40,12 +40,12 @@ class Order extends BaseView
           <div class="card mb-4">
             <div class="card-header">
               <div class="row">
-                <div class="col-md-3">
-                  <h6 class="card-title">Tên</h6>
+                <div class="col-md-6">
+                  <h6 class="card-title">Đơn hàng</h6>
                 </div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                   <h6 class="card-title">Giá</h6>
-                </div>
+                </div> -->
                 <div class="col-md-2">
                   <h6 class="card-title">Ngày đặt</h6>
                 </div>
@@ -53,13 +53,13 @@ class Order extends BaseView
                   <h6 class="card-title">Tổng đơn</h6>
                 </div>
                 <?php if (isset($data[0]['QR'])): ?>
-                  <div class="col-md-2">
+                  <div class="col-md-2 text-center">
                     <h6>Mã QR</h6>
                   </div>
                   <?php
-                  else: ?>
+                else: ?>
                   <?php
-              echo '<p></p>';
+                  echo '<p></p>';
                 endif;
                 ?>
               </div>
@@ -72,40 +72,92 @@ class Order extends BaseView
                     continue;
                   ?>
                   <div class="row cart-item mb-3">
-                    <div class="col-md-3">
-                      <h6 class="card-title"><?= htmlspecialchars($item['name'] ?? 'Không có tên') ?></h6>
-                    </div>
-                    <div class="col-md-3">
-                      <span><?= htmlspecialchars($item['price'] ?? '0') ?> x
-                        <?= htmlspecialchars($item['quantity'] ?? '0') ?></span>
+                    <div class="col-md-6">
+                      <input type="hidden" name="order_id" value="<?= $item['order_id'] ?>">
+                      <?php
+                      if (array($item['product'])):
+                        foreach ($item['product'] as $product):
+                          ?>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <p class="card-title text-dark">
+                                <?= htmlspecialchars($product['name'] ?? 'Tên sản phẩm đang được cập nhật') ?>
+                              </p>
+                            </div>
+                            <div class="col-md-6">
+                              <span><?= htmlspecialchars(number_format($product['price']) ?? '0') ?> x
+                                <?= htmlspecialchars($product['quantity'] ?? '0') ?></span>
+                            </div>
+                          </div>
+                          <?php
+                        endforeach;
+                      else:
+                        ?>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p class="card-title text-dark">
+                              <?= htmlspecialchars($item['name'] ?? 'Tên sản phẩm đang được cập nhật') ?>
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <span><?= htmlspecialchars(number_format($item['price']) ?? '0') ?> x
+                              <?= htmlspecialchars($item['quantity'] ?? '0') ?></span>
+                          </div>
+                        </div>
+                        <?php
+                      endif;
+                      ?>
                     </div>
                     <div class="col-md-2">
                       <p class="fw-bold"><?= htmlspecialchars($item['date'] ?? 'Không có ngày') ?></p>
                     </div>
                     <div class="col-md-2">
-                      <p><?= htmlspecialchars($item['total'] ?? '0') ?></p>
+                      <p><?= htmlspecialchars(number_format($item['total']) ?? '0') ?></p>
                     </div>
 
                     <?php if (!empty($item['QR'])): ?>
-                      <div class="col-md-2">
-                        <!-- <div class="modal-12">
-                          <div class="card">
-                            <div class="card-content">
-                              <h6 class="card-heading">Vui lòng quét mã thanh toán!</h6>
-                              <p>Chúng tôi sẽ lên đơn ngay sau khi thanh toán</p>
+                      <div class="col-md-2 text-center">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="border border-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <img width="20" height="20" src="https://img.icons8.com/ios/50/qr-code--v1.png" alt="qr-code--v1" />
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="modal-12">
+                                  <div class="card">
+                                    <div class="card-content">
+                                      <h6 class="card-heading">Vui lòng quét mã thanh toán!</h6>
+                                      <p>Chúng tôi sẽ lên đơn ngay sau khi thanh toán</p>
+                                    </div>
+                                    <div class="card-button-wrapper text-center">
+                                      <img width="300px"
+                                        src="https://api.vietqr.io/image/970423-00003718641-pPEios2.jpg?accountName=DANG%20QUOC%20KHIEM&amount=<?= $item['total'] ?>"
+                                        alt="QR Code">
+                                    </div>
+                                    <button class="exit-button" data-bs-dismiss="modal">
+                                      <svg height="20px" viewBox="0 0 384 512">
+                                        <path
+                                          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
+                                        </path>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
                             </div>
-                            <div class="card-button-wrapper text-center">
-                              <img width="300px" src="<?= htmlspecialchars($item['QR']) ?>" alt="QR Code">
-                            </div>
-                            <button class="exit-button">
-                              <svg height="20px" viewBox="0 0 384 512">
-                                <path
-                                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
-                                </path>
-                              </svg>
-                            </button>
                           </div>
-                        </div> -->
+                        </div>
                       </div>
                     <?php endif; ?>
                   </div>

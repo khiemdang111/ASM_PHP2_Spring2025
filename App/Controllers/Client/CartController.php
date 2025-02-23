@@ -130,6 +130,8 @@ class CartController
 
     if ($payment === 'LIVE') {
       $order = new Order;
+      $data['status'] = 2;
+      $data['QR'] = null;
       $order->createOrder($data);
       $order_id_max = $order->getMaxOrderId();
       // $count = count($_POST['product_id']);

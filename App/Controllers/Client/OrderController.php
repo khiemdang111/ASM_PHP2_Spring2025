@@ -14,39 +14,48 @@ class OrderController
     Index::render();
     Footer::render();
   }
-  public function waitPay($id){
+  public function waitPay($id)
+  {
     $orders = new Order();
     // trạng thái bằng 4 là chưa thanh toán
     $status = 4;
-    $data = $orders->getOrderByUserId($id, $status);
+    $_SESSION['check_status'] = $status;
+    $order = $orders->getOrderByUserId($id, $status);
+
+    $productAll = $orders->getAllProductByOrderId($order);
+    $data = $productAll;
     $data['title'] = 'Đơn hàng chưa thanh toán';
-    // echo '<pre>';
-    // var_dump($data); die;
+
     Header::render();
     Notification::render();
     NotificationHelper::unset();
     Index::render($data);
+    unset($_SESSION['check_status']);
     Footer::render();
   }
-  public function workOrder($id){
+  public function workOrder($id)
+  {
     $orders = new Order();
-    // trạng thái bằng 4 là chưa thanh toán
+    // trạng thái bằng 2 là đang giao hàng
     $status = 2;
-    $data = $orders->getOrderByUserId($id, $status);
+    $order = $orders->getOrderByUserId($id, $status);
+    $productAll = $orders->getAllProductByOrderId($order);
+    $data = $productAll;
     $data['title'] = 'Đơn hàng đang giao';
-    // echo '<pre>';
-    // var_dump($data); die;
     Header::render();
     Notification::render();
     NotificationHelper::unset();
     Index::render($data);
     Footer::render();
   }
-  public function successOrder($id){
+  public function successOrder($id)
+  {
     $orders = new Order();
-    // trạng thái bằng 4 là chưa thanh toán
+    // trạng thái bằng 1 là giao thành công
     $status = 1;
-    $data = $orders->getOrderByUserId($id, $status);
+    $order = $orders->getOrderByUserId($id, $status);
+    $productAll = $orders->getAllProductByOrderId($order);
+    $data = $productAll;
     $data['title'] = 'Đơn hàng giao thành công';
     // echo '<pre>';
     // var_dump($data); die;
@@ -56,14 +65,15 @@ class OrderController
     Index::render($data);
     Footer::render();
   }
-  public function cancelOrder($id){
+  public function cancelOrder($id)
+  {
     $orders = new Order();
-    // trạng thái bằng 4 là chưa thanh toán
+    // trạng thái bằng 0 là hủy đơn hàng
     $status = 0;
-    $data = $orders->getOrderByUserId($id, $status);
+    $order = $orders->getOrderByUserId($id, $status);
+    $productAll = $orders->getAllProductByOrderId($order);
+    $data = $productAll;
     $data['title'] = 'Đơn hàng đã hủy';
-    // echo '<pre>';
-    // var_dump($data); die;
     Header::render();
     Notification::render();
     NotificationHelper::unset();

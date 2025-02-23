@@ -46,7 +46,7 @@ class Edit extends BaseView
                   </li>
                   <li class="list-group-item d-flex align-items-center p-3">
                     <i class="bi bi-cart"></i>
-                    <p class="mb-0 mx-2"><a class="text-dark" href="">Giỏ hàng</a></p>
+                    <p class="mb-0 mx-2"><a class="text-dark" href="/cart">Giỏ hàng</a></p>
                   </li>
                   <li id="order" class="list-group-item d-flex align-items-center p-3">
                     <!-- From Uiverse.io by ilkhoeri -->
@@ -62,15 +62,15 @@ class Edit extends BaseView
                       </li>
                       <li class=" d-flex align-items-center">
                         <i class="bi bi-truck mx-2"></i>
-                        <a class="text-dark" href="">Đang giao</a>
+                        <a class="text-dark" href="/user/order/work/<?= $_SESSION['user']['id'] ?>">Đang giao</a>
                       </li>
                       <li class=" d-flex align-items-center">
                         <i class="bi bi-flower3 mx-2"></i>
-                        <a class="text-dark" href="">Đã giao</a>
+                        <a class="text-dark" href="/user/order/success/<?= $_SESSION['user']['id'] ?>">Đã giao</a>
                       </li>
                       <li class=" d-flex align-items-center">
                         <i class="bi bi-x-circle mx-2"></i>
-                        <a class="text-dark" href="">Đã hủy</a>
+                        <a class="text-dark" href="/user/order/cancel/<?= $_SESSION['user']['id'] ?>">Đã hủy</a>
                       </li>
                     </ul>
                   </li>
