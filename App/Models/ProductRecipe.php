@@ -6,10 +6,35 @@ class ProductRecipe extends BaseModel
   protected $table = 'product_recipes';
   protected $id = 'id';
 
-  public function getAllProductRecipe(){
+  public function getAllProductRecipe()
+  {
     $result = [];
     try {
       $sql = "SELECT product_recipes.id AS product_recipes_id, product_recipes.name as product_recipes_name, products.name as product_name, raw_materials.name AS material_name, ingredients.quantity AS quantity, ingredients.unit AS unit FROM `products` INNER JOIN $this->table ON products.id = product_recipes.product_id INNER JOIN ingredients ON product_recipes.id = ingredients.product_recipes_id INNER JOIN raw_materials ON ingredients.raw_material_id = raw_materials.id;";
+      $result = $this->_conn->MySQLi()->query($sql)->fetch_all(MYSQLI_ASSOC);
+      return $result;
+    } catch (\Throwable $th) {
+      error_log('L��i khi lấy tất cả kết quả vòng quay: ' . $th->getMessage());
+      return $result;
+    }
+  }
+  public function getAllProductRecipeByName($name)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT product_recipes.id AS product_recipes_id, product_recipes.name as product_recipes_name, products.name as product_name, raw_materials.name AS material_name, ingredients.quantity AS quantity, ingredients.unit AS unit FROM `products` INNER JOIN $this->table ON products.id = product_recipes.product_id INNER JOIN ingredients ON product_recipes.id = ingredients.product_recipes_id INNER JOIN raw_materials ON ingredients.raw_material_id = raw_materials.id WHERE product_recipes.name = $name";
+      $result = $this->_conn->MySQLi()->query($sql)->fetch_all(MYSQLI_ASSOC);
+      return $result;
+    } catch (\Throwable $th) {
+      error_log('L��i khi lấy tất cả kết quả vòng quay: ' . $th->getMessage());
+      return $result;
+    }
+  }
+  public function getAllProductRecipeByProductId($id, $name)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT product_recipes.id AS product_recipes_id, product_recipes.name as product_recipes_name, products.name as product_name, raw_materials.name AS material_name, ingredients.quantity AS quantity, ingredients.unit AS unit FROM `products` INNER JOIN $this->table ON products.id = product_recipes.product_id INNER JOIN ingredients ON product_recipes.id = ingredients.product_recipes_id INNER JOIN raw_materials ON ingredients.raw_material_id = raw_materials.id WHERE product_recipes.product_id = $id OR product_recipes.name LIKE '%$name%'";
       $result = $this->_conn->MySQLi()->query($sql)->fetch_all(MYSQLI_ASSOC);
       return $result;
     } catch (\Throwable $th) {
@@ -143,7 +168,8 @@ class ProductRecipe extends BaseModel
   {
     return $this->delete($id);
   }
-  public function deleteIngredient($id){
+  public function deleteIngredient($id)
+  {
     try {
       $sql = "DELETE FROM ingredients WHERE product_recipes_id=?";
       $conn = $this->_conn->MySQLi();
@@ -151,7 +177,7 @@ class ProductRecipe extends BaseModel
       $stmt->bind_param('i', $id);
       return $stmt->execute();
     } catch (\Throwable $th) {
-      error_log('L��i khi xóa dữ liệu: '. $th->getMessage());
+      error_log('L��i khi xóa dữ liệu: ' . $th->getMessage());
       return false;
     }
   }

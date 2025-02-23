@@ -33,16 +33,16 @@ class ProductRecipeController
     //         'unit' => $recipe['unit']
     //     ];
     // }
-    
+
     // // In ra toàn bộ kết quả để kiểm tra
     // echo '<pre>';
     // // print_r($result);
-    
+
     // // Duyệt qua mảng $result và var_dump tất cả materials
     // foreach ($result as $id => $recipe) {
     //     var_dump($recipe['materials']); // In ra mảng materials của từng id
     // }
-    
+
     // die;
     Header::render();
     Notification::render();
@@ -108,5 +108,41 @@ class ProductRecipeController
       header('location: /admin/warehouse/productrecipe');
       exit;
     }
+  }
+  public function searchProductRecipe()
+  {
+    $_GET['keyword'] = trim($_GET['keyword']);
+    $recipes = new ProductRecipe();
+    $recipe = $recipes->getAllProductRecipeByName($_GET['keyword']);
+    if ($recipe !== null) {
+      $_SESSION['keyword'] = $_GET['keyword'];
+      $data = $recipe;
+    }
+    if ($recipe == null) {
+      $product = new Product();
+      $recipes = new ProductRecipe();
+      // var_dump($_GET['keyword']);
+      $product = $product->searchProduct($_GET['keyword']);
+      // var_dump($product);
+      if ($product == null) {
+        $name = $_GET['keyword'];
+        $meterial_id = 0;
+      } else {
+        $meterial_id = (int) $product[0]['id'];
+        $name = $_GET['keyword'];
+      }
+      $data = $recipes->getAllProductRecipeByProductId($meterial_id, $name);
+      if ($data == null) {
+        $_SESSION['keyword'] = $_GET['keyword'];
+        $data = null;
+      } else {
+        $_SESSION['keyword'] = $_GET['keyword'];
+      }
+    }
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    Index::render($data);
+    Footer::render();
   }
 }

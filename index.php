@@ -113,6 +113,7 @@ Route::get("/warehouse/search", [WareHouseController::class, 'searchWare']);
 Route::get("/admin/warehouse/purchaseorder", [PurchaseOrdersController::class, 'index']);
 Route::get("/admin/warehouse/create", [PurchaseOrdersController::class, 'createPurchaseOrders']);
 Route::post("/purchase_order/store", [PurchaseOrdersController::class, 'storePurchaseOrder']);
+Route::get("/purchase/search", [PurchaseOrdersController::class, 'searchPurchase']);
 
 //Raw_material
 Route::get("/admin/warehouse/raw_material", [MaterialController::class, 'raw_material']);
@@ -123,6 +124,7 @@ Route::post("/rawmaterial/store", [MaterialController::class, 'storeRawmaterial'
 Route::get("/admin/warehouse/productrecipe", [ProductRecipeController::class, 'productRecipe']);
 Route::get("/admin/warehouse/productrecipe/create", [ProductRecipeController::class, 'createProductRecipe']);
 Route::post("/warehouse/productrecipe/store", [ProductRecipeController::class, 'storeProductRecipe']);
+Route::get("/recipes/search", [ProductRecipeController::class, 'searchProductRecipe']);
 
 
 // Category Admin

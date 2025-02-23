@@ -10,6 +10,7 @@ use App\Models\WareHouse;
 use App\Models\Material;
 use App\Models\PurchaseOrders;
 use App\Validations\WareHouseValidation;
+
 class PurchaseOrdersController
 {
   public function index()
@@ -138,5 +139,25 @@ class PurchaseOrdersController
       header('location: /admin/warehouse/create');
       exit;
     }
+  }
+  public function searchPurchase()
+  {
+    $_GET['keyword'] = trim($_GET['keyword']);
+    $materials = new Material();
+    $ware = new PurchaseOrders();
+    $material = $materials->searchMaterial($_GET['keyword']);
+    if ($material == null) {
+      $_SESSION['keyword'] = $_GET['keyword'];
+      $data = null;
+    } else {
+      $_SESSION['keyword'] = $_GET['keyword'];
+      $id = (int) $material[0]['id'];
+      $data = $ware->getOnePurchasesOrderByMatirialId($id);
+    }
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    Index::render($data);
+    Footer::render();
   }
 }

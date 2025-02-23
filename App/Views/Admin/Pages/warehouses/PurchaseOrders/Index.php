@@ -49,13 +49,13 @@ class Index extends BaseView
               </div>
             </div>
             <div class="ibox-content">
-              <div class="row">
+              <div class="row mb-3">
                 <div class="col-sm-5 m-b-xs">
                 </div>
-                <div class="col-sm-4 m-b-xs">
+                <div class="col-sm-3 m-b-xs">
                 </div>
-                <div class="col-sm-3">
-                  <form action="/product/search" method="get">
+                <div class="col-sm-4">
+                  <form action="/purchase/search" method="get">
                     <div class="input-group">
                       <input type="text" name="keyword" class="input-sm form-control"
                         value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>"
@@ -70,7 +70,6 @@ class Index extends BaseView
                 <table class="table table-striped">
                   <thead>
                     <tr>
-
                       <th><input type="checkbox" class="i-checks" name="input[]"></th>
                       <th>Tên</th>
                       <th>Số lượng </th>
@@ -91,7 +90,7 @@ class Index extends BaseView
                           <td><?= $item['name'] ?></td>
                           <td><?= str_replace(".00", "", $item['quantity']) ?></td>
                           <td><?= $item['unit'] ?></td>
-                          <td><?= number_format($item['price'])?></td>
+                          <td><?= number_format($item['price']) ?></td>
                           <td><?= date('d-m-Y', strtotime($item['date'])) ?></td>
                           <td>
                             <?php
@@ -136,8 +135,7 @@ class Index extends BaseView
                                     </li>
                                     <hr>
                                     <li>
-                                      <form action="/admin/product/delete/" method="post"
-                                        style="display: inline-block;">
+                                      <form action="/admin/product/delete/" method="post" style="display: inline-block;">
                                         <input type="hidden" name="method" value="POST">
                                         <button type="submit">
                                           <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
@@ -159,20 +157,21 @@ class Index extends BaseView
                             </div>
                           </td>
                         </tr>
-                      <?php endforeach;
+                      <?php endforeach; ?>
+
+                    </tbody>
+                  </table>
+                </div>
+                <?php
                     else:
                       ?>
-                      <h2 class="text-danger">Chưa có sản phẩm trong cơ sở dữ liệu!</h2>
-                      <?php
+                <h2 class="text-danger">Không tìm thấy nguyên liệu trong đơn nhập hàng!</h2>
+                <?php
                     endif;
                     ?>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <?php

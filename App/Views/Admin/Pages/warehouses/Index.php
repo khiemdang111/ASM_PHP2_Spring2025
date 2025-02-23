@@ -95,7 +95,7 @@ class Index extends BaseView
                             <?php
                             if ($item['quantity'] >= 15) {
                               echo '<span class="label label-primary">Còn hàng</span>';
-                            }elseif($item['quantity'] >=1){
+                            } elseif ($item['quantity'] >= 1) {
                               echo '<span class="label label-warning">Sắp hết hàng</span>';
                             } else {
                               echo '<span class="label label-danger">Hết hàng</span>';
@@ -160,22 +160,24 @@ class Index extends BaseView
                           </td>
                         </tr>
                       <?php endforeach;
-                    else:
                       ?>
-                      <h2 class="text-danger">Chưa có sản phẩm trong cơ sở dữ liệu!</h2>
-                      <?php
-                    endif;
-                    ?>
-                  </tbody>
-                </table>
+
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-    <?php
+      <?php
+                    else:
+                      ?>
+      <h2 class="text-danger text-center">Không tìm thấy nguyên liệu trong kho!</h2>
+      <?php
+                    endif;
+  ?>
+  <?php
   }
 }
 ?>

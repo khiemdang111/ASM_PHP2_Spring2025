@@ -26,13 +26,20 @@ class WareHouseController
     Index::render($data);
     Footer::render();
   }
-  public function searchWare(){
+  public function searchWare()
+  {
+    $_GET['keyword'] = trim($_GET['keyword']);
     $materials = new Material();
     $ware = new Warehouse();
     $material = $materials->searchMaterial($_GET['keyword']);
-    $_SESSION['keyword'] = $_GET['keyword'];
-    $id = (int) $material[0]['id'];
-    $data = $ware->getOneInventoryByMaterialId($id);
+    if ($material == null) {
+      $_SESSION['keyword'] = $_GET['keyword'];
+      $data = null;
+    } else {
+      $_SESSION['keyword'] = $_GET['keyword'];
+      $id = (int) $material[0]['id'];
+      $data = $ware->getOneInventoryByMaterialId($id);
+    }
     Header::render();
     Notification::render();
     NotificationHelper::unset();

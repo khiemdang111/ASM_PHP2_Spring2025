@@ -482,8 +482,9 @@ class Footer extends BaseView
 
       </div>
 
-
-
+      <?php
+      unset($_SESSION['keyword']);
+      ?>
     </div>
     </div>
 
