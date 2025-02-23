@@ -9,8 +9,10 @@ class Order extends BaseView
   public static function render($data = null)
   {
     $currentPath = strtok($_SERVER['REQUEST_URI'], '?');
+    $url = $_SERVER['REQUEST_URI'];
+    $url_keyword = (strpos($url, 'waitpay') !== false) ? 'waitpay' : '';
     ?>
-    <div class="container py-5">
+    <div class="container py-5 py-0">
       <h1 class="mb-5"><?= $data['title'] ?></h1>
       <div class="row">
         <div class="col-lg-3">
@@ -40,7 +42,7 @@ class Order extends BaseView
           <div class="card mb-4">
             <div class="card-header">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <h6 class="card-title">Đơn hàng</h6>
                 </div>
                 <!-- <div class="col-md-3">
@@ -52,14 +54,16 @@ class Order extends BaseView
                 <div class="col-md-2">
                   <h6 class="card-title">Tổng đơn</h6>
                 </div>
-                <?php if (isset($data[0]['QR'])): ?>
-                  <div class="col-md-2 text-center">
-                    <h6>Mã QR</h6>
+                <div class="col-md-2 text-center">
+                  <h6>Mã QR</h6>
+                </div>
+                <?php
+                if ($url_keyword != ''):
+                  ?>
+                  <div class="col-md-1">
+                    <h6 class="card-title">Sửa</h6>
                   </div>
                   <?php
-                else: ?>
-                  <?php
-                  echo '<p></p>';
                 endif;
                 ?>
               </div>
@@ -72,20 +76,21 @@ class Order extends BaseView
                     continue;
                   ?>
                   <div class="row cart-item mb-3">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                       <input type="hidden" name="order_id" value="<?= $item['order_id'] ?>">
                       <?php
                       if (array($item['product'])):
                         foreach ($item['product'] as $product):
                           ?>
                           <div class="row">
-                            <div class="col-md-6">
-                              <p class="card-title text-dark">
+                            <div class="col-md-8">
+                              <span class="card-title text-dark">
                                 <?= htmlspecialchars($product['name'] ?? 'Tên sản phẩm đang được cập nhật') ?>
-                              </p>
+                              </span>
                             </div>
-                            <div class="col-md-6">
-                              <span><?= htmlspecialchars(number_format($product['price']) ?? '0') ?> x
+                            <div class="col-md-4">
+                              <span class="text-danger"><?= htmlspecialchars(number_format($product['price']) ?? '0') ?> <b
+                                  class="text-dark">x</b>
                                 <?= htmlspecialchars($product['quantity'] ?? '0') ?></span>
                             </div>
                           </div>
@@ -94,13 +99,14 @@ class Order extends BaseView
                       else:
                         ?>
                         <div class="row">
-                          <div class="col-md-6">
-                            <p class="card-title text-dark">
+                          <div class="col-md-8">
+                            <span class="card-title text-dark">
                               <?= htmlspecialchars($item['name'] ?? 'Tên sản phẩm đang được cập nhật') ?>
-                            </p>
+                            </span>
                           </div>
-                          <div class="col-md-6">
-                            <span><?= htmlspecialchars(number_format($item['price']) ?? '0') ?> x
+                          <div class="col-md-4">
+                            <span class="text-danger"><?= htmlspecialchars(number_format($item['price']) ?? '0') ?> <b
+                                class="text-dark">x</b>
                               <?= htmlspecialchars($item['quantity'] ?? '0') ?></span>
                           </div>
                         </div>
@@ -159,7 +165,21 @@ class Order extends BaseView
                           </div>
                         </div>
                       </div>
-                    <?php endif; ?>
+                      <?php
+                    else:
+                      ?>
+                      <div class="col-md-2">
+                      </div>
+                      <?php
+                    endif; ?>
+                    <?php
+                    if ($url_keyword != ''):
+                      ?>
+                      <div class="col-md-1">
+                        <a href="/order/remove/<?= $item['order_id'] ?>"><i class="bi bi-x-circle"></i></a>
+                      </div>
+                      <?php
+                    endif; ?>
                   </div>
                   <hr>
                   <?php

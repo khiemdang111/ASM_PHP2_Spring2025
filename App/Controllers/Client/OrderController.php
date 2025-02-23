@@ -80,4 +80,13 @@ class OrderController
     Index::render($data);
     Footer::render();
   }
+  public function removeOrder($id)
+  {
+    $orders = new Order();
+    $data = [
+      'status' => 0,
+    ];
+    $orders->updateOrder($id, $data);
+    header('Location: /user/order/waitpay/' . $_SESSION['user']['id']);
+  }
 }

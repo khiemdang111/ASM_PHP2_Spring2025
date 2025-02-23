@@ -38,7 +38,7 @@ class Index extends BaseView
         <h1 class="text-center">Giỏ hàng</h1>
       </div>
       <div class="container h-100 py-5">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row d-flex justify-content-center h-100">
           <div class="col-8 col-md-8">
             <div class="table-responsive">
               <h5 class="mb-5">Đơn hàng</h5>

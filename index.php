@@ -87,10 +87,13 @@ Route::get("/user/changepassword/{id}", controllerMethod: [AuthController::class
 Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, 'uploadPassword']);
 Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
 Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
+
+// order
 Route::get("/user/order/waitpay/{id}", controllerMethod: [OrderController::class, 'waitPay']);
 Route::get("/user/order/work/{id}", controllerMethod: [OrderController::class, 'workOrder']);
 Route::get("/user/order/success/{id}", controllerMethod: [OrderController::class, 'successOrder']);
 Route::get("/user/order/cancel/{id}", controllerMethod: [OrderController::class, 'cancelOrder']);
+Route::get("/order/remove/{id}", controllerMethod: [OrderController::class, 'removeOrder']);
 
 
 // ***** Admin *****

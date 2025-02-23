@@ -139,4 +139,7 @@ class Order extends BaseModel
     return $result;
   }
 
+  public function updateOrder($id, $data){
+    return $this->update($id, $data);
+  }
 }
