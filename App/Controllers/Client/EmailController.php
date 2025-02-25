@@ -26,16 +26,16 @@ class EmailController
       $code = substr(rand(0, 99999), 0, 6);
       $title = "Cấp lại mật khẩu";
       $content = ' <div style="max-width: 500px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; border-radius: 8px; text-align: center; ">
-    <img src="https://st.quantrimang.com/photos/image/2020/07/06/Hinh-Nen-Mo-Khoa-Dien-Thoai-Hai-Huoc-25.jpg" 
-         alt="Company Logo" 
-         style="width: 320px; height: 300px; margin-bottom: 20px;">
-    <h2 style="color: #333;">Khôi phục mật khẩu của bạn</h2>
-    <p style="color: #555; font-size: 14px;">Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.</p>
-    <p style="color: #555; font-size: 14px;">Nhấp vào nút bên dưới để đặt lại mật khẩu của bạn:</p>
-    <p>Mã OTP của bạn là: <b> ' . $code . ' </b></p>
-    <p style="color: #555; font-size: 14px; margin-top: 20px;">Cảm ơn,<br> <strong>Đội ngũ hỗ trợ</strong></p>
-</div>
-';
+                      <img src="https://st.quantrimang.com/photos/image/2020/07/06/Hinh-Nen-Mo-Khoa-Dien-Thoai-Hai-Huoc-25.jpg" 
+                          alt="Company Logo" 
+                          style="width: 320px; height: 300px; margin-bottom: 20px;">
+                      <h2 style="color: #333;">Khôi phục mật khẩu của bạn</h2>
+                      <p style="color: #555; font-size: 14px;">Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.</p>
+                      <p style="color: #555; font-size: 14px;">Nhấp vào nút bên dưới để đặt lại mật khẩu của bạn:</p>
+                      <p>Mã OTP của bạn là: <b> ' . $code . ' </b></p>
+                      <p style="color: #555; font-size: 14px; margin-top: 20px;">Cảm ơn,<br> <strong>Đội ngũ hỗ trợ</strong></p>
+                  </div>
+                ';
       $mailer->sendEmail($title, $content, $email);
       $_SESSION['email'] = $email;
       $_SESSION['code'] = $code;

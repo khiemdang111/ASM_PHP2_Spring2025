@@ -56,9 +56,7 @@ class Create extends BaseView
                 <button class="btn btn-primary">Thêm</button>
                 <button class="btn btn-success">Nhập lại</button>
               </div>
-
             </div>
-
           </div>
         </form>
       </div>

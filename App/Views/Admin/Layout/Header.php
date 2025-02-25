@@ -98,6 +98,17 @@ class Header extends BaseView
                                     <li><a href="/admin/category/create">Thêm mới</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
+                                        class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li><a href="#">Tất cả</a></li>
+                                    <li><a href="/admin/order/waitpay">Chờ xử lí</a></li>
+                                    <li><a href="/admin/order/work">Đang giao</a></li>
+                                    <li><a href="/admin/order/success">Đã giao</a></li>
+                                    <li><a href="/admin/order/cancel">Đã hủy</a></li>
+                                </ul>
+                            </li>
                             <li class="<?= strpos($currentPath, '/admin/customer') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/customer"><i class="fa fa-user"></i> <span class="nav-label">Khách hàng</span>
                                 </a>
@@ -108,17 +119,6 @@ class Header extends BaseView
                             </li>
                             <li class="<?= strpos($currentPath, '/admin/raiting') === 0 ? 'active' : '' ?>">
                                 <a href="/admin/raiting"><i class="fa fa-star"></i> <span class="nav-label">Đánh giá</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
-                                        class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level collapse">
-                                    <li><a href="/admin/order">Tất cả</a></li>
-                                    <li><a href="/admin/order">Chờ xử lí</a></li>
-                                    <li><a href="/admin/order">Đang giao</a></li>
-                                    <li><a href="/admin/order">Đã giao</a></li>
-                                    <li><a href="/admin/order">Đã hủy</a></li>
-                                </ul>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết </span><span

@@ -16,6 +16,18 @@ class Order extends BaseModel
   {
     return $this->getOne($id);
   }
+  public function getAllOrderByStatus($status)
+  {
+    $result = [];
+    try {
+      $sql = "SELECT orders.id as id, orders.name as name_customer, orders.phone as phone, orders.email as email, orders.address as address, orders.total as total, products.name as name FROM `orders` INNER JOIN `order_details` ON orders.id = order_details.order_id INNER JOIN products ON order_details.product_id = products.id WHERE orders.status = $status";
+      $result = $this->_conn->MySQLi()->query($sql);
+      return $result->fetch_all(MYSQLI_ASSOC);
+    } catch (\Throwable $th) {
+      error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
+      return $result;
+    }
+  }
   public function getOrderByUserId($id, $status)
   {
     $result = [];

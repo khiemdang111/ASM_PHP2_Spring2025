@@ -78,7 +78,7 @@ class Edit extends BaseView
                   <li class="list-group-item d-flex align-items-center p-3">
                     <div class="d-flex w-50">
                       <i class="bi bi-wallet2"></i>
-                      <p class="mb-0 mx-2"><a class="text-dark" href="/user/wallet/<?= $_SESSION['user']['id'] ?>">Số dư
+                      <p class="mb-0 mx-2"><a class="text-dark" href="">Số dư
                           ví</a>
                       </p>
                     </div>
