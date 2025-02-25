@@ -115,4 +115,7 @@ class User extends BaseModel
             return $result;
         }
     }
+    public function countUserTotal(){
+        return $this->countTotal();
+    }
 }

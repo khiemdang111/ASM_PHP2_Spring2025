@@ -99,4 +99,7 @@ class Product extends BaseModel
       return $result;
     }
   }
+  public function countProductTotal(){
+    return $this->countTotal();
+}
 }

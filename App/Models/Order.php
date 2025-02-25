@@ -147,4 +147,8 @@ class Order extends BaseModel
   {
     return $this->update($id, $data);
   }
+  public function counOrderTotal()
+  {
+    return $this->countTotal();
+  }
 }

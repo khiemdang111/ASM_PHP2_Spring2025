@@ -36,6 +36,9 @@ class Header extends BaseView
             <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         </head>
 
         <body>
@@ -46,7 +49,7 @@ class Header extends BaseView
                             <li class="nav-header">
                                 <div class="dropdown profile-element text-center"> <span>
                                         <img alt="image" class="img-circle avatar-admin m-auto" width="70px"
-                                            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Ftthy5143%2Favatar-facebook-xinh-m%25E1%25BA%25B7c-%25C4%2591%25E1%25BB%258Bnh%2F&psig=AOvVaw2Mx-ZSuYChIx1DqEIBi9xk&ust=1737186702659000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjSnvWi_IoDFQAAAAAdAAAAABAE" />
+                                            src="<?= APP_URL ?>/public/assets/images/<?= $_SESSION['user']['avatar'] ?>" />
                                     </span>
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                         <span class="clear"> <span class="block m-t-xs"> <strong
@@ -75,7 +78,7 @@ class Header extends BaseView
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/admin/warehouse">Tất cả</a></li>
                                     <li><a href="/admin/warehouse/purchaseorder">Nhập đơn hàng</a></li>
-                                    <li><a href="/admin/warehouse/rawmaterial/create">Thêm nguyên liệu</a></li> 
+                                    <li><a href="/admin/warehouse/rawmaterial/create">Thêm nguyên liệu</a></li>
                                     <li><a href="/admin/warehouse/productrecipe">Công thức món</a></li>
                                 </ul>
                             </li>
