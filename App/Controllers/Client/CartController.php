@@ -174,7 +174,11 @@ class CartController
     }
     if ($payment === 'BANK') {
       $order = new Order;
-      $_SESSION['QR'] = "https://api.vietqr.io/image/970423-00003718641-pPEios2.jpg?accountName=DANG%20QUOC%20KHIEM&amount=" . $data['total'];
+      $product_name = $_POST['product_name'];
+      // echo '<pre>';
+      // var_dump($_POST); die;
+      $data['status'] = 4;
+      $_SESSION['QR'] = "https://api.vietqr.io/image/970423-00003718641-pPEios2.jpg?accountName=DANG%20QUOC%20KHIEM&amount=" . $data['total']. "&addInfo=Thanh toán đơn hàng " . $product_name  ;
       $data['QR'] = $_SESSION['QR'];
       $order->createOrder($data);
       $order_id_max = $order->getMaxOrderId();
