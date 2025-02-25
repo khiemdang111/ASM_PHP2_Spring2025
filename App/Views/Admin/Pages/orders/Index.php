@@ -3,20 +3,20 @@ namespace App\Views\Admin\Pages\Orders;
 
 use App\Views\BaseView;
 
-class OrderWait extends BaseView
+class Index extends BaseView
 {
   public static function render($data = null)
   {
     ?>
     <div class="row wrapper border-bottom white-bg page-heading">
       <div class="col-lg-9">
-        <h2>Đơn hàng chờ xác nhận</h2>
+        <h2>Tất cả đơn hàng</h2>
         <ol class="breadcrumb">
           <li>
             <a href="index.html">Trang chủ</a>
           </li>
           <li class="active">
-            <a>Đơn hàng chờ xác nhận</a>
+            <a>Tất cả đơn hàng</a>
           </li>
         </ol>
       </div>

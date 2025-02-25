@@ -161,12 +161,14 @@ Route::get("/admin/comment", [AdminCommentController::class, 'index']);
 Route::get("/admin/raiting", [AdminRaitingController::class, 'index']);
 
 // Order Admin
+Route::get("/admin/order", [AdminOrderController::class, 'index']);
 Route::get("/admin/order/waitpay", [AdminOrderController::class, 'waitPay']);
 Route::get("/admin/order/work", [AdminOrderController::class, 'workOrder']);
 Route::get("/admin/order/success", [AdminOrderController::class, 'successOrder']);
 Route::get("/admin/order/cancel", [AdminOrderController::class, 'cancelOrder']);
 Route::get("/admin/order/work/{id}", [AdminOrderController::class, 'updateWorkOrder']);
 Route::get("/admin/order/cancel/{id}", [AdminOrderController::class, 'updateCancelOrder']);
+Route::get("/order/search", [AdminOrderController::class, 'searchOrder']);
 
 // Post Admin
 Route::get("/admin/post", [AdminPostController::class, 'index']);

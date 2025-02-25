@@ -7,12 +7,21 @@ use App\Views\Admin\Pages\Orders\OrderWork;
 use App\Views\Admin\Pages\Orders\SuccessWork;
 use App\Views\Admin\Pages\Orders\CencalWork;
 use App\Views\Admin\Pages\Orders\Create;
-use App\Views\Admin\Pages\Orders\Edit;
+use App\Views\Admin\Pages\Orders\Index;
 use App\Views\Admin\Components\Notification;
 use App\Helpers\NotificationHelper;
 use App\Models\Order;
 class OrderController
 {
+  public function index(){
+    $order = new Order();
+    $data = $order->getAllOrder();
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    Index::render($data);
+    Footer::render();
+  }
   public function waitPay()
   {
     $order = new Order();
@@ -97,5 +106,15 @@ class OrderController
       NotificationHelper::error('update_order', 'Cập nhật thất bại');
       header('Location: /admin/order/work');
     }
+  }
+  public function searchOrder(){
+    $order = new Order();
+    $search = trim($_GET['keyword']);
+    $data = $order->searchOrder($search);
+    Header::render();
+    Notification::render();
+    NotificationHelper::unset();
+    OrderWait::render($data);
+    Footer::render();
   }
 }

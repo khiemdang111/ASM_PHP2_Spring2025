@@ -102,7 +102,7 @@ class Header extends BaseView
                                 <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Đơn hàng</span><span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li><a href="#">Tất cả</a></li>
+                                    <li><a href="/admin/order/">Tất cả</a></li>
                                     <li><a href="/admin/order/waitpay">Chờ xử lí</a></li>
                                     <li><a href="/admin/order/work">Đang giao</a></li>
                                     <li><a href="/admin/order/success">Đã giao</a></li>
