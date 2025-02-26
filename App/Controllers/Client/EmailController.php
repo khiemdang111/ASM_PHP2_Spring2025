@@ -17,9 +17,14 @@ class EmailController
     $mailer = new Mailer();
     $user = new User();
     $getUser = $user->getOneUserByEmail($email);
+    
     $_SESSION['id_user'] = $getUser['id'];
     if (!$getUser) {
       NotificationHelper::error('notFoundUser', 'Email không tồn tại');
+      return false;
+    }
+    if($getUser['access_token'] != $_SESSION['access_token']){
+      NotificationHelper::error('notMatchToken', 'Token không đúng');
       return false;
     }
     if ($getUser['email'] === $email) {

@@ -54,9 +54,15 @@ class OrderWork extends BaseView
                 <div class="col-sm-4 m-b-xs">
                 </div>
                 <div class="col-sm-3">
-                  <div class="input-group"><input type="text" placeholder="Tìm kiếm" class="input-sm form-control"> <span
-                      class="input-group-btn">
-                      <button type="button" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span></div>
+                  <form action="/order/search" method="get">
+                    <div class="input-group">
+                      <input type="text" name="keyword" class="input-sm form-control"
+                        value="<?php echo isset($_SESSION['keyword']) ? $_SESSION['keyword'] : ''; ?>"
+                        placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary"> Tìm kiếm</button> </span>
+                    </div>
+                  </form>
                 </div>
               </div>
               <div class="table-responsive">

@@ -229,15 +229,31 @@ class AuthController
         }
 
     }
+    public function createToken()
+    {
+        $user = new User();
+        $email = $_GET['email'];
+        $user_data = $user->createAccesstoken($email);
+        $_SESSION['access_token'] = $user_data;
+        $_SESSION['email'] = $email;
+        if ($user_data) {
+            header('Location: /forgotPassword?email=' . $_SESSION['email'] . '&access_token=' . $_SESSION['access_token']);
+        }else{
+            NotificationHelper::error('change_password', 'Đã có lỗi xảy ra');
+            header('Location: /login');
+        }
+
+    }
     public function forgotPassword()
     {
         $mail = new EmailController();
-        $email = $_GET['email'];
-        $check = $mail->checkEmail($email);
+        $email = $_SESSION['email'];
+        $check = $mail->checkEmail($email, );
         if (!$check) {
             header('Location: /login');
             exit();
         }
+        unset($_SESSION['access_token'], $_SESSION['email']);
         Header::render();
         Notification::render();
         NotificationHelper::unset();

@@ -118,4 +118,14 @@ class User extends BaseModel
     public function countUserTotal(){
         return $this->countTotal();
     }
+    public function createAccesstoken($email)
+  {
+    $access_token = md5($email.time());
+    $sql = "UPDATE $this->table SET access_token = ? WHERE email = ?";
+    $conn = $this->_conn->MySQLi();
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ss', $access_token, $email);
+    $stmt->execute();
+    return $access_token;
+  }
 }

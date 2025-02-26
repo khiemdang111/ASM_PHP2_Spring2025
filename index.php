@@ -85,6 +85,7 @@ Route::get("/users/{id}", controllerMethod: [AuthController::class, 'edit']);
 Route::post("/users/update/{id}", controllerMethod: [AuthController::class, 'upload']);
 Route::get("/user/changepassword/{id}", controllerMethod: [AuthController::class, 'changePassword']);
 Route::post("/updata/password/{id}", controllerMethod: [AuthController::class, 'uploadPassword']);
+Route::get("/create/token", controllerMethod: [AuthController::class, 'createToken']);
 Route::get("/forgotPassword", controllerMethod: [AuthController::class, 'forgotPassword']);
 Route::post("/forgotpassword/checkopt", controllerMethod: [EmailController::class, 'checkOpt']);
 

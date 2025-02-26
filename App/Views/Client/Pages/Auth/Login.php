@@ -46,7 +46,7 @@ class Login extends BaseView
           </a>
         </div>
         <p class="sign-up-label mt-3">
-        <form action="/forgotPassword" method="get">
+        <form action="/create/token" method="get">
           <!-- Button trigger modal -->
           <a class="text-success" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Quên mật khẩu
