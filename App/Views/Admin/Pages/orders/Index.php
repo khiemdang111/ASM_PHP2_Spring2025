@@ -81,7 +81,7 @@ class Index extends BaseView
                   <tbody>
                     <?php
                     if (!empty($data)):
-                      foreach ($data as $item):
+                      foreach ($data['order'] as $item):
                         ?>
                         <tr>
                           <td><input type="checkbox" class="i-checks" name="input[]"></td>
@@ -123,8 +123,7 @@ class Index extends BaseView
                                     </li>
                                     <hr>
                                     <li>
-                                      <a href="/admin/order/cancel/<?= $item['id'] ?>"
-                                        style="display: inline-block;">
+                                      <a href="/admin/order/cancel/<?= $item['id'] ?>" style="display: inline-block;">
                                         <button type="submit">
                                           <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
                                             stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14"
@@ -159,41 +158,39 @@ class Index extends BaseView
             </div>
           </div>
         </div>
+      </div>
+      <div class="row mb-3 text-center">
+        <nav aria-label="...">
+          <ul class="pagination d-flex justify-content-center">
+            <?php
+            $currentPage = isset($_GET['pages']) ? intval($_GET['pages']) : 1;
+            $totalPages = $data['total_pages'];
 
+            $prevPage = $currentPage - 1;
+            ?>
+            <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
+              <a class="page-link" href="<?= $currentPage > 1 ? '/admin/order?pages=' . $prevPage : '#' ?>">
+                << </a>
+            </li>
+            <?php
+            for ($i = 1; $i <= $totalPages; $i++):?>
+            
+              <li class="page-item">
+                <a class="page-link " style="background-color: <?= $i == $currentPage ? '#0dcaf0' : '' ?> " href="/admin/order?pages=<?= $i ?>"><?= $i ?></a>
+              </li>
+            <?php endfor; ?>
+            <?php
+            $nextPage = $currentPage + 1;
+            ?>
+            <li class="page-item <?= $currentPage >= $totalPages ? 'disabled' : '' ?>">
+              <a class="page-link" href="<?= $currentPage < $totalPages ? '/admin/order?pages=' . $nextPage : '#' ?>">
+                >> </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div class="row my-5 justify-content-center">
-          <nav aria-label="...">
-            <ul class="pagination d-flex justify-content-center">
-              <?php
-              $currentPage = isset($_GET['pages']) ? intval($_GET['pages']) : 1;
-              $totalPages = $data['total_pages'];
 
-              $prevPage = $currentPage - 1;
-              ?>
-              <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $currentPage > 1 ? '/admin/products?pages=' . $prevPage : '#' ?>">
-                  << </a>
-              </li>
-
-              <?php
-              for ($i = 1; $i <= $totalPages; $i++): ?>
-                <li class="page-item <?= $i === $currentPage ? 'active' : '' ?>">
-                  <a class="page-link" href="/admin/products?pages=<?= $i ?>"><?= $i ?></a>
-                </li>
-              <?php endfor; ?>
-
-              <?php
-              $nextPage = $currentPage + 1;
-              ?>
-              <li class="page-item <?= $currentPage >= $totalPages ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $currentPage < $totalPages ? '/admin/products?pages=' . $nextPage : '#' ?>">
-                  >> </a>
-              </li>
-            </ul>
-          </nav>
-
-        </div>
     <?php
   }
 }

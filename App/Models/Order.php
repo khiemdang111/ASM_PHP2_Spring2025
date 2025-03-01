@@ -18,11 +18,23 @@ class Order extends BaseModel
   }
   public function getAllOrder()
   {
+    $pages = isset($_GET['pages']) ? intval($_GET['pages']) : 1;
+    $row = 10;
+    $from = ($pages - 1) * $row;
+
     $result = [];
     try {
-      $sql = "SELECT orders.id as id, orders.name as name_customer, orders.phone as phone, orders.email as email, orders.address as address, orders.total as total, products.name as name FROM `orders` INNER JOIN `order_details` ON orders.id = order_details.order_id INNER JOIN products ON order_details.product_id = products.id  ORDER BY orders.id DESC";
+      $sql = "SELECT orders.id as id, orders.name as name_customer, orders.phone as phone, orders.email as email, orders.address as address, orders.total as total, products.name as name FROM `orders` INNER JOIN `order_details` ON orders.id = order_details.order_id INNER JOIN products ON order_details.product_id = products.id  ORDER BY orders.id DESC LIMIT " . $from . "," . $row;
+      $count = "SELECT COUNT(id) AS total FROM $this->table";
+      $result_count = $this->_conn->MySQLi()->query($count);
+      $total = $result_count->fetch_assoc()['total'];
       $result = $this->_conn->MySQLi()->query($sql);
-      return $result->fetch_all(MYSQLI_ASSOC);
+      return [
+        'order' => $result->fetch_all(MYSQLI_ASSOC), // Lấy danh sách bài viết
+        'total' => intval($total), // Tổng số bài viết
+        'current_page' => $pages, // Trang hiện tại
+        'total_pages' => ceil($total / $row) // Tổng số trang
+      ];
     } catch (\Throwable $th) {
       error_log('Lỗi khi hiển thị tất cả dữ liệu: ' . $th->getMessage());
       return $result;
@@ -175,7 +187,8 @@ class Order extends BaseModel
   {
     return $this->countTotal();
   }
-  public function searchOrder($keyword){
+  public function searchOrder($keyword)
+  {
     $result = [];
     try {
       $sql = "SELECT orders.id as id, orders.name as name_customer, orders.phone as phone, orders.email as email, orders.address as address, orders.total as total, products.name as name FROM `orders` INNER JOIN `order_details` ON orders.id = order_details.order_id INNER JOIN products ON order_details.product_id = products.id WHERE orders.name LIKE '%$keyword%' OR orders.phone LIKE '%$keyword%' OR orders.email LIKE '%$keyword%' OR products.name LIKE '%$keyword%' ";
